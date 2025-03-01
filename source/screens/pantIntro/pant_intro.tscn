@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://36fc6air06j6"]
+
+[ext_resource type="FontFile" uid="uid://bqc8jwwk78iqu" path="res://resources/lang/MinecraftBoldItalic-1y1e.otf" id="1_2hftb"]
+[ext_resource type="PackedScene" uid="uid://rerxv8lts2mu" path="res://source/componentes/btn_a_menu_prin.tscn" id="2_ij8cx"]
+
+[node name="PantIntro" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -11.5
+offset_right = 34.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_2hftb")
+theme_override_font_sizes/font_size = 80
+text = "lbl_titulo"
+
+[node name="btn_AMenuPrin" parent="Panel" instance=ExtResource("2_ij8cx")]
+layout_mode = 1
+anchors_preset = 8
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -90.75
+offset_top = 66.0
+offset_right = 90.75
+offset_bottom = 126.0
+grow_vertical = 2
+text = "btn_start"
