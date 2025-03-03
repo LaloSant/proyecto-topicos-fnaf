@@ -345,7 +345,7 @@ offset_left = 323.0
 offset_top = 125.0
 offset_right = 428.0
 offset_bottom = 148.0
-text = "Confirmo"
+text = "nio"
 
 [node name="Label2" type="Label" parent="."]
 offset_left = 101.0
