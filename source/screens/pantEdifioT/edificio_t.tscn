@@ -347,6 +347,13 @@ offset_right = 428.0
 offset_bottom = 148.0
 text = "Confirmo"
 
+[node name="Label2" type="Label" parent="."]
+offset_left = 101.0
+offset_top = 134.0
+offset_right = 224.0
+offset_bottom = 157.0
+text = "Este es un texto"
+
 [connection signal="body_entered" from="TpP1" to="." method="_on_tp_p_1_body_entered"]
 [connection signal="body_entered" from="TpSalon" to="." method="_on_tp_salon_body_entered"]
 [connection signal="body_entered" from="TPEntrada" to="." method="_on_tp_entrada_body_entered"]
