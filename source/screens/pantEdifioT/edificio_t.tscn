@@ -229,13 +229,7 @@ size = Vector2(30, 6)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v06al"]
 size = Vector2(33.8, 18.8)
 
-<<<<<<< Updated upstream
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5xb0"]
-size = Vector2(18, 6.5)
-=======
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w50ds"]
-size = Vector2(20, 12)
->>>>>>> Stashed changes
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07j70"]
 
 [node name="EdificioT" type="Node2D"]
 script = ExtResource("1_i38r3")
@@ -331,13 +325,6 @@ position = Vector2(-303.3, -54.6)
 shape = SubResource("RectangleShape2D_v06al")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
-[node name="TpPasillo" type="Area2D" parent="."]
-collision_mask = 2
-
-[node name="ColisionTpPasillo" type="CollisionShape2D" parent="TpPasillo"]
-position = Vector2(760, 74)
-shape = SubResource("RectangleShape2D_d5xb0")
-
 [node name="Personaje" parent="." instance=ExtResource("1_ghekp")]
 position = Vector2(215, -7)
 scale = Vector2(0.4, 0.4)
@@ -350,8 +337,8 @@ zoom = Vector2(5, 5)
 collision_mask = 2
 
 [node name="ColisionTpPasillo" type="CollisionShape2D" parent="TpPasillo"]
-position = Vector2(760, 72)
-shape = SubResource("RectangleShape2D_w50ds")
+position = Vector2(761, 81)
+shape = SubResource("RectangleShape2D_07j70")
 
 [connection signal="body_entered" from="TpP1" to="." method="_on_tp_p_1_body_entered"]
 [connection signal="body_entered" from="TpSalon" to="." method="_on_tp_salon_body_entered"]
