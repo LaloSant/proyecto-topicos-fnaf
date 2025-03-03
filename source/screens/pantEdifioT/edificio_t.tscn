@@ -345,7 +345,7 @@ offset_left = 323.0
 offset_top = 125.0
 offset_right = 428.0
 offset_bottom = 148.0
-text = "PRUEBAAAAA"
+text = "Confirmo"
 
 [connection signal="body_entered" from="TpP1" to="." method="_on_tp_p_1_body_entered"]
 [connection signal="body_entered" from="TpSalon" to="." method="_on_tp_salon_body_entered"]
