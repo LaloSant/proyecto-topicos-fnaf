@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://b5hj1agndq0u6"]
+[gd_scene load_steps=14 format=4 uid="uid://b5hj1agndq0u6"]
 
 [ext_resource type="PackedScene" uid="uid://ciyad5p3oge3u" path="res://source/componentes/personaje.tscn" id="1_ghekp"]
 [ext_resource type="Script" path="res://source/screens/pantEdifioT/edificio_t.gd" id="1_i38r3"]
@@ -229,6 +229,14 @@ size = Vector2(30, 6)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v06al"]
 size = Vector2(33.8, 18.8)
 
+<<<<<<< Updated upstream
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5xb0"]
+size = Vector2(18, 6.5)
+=======
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w50ds"]
+size = Vector2(20, 12)
+>>>>>>> Stashed changes
+
 [node name="EdificioT" type="Node2D"]
 script = ExtResource("1_i38r3")
 
@@ -245,6 +253,7 @@ position = Vector2(0, 32)
 scale = Vector2(0.4, 0.4)
 stream = ExtResource("1_n6ms6")
 volume_db = -20.0
+autoplay = true
 max_distance = 100000.0
 attenuation = 1e-05
 panning_strength = 0.05
@@ -322,6 +331,13 @@ position = Vector2(-303.3, -54.6)
 shape = SubResource("RectangleShape2D_v06al")
 debug_color = Color(0, 0.6, 0.7, 0.42)
 
+[node name="TpPasillo" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="ColisionTpPasillo" type="CollisionShape2D" parent="TpPasillo"]
+position = Vector2(760, 74)
+shape = SubResource("RectangleShape2D_d5xb0")
+
 [node name="Personaje" parent="." instance=ExtResource("1_ghekp")]
 position = Vector2(215, -7)
 scale = Vector2(0.4, 0.4)
@@ -330,9 +346,17 @@ collision_layer = 2
 [node name="Camera2D" parent="Personaje" index="1"]
 zoom = Vector2(5, 5)
 
+[node name="TpPasillo" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="ColisionTpPasillo" type="CollisionShape2D" parent="TpPasillo"]
+position = Vector2(760, 72)
+shape = SubResource("RectangleShape2D_w50ds")
+
 [connection signal="body_entered" from="TpP1" to="." method="_on_tp_p_1_body_entered"]
 [connection signal="body_entered" from="TpSalon" to="." method="_on_tp_salon_body_entered"]
 [connection signal="body_entered" from="TPEntrada" to="." method="_on_tp_entrada_body_entered"]
 [connection signal="body_entered" from="TpPb" to="." method="_on_tp_pb_body_entered"]
+[connection signal="body_entered" from="TpPasillo" to="." method="_on_tp_pasillo_body_entered"]
 
 [editable path="Personaje"]
