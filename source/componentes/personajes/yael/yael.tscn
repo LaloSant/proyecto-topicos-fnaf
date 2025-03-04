@@ -100,6 +100,38 @@ animations = [{
 "loop": true,
 "name": &"caminar_izq",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_xlg4j")
+}],
+"loop": true,
+"name": &"idle_abj",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_l7php")
+}],
+"loop": true,
+"name": &"idle_arr",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ng047")
+}],
+"loop": true,
+"name": &"idle_der",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_q18fk")
+}],
+"loop": true,
+"name": &"idle_izq",
+"speed": 5.0
 }]
 
 [node name="Yael" type="CharacterBody2D"]
@@ -117,6 +149,4 @@ zoom = Vector2(3.7, 3.7)
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_2ip5o")
-animation = &"caminar_abj"
-frame = 2
-frame_progress = 0.829665
+animation = &"idle_izq"
