@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=4 uid="uid://bcedmut05i6ho"]
+[gd_scene load_steps=14 format=4 uid="uid://bcedmut05i6ho"]
 
 [ext_resource type="Texture2D" uid="uid://copdfgaxr8gx2" path="res://resources/images/sprites/tilesets/Exterior.png" id="1_5vcrp"]
 [ext_resource type="Script" path="res://source/screens/pantMundExterior/mund_ext.gd" id="1_woy8x"]
 [ext_resource type="Texture2D" uid="uid://ln2gdre8nwnu" path="res://resources/images/sprites/tilesets/Estructuras.png" id="2_n3omv"]
 [ext_resource type="AudioStream" uid="uid://dp1m1k357d67x" path="res://resources/audio/musica/Mundo Tec.mp3" id="2_r2syo"]
 [ext_resource type="PackedScene" uid="uid://8fron7ef5lkw" path="res://source/componentes/personajes/yael/yael.tscn" id="4_vgnge"]
+[ext_resource type="PackedScene" uid="uid://dnmftkp1mwmsu" path="res://source/componentes/personajes/lalo/lalo.tscn" id="6_2wdl6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hvhlb"]
 texture = ExtResource("2_n3omv")
@@ -2599,6 +2600,8 @@ script = ExtResource("1_woy8x")
 stream = ExtResource("2_r2syo")
 volume_db = -10.0
 autoplay = true
+bus = &"Musica"
+parameters/looping = true
 
 [node name="Piso" type="TileMapLayer" parent="."]
 scale = Vector2(1.4, 1.4)
@@ -2607,6 +2610,9 @@ tile_set = SubResource("TileSet_chqxa")
 
 [node name="Yael" parent="." instance=ExtResource("4_vgnge")]
 position = Vector2(381, 534)
+
+[node name="Lalo" parent="." instance=ExtResource("6_2wdl6")]
+position = Vector2(416, 534)
 
 [node name="Basquet 1" type="Sprite2D" parent="."]
 position = Vector2(-648, -1501)
