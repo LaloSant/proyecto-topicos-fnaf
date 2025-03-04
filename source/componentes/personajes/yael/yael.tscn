@@ -149,6 +149,5 @@ zoom = Vector2(3.7, 3.7)
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_2ip5o")
-animation = &"caminar_izq"
+animation = &"idle_der"
 autoplay = "idle_abj"
-frame_progress = 0.746694

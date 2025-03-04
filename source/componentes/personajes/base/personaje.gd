@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var lastAnimation = "iddle_abj"
+var lastAnimation = "idle_abj"
 var defaultSpeed = 150
 var speed = defaultSpeed
 

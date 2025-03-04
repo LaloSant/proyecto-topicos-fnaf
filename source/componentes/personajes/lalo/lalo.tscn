@@ -124,6 +124,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("18_eujf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lp6rl")
 }],
 "loop": true,
 "name": &"idle_der",
@@ -154,6 +157,6 @@ zoom = Vector2(3.7, 3.7)
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_k30ty")
-animation = &"caminar_der"
+animation = &"idle_der"
 autoplay = "idle_abj"
-frame_progress = 0.450625
+frame_progress = 0.934753
