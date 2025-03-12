@@ -1,11 +1,19 @@
+'''
+	Modulo Personaje
+	Creado por: Eduardo Jair Bautista Santiesteban
+	Fecha de creacion: 27 / 02 / 2025
+	Fecha de ultima modificacion: 06 / 03 / 2025
+	Descripcion: Se implementa la logica del personaje.
+'''
+
 extends CharacterBody2D
 
 var lastAnimation = "idle_abj"
-var defaultSpeed = 150
+var defaultSpeed = GLOBAL.pers_default_speed
 var speed = defaultSpeed
 
 func _physics_process(_delta: float) -> void:
-	var direction = Vector2.ZERO
+	var direction:Vector2 = Vector2.ZERO
 	direction.x = Input.get_axis("ui_left", "ui_right")
 	direction.y = Input.get_axis("ui_up", "ui_down")
 	

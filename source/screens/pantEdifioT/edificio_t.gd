@@ -1,3 +1,12 @@
+'''
+	Modulo Edificio T
+	Creado por: Eduardo Jair Bautista Santiesteban
+	Modificado por:
+	Fecha de creacion: 27 / 02 / 2025
+	Fecha de ultima modificacion: 06 / 03 / 2025
+	Descripcion: Se implementa el nivel del edificio T
+'''
+
 extends Node2D
 
 

@@ -20,6 +20,7 @@ config/icon="res://resources/images/FNAH.png"
 
 CONFIG_FILE="*res://source/singleton/config.gd"
 GLOBAL="*res://source/singleton/global.gd"
+SCN_FADE_IN="*res://source/singleton/transiciones/scn_fade_in.tscn"
 
 [debug]
 

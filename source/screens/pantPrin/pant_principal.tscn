@@ -128,8 +128,13 @@ theme_override_fonts/font = ExtResource("2_oughh")
 theme_override_font_sizes/font_size = 24
 text = "btn_config"
 
-[connection signal="focus_entered" from="Panel" to="." method="_on_panel_focus_entered"]
+[node name="TimerVideoIntro" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+autostart = true
+
 [connection signal="pressed" from="Panel/btn_salir" to="." method="_on_btn_salir_pressed"]
 [connection signal="pressed" from="Panel/btn_creditos" to="." method="_on_btn_creditos_pressed"]
 [connection signal="pressed" from="Panel/btn_iniciar" to="." method="_on_btn_iniciar_pressed"]
 [connection signal="pressed" from="Panel/btn_config" to="." method="_on_btn_config_pressed"]
+[connection signal="timeout" from="TimerVideoIntro" to="." method="_on_timer_video_intro_timeout"]

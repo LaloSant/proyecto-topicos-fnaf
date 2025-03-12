@@ -1,8 +1,8 @@
 '''
 	Modulo PantPrincipal
 	Creado por: Eduardo Jair Bautista Santiesteban
-	Fecha de creacion: 17 / 02 / 2024
-	Fecha de ultima modificacion: 26 / 02 / 2024
+	Fecha de creacion: 17 / 02 / 2025
+	Fecha de ultima modificacion: 11 / 03 / 2025
 	Descripcion: Se implementa la pantalla principal del juego.
 '''
 
@@ -20,18 +20,16 @@ func _process(_delta: float) -> void:
 func _on_btn_salir_pressed() -> void:
 	get_tree().quit()
 
-
 func _on_btn_config_pressed() -> void:
-	get_tree().change_scene_to_file("res://source/screens/pantConfig/pant_config.tscn")
+	SCN_FADE_IN._cambia_escena("res://source/screens/pantConfig/pant_config.tscn")
 
 
 func _on_btn_creditos_pressed() -> void:
-	get_tree().change_scene_to_file("res://source/screens/pantCreditos/pant_creditos.tscn")
+	SCN_FADE_IN._cambia_escena("res://source/screens/pantCreditos/pant_creditos.tscn")
 
 
 func _on_btn_iniciar_pressed() -> void:
-	get_tree().change_scene_to_file("res://source/screens/pantEdifioT/edificio_t.tscn")
+	SCN_FADE_IN._cambia_escena("res://source/screens/pantEdifioT/edificio_t.tscn")
 
-
-func _on_panel_focus_entered() -> void:
-	$Panel/Musica.play(0)
+func _on_timer_video_intro_timeout() -> void:
+	SCN_FADE_IN._cambia_escena("res://source/screens/pantVideoIntro/pant_video_intro.tscn")
