@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bt2k7hof7sakh"]
 
-[ext_resource type="Script" path="res://source/screens/pantPrin/pant_principal.gd" id="1_ut4m4"]
+[ext_resource type="Script" path="res://source/screens/menus/pant_principal.gd" id="1_ut4m4"]
 [ext_resource type="FontFile" uid="uid://dhfqs3hiwwpc3" path="res://resources/lang/MinecraftRegular-Bmg3.otf" id="2_oughh"]
 [ext_resource type="Texture2D" uid="uid://c3v7cdacugfc3" path="res://resources/images/FiveNigths.jpg" id="3_o7wbf"]
 [ext_resource type="AudioStream" uid="uid://1ehnfoqqyg11" path="res://resources/audio/musica/Main Menu.mp3" id="4_atong"]

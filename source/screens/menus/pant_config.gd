@@ -2,25 +2,14 @@
 	Modulo PantConfig
 	Creado por: Eduardo Jair Bautista Santiesteban
 	Fecha de creacion: 19 / 02 / 2024
-	Fecha de ultima modificacion: 26 / 02 / 2024
+	Fecha de ultima modificacion: 23 / 03 / 2024
 	Descripcion: Se implementa la pantalla de configuracion del juego
 '''
 
 extends Node2D
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
-	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
-
-
 func _on_btn_pant_principal_pressed() -> void:
-	get_tree().change_scene_to_file("res://source/screens/pantPrin/pant_principal.tscn")
+	SCN_FADE_IN.cambia_escena("res://source/screens/menus/pant_principal.tscn")
 
 func _on_btn_idioma_pressed() -> void:
 	language_control()

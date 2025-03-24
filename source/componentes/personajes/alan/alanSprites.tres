@@ -1,0 +1,135 @@
+[gd_resource type="SpriteFrames" load_steps=19 format=3 uid="uid://kag7yirkasv3"]
+
+[ext_resource type="Texture2D" uid="uid://crn35h72d7jaj" path="res://source/componentes/personajes/alan/tile_0348.png" id="1_peffk"]
+[ext_resource type="Texture2D" uid="uid://bx8rsk0l4bbjm" path="res://source/componentes/personajes/alan/tile_0375.png" id="2_83hxc"]
+[ext_resource type="Texture2D" uid="uid://cfy1i4wmtg8kp" path="res://source/componentes/personajes/alan/tile_0402.png" id="3_d6a3n"]
+[ext_resource type="Texture2D" uid="uid://mulv1kokb3u1" path="res://source/componentes/personajes/alan/tile_0349.png" id="4_e105w"]
+[ext_resource type="Texture2D" uid="uid://daa6wp62v3p6t" path="res://source/componentes/personajes/alan/backw1.png" id="5_dnmkd"]
+[ext_resource type="Texture2D" uid="uid://cglo03rih2880" path="res://source/componentes/personajes/alan/tile_0376.png" id="6_26fjy"]
+[ext_resource type="Texture2D" uid="uid://j4tijvr6nhqd" path="res://source/componentes/personajes/alan/backw2.png" id="7_oux8s"]
+[ext_resource type="Texture2D" uid="uid://cbltufdpad4i2" path="res://source/componentes/personajes/alan/tile_0403.png" id="8_ctodo"]
+[ext_resource type="Texture2D" uid="uid://u15udkfnxuwd" path="res://source/componentes/personajes/alan/tile_0350.png" id="9_lpm3r"]
+[ext_resource type="Texture2D" uid="uid://sywwi8m64x77" path="res://source/componentes/personajes/alan/tile_0377.png" id="10_tym6h"]
+[ext_resource type="Texture2D" uid="uid://c8v2meab6bhg4" path="res://source/componentes/personajes/alan/tile_0404.png" id="11_r6mhe"]
+[ext_resource type="Texture2D" uid="uid://bvv6fcrghu6ra" path="res://source/componentes/personajes/alan/tile_0347.png" id="12_607uh"]
+[ext_resource type="Texture2D" uid="uid://dlp6503yfvl03" path="res://source/componentes/personajes/alan/tile_0374.png" id="13_1rbo4"]
+[ext_resource type="Texture2D" uid="uid://q0c4ortcj6uo" path="res://source/componentes/personajes/alan/tile_0401.png" id="14_5wtcb"]
+[ext_resource type="Texture2D" uid="uid://bg3ctcntg10hj" path="res://source/componentes/personajes/alan/alan front idle.png" id="15_sq70i"]
+[ext_resource type="Texture2D" uid="uid://ddjgqak35h6ai" path="res://source/componentes/personajes/alan/alan idle back.png" id="16_7wpnu"]
+[ext_resource type="Texture2D" uid="uid://bw7afan5hulb0" path="res://source/componentes/personajes/alan/right idle.png" id="17_enb60"]
+[ext_resource type="Texture2D" uid="uid://cklp4twj7d537" path="res://source/componentes/personajes/alan/left idle.png" id="18_sym2b"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_peffk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_83hxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_peffk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d6a3n")
+}],
+"loop": true,
+"name": &"caminar_abj",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_e105w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dnmkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_26fjy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dnmkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e105w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_oux8s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ctodo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_oux8s")
+}],
+"loop": true,
+"name": &"caminar_arr",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_lpm3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tym6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_lpm3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_r6mhe")
+}],
+"loop": true,
+"name": &"caminar_der",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_607uh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1rbo4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_607uh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_5wtcb")
+}],
+"loop": true,
+"name": &"caminar_izq",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_sq70i")
+}],
+"loop": true,
+"name": &"idle_abj",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_7wpnu")
+}],
+"loop": true,
+"name": &"idle_arr",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_enb60")
+}],
+"loop": true,
+"name": &"idle_der",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_sym2b")
+}],
+"loop": true,
+"name": &"idle_izq",
+"speed": 5.0
+}]

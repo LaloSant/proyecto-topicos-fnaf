@@ -10,4 +10,4 @@ extends Node2D
 
 
 func _on_video_stream_player_finished() -> void:
-	get_tree().change_scene_to_file("res://source/screens/pantPrin/pant_principal.tscn")
+	SCN_FADE_IN.cambia_escena("res://source/screens/menus/pant_principal.tscn")

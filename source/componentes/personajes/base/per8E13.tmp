@@ -4,7 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://mmr1yoqjk6at" path="res://source/componentes/personajes/lalo/laloSprites.tres" id="2_6g65x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdach"]
-size = Vector2(30, 32.5)
+size = Vector2(42, 32.5)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cemx0"]
 polygon = PackedVector2Array(-10, -10, 10, -10, 10, 5, 15, 5, 15, 15, 10, 15, 10, 22.5, -10, 22.5, -10, 15, -15, 15, -15, 5, -10, 5)
@@ -15,7 +15,7 @@ collision_layer = 2
 script = ExtResource("1_pkvuc")
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(-4.47035e-07, 8.75)
+position = Vector2(0, 8.75)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_vdach")
 debug_color = Color(0, 0.6, 0.7, 0.42)
@@ -30,6 +30,5 @@ sprite_frames = ExtResource("2_6g65x")
 animation = &"idle_abj"
 autoplay = "idle_abj"
 
-[node name="LightOc" type="LightOccluder2D" parent="."]
-visible = false
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_cemx0")

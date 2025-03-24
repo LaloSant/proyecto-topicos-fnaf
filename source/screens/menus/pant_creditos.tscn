@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dquhxwhrmnp7e"]
 
-[ext_resource type="Script" path="res://source/screens/pantCreditos/pant_creditos.gd" id="1_lkht7"]
+[ext_resource type="Script" path="res://source/screens/menus/pant_creditos.gd" id="1_lkht7"]
 [ext_resource type="VideoStream" path="res://resources/videos/Batalla epica short.ogv" id="2_0fkvu"]
 [ext_resource type="PackedScene" uid="uid://rerxv8lts2mu" path="res://source/componentes/btn_a_menu_prin.tscn" id="3_dqu32"]
 
@@ -10,6 +10,12 @@ script = ExtResource("1_lkht7")
 [node name="Panel" type="Panel" parent="."]
 offset_right = 1280.0
 offset_bottom = 720.0
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Panel"]
 layout_mode = 0

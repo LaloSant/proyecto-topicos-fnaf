@@ -18,4 +18,4 @@ func _on_btn_a_pant_intro_pressed() -> void:
 	salir_a_menu()
 	
 func salir_a_menu():
-	SCN_FADE_IN._cambia_escena("res://source/screens/pantIntro/pant_intro.tscn")
+	SCN_FADE_IN.cambia_escena("res://source/screens/menus/pant_intro.tscn")

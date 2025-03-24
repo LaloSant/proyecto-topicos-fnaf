@@ -16,4 +16,4 @@ func _on_pressed() -> void:
 	a_menu_prin()
 	
 func a_menu_prin() -> void:
-	SCN_FADE_IN._cambia_escena("res://source/screens/pantPrin/pant_principal.tscn")
+	SCN_FADE_IN.cambia_escena("res://source/screens/menus/pant_principal.tscn")

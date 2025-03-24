@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://36fc6air06j6"]
 
 [ext_resource type="FontFile" uid="uid://bqc8jwwk78iqu" path="res://resources/lang/MinecraftBoldItalic-1y1e.otf" id="1_2hftb"]
-[ext_resource type="Script" path="res://source/screens/pantIntro/pant_intro.gd" id="1_3jl3o"]
+[ext_resource type="Script" path="res://source/screens/menus/pant_intro.gd" id="1_3jl3o"]
 [ext_resource type="PackedScene" uid="uid://rerxv8lts2mu" path="res://source/componentes/btn_a_menu_prin.tscn" id="2_ij8cx"]
 
 [sub_resource type="Gradient" id="Gradient_mhdur"]

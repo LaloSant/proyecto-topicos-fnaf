@@ -11,7 +11,7 @@ extends CanvasLayer
 func _ready() -> void:
 	layer = -1
 
-func _cambia_escena(path:String) -> void:
+func cambia_escena(path:String) -> void:
 	layer = 1
 	$ANPFade.play("Fade_in")
 	await($ANPFade.animation_finished)

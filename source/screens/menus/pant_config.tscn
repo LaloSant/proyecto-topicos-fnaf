@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://be4ajke3n2l0g"]
 
-[ext_resource type="Script" path="res://source/screens/pantConfig/pant_config.gd" id="1_25cpi"]
+[ext_resource type="Script" path="res://source/screens/menus/pant_config.gd" id="1_25cpi"]
 [ext_resource type="FontFile" uid="uid://dhfqs3hiwwpc3" path="res://resources/lang/MinecraftRegular-Bmg3.otf" id="1_a6jwc"]
 
 [sub_resource type="Gradient" id="Gradient_wagfi"]

@@ -2,15 +2,19 @@
 	Modulo Personaje
 	Creado por: Eduardo Jair Bautista Santiesteban
 	Fecha de creacion: 27 / 02 / 2025
-	Fecha de ultima modificacion: 06 / 03 / 2025
+	Fecha de ultima modificacion: 23 / 03 / 2025
 	Descripcion: Se implementa la logica del personaje.
 '''
 
-extends CharacterBody2D
+class_name Personaje extends CharacterBody2D
 
 var lastAnimation = "idle_abj"
 var defaultSpeed = GLOBAL.pers_default_speed
 var speed = defaultSpeed
+var spriteSet:Resource = preload("res://source/componentes/personajes/lalo/laloSprites.tres")
+
+func _ready() -> void:
+	cambiarSprite(spriteSet)
 
 func _physics_process(_delta: float) -> void:
 	var direction:Vector2 = Vector2.ZERO
@@ -65,7 +69,12 @@ func _process(_delta: float) -> void:
 		$sprite.speed_scale = 1.5
 	else:
 		speed = defaultSpeed
+	if Input.is_action_pressed("ui_accept"):
+		cambiarSprite(preload("res://source/componentes/personajes/yael/yaelSprites.tres"))
 
 func _cambiarAnimacion(animacion:String) -> void:
 	$sprite.play(animacion)
 	lastAnimation = animacion
+
+func cambiarSprite(spriteSetNew:Resource) -> void:
+	$sprite.set_sprite_frames(spriteSetNew)

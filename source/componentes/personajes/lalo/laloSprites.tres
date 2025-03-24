@@ -1,0 +1,138 @@
+[gd_resource type="SpriteFrames" load_steps=19 format=3 uid="uid://mmr1yoqjk6at"]
+
+[ext_resource type="Texture2D" uid="uid://e5qeawporx1i" path="res://source/componentes/personajes/lalo/frente0.png" id="1_a3i28"]
+[ext_resource type="Texture2D" uid="uid://b0v5cylj0cx5l" path="res://source/componentes/personajes/lalo/frente1.png" id="2_w2fuq"]
+[ext_resource type="Texture2D" uid="uid://i0rotlguwws0" path="res://source/componentes/personajes/lalo/frente2.png" id="3_n7hqn"]
+[ext_resource type="Texture2D" uid="uid://bwx00ht61obnr" path="res://source/componentes/personajes/lalo/arriba0.png" id="4_ckn80"]
+[ext_resource type="Texture2D" uid="uid://cebtuxylgtduf" path="res://source/componentes/personajes/lalo/arriba1.png" id="5_odmhc"]
+[ext_resource type="Texture2D" uid="uid://dig0tiuc24c2u" path="res://source/componentes/personajes/lalo/arriba2.png" id="6_f7fyp"]
+[ext_resource type="Texture2D" uid="uid://psujrluv7jd6" path="res://source/componentes/personajes/lalo/arriba3.png" id="7_vcib0"]
+[ext_resource type="Texture2D" uid="uid://b6p6aujct6cin" path="res://source/componentes/personajes/lalo/arriba4.png" id="8_u6j0p"]
+[ext_resource type="Texture2D" uid="uid://bc1vwh80gqc16" path="res://source/componentes/personajes/lalo/derecha0.png" id="9_tk8ww"]
+[ext_resource type="Texture2D" uid="uid://b3g4ggpt0fqli" path="res://source/componentes/personajes/lalo/derecha1.png" id="10_y7dkn"]
+[ext_resource type="Texture2D" uid="uid://ckugnqkatouc7" path="res://source/componentes/personajes/lalo/derecha2.png" id="11_i7dki"]
+[ext_resource type="Texture2D" uid="uid://be21llpak1560" path="res://source/componentes/personajes/lalo/izquierda0.png" id="12_0avdf"]
+[ext_resource type="Texture2D" uid="uid://djdq52ereoq12" path="res://source/componentes/personajes/lalo/izquierda1.png" id="13_4l0k8"]
+[ext_resource type="Texture2D" uid="uid://co063pni0k6cy" path="res://source/componentes/personajes/lalo/izquierda2.png" id="14_qsoka"]
+[ext_resource type="Texture2D" uid="uid://b8bubngkde3ti" path="res://source/componentes/personajes/lalo/idle frente.png" id="15_4amym"]
+[ext_resource type="Texture2D" uid="uid://cvpsex6kwwhd4" path="res://source/componentes/personajes/lalo/idle arriba.png" id="16_wbswj"]
+[ext_resource type="Texture2D" uid="uid://4nldce7n1q73" path="res://source/componentes/personajes/lalo/idle derecha.png" id="17_iy6xf"]
+[ext_resource type="Texture2D" uid="uid://cgjtuxiae7h0w" path="res://source/componentes/personajes/lalo/idle izquierda.png" id="18_icsmo"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_a3i28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_w2fuq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_a3i28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n7hqn")
+}],
+"loop": true,
+"name": &"caminar_abj",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ckn80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_odmhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f7fyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_odmhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ckn80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vcib0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_u6j0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vcib0")
+}],
+"loop": true,
+"name": &"caminar_arr",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_tk8ww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_y7dkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tk8ww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_i7dki")
+}],
+"loop": true,
+"name": &"caminar_der",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_0avdf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_4l0k8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0avdf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_qsoka")
+}],
+"loop": true,
+"name": &"caminar_izq",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_4amym")
+}],
+"loop": true,
+"name": &"idle_abj",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_wbswj")
+}],
+"loop": true,
+"name": &"idle_arr",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_iy6xf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tk8ww")
+}],
+"loop": true,
+"name": &"idle_der",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_icsmo")
+}],
+"loop": true,
+"name": &"idle_izq",
+"speed": 1.0
+}]

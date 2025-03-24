@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=4 uid="uid://b5hj1agndq0u6"]
 
 [ext_resource type="PackedScene" uid="uid://ciyad5p3oge3u" path="res://source/componentes/personajes/base/personaje.tscn" id="1_ghekp"]
-[ext_resource type="Script" path="res://source/screens/pantEdifioT/edificio_t.gd" id="1_i38r3"]
+[ext_resource type="Script" path="res://source/screens/juego/edifT/edificio_t.gd" id="1_i38r3"]
 [ext_resource type="AudioStream" uid="uid://8sb45u14ewm6" path="res://resources/audio/musica/Never Let Me Down.mp3" id="1_n6ms6"]
 [ext_resource type="Texture2D" uid="uid://duugqf1fce8cs" path="res://resources/images/sprites/tilesets/EdificioT.png" id="3_t3tsd"]
 
