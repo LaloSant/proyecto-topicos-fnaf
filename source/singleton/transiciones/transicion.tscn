@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfphplmv1hblj"]
+
+[ext_resource type="Script" path="res://source/singleton/transiciones/transicion.gd" id="1_61r6y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hiu41"]
+
+[node name="Transicion" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_61r6y")
+escena = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hiu41")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

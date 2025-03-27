@@ -12,11 +12,24 @@ var lastAnimation = "idle_abj"
 var defaultSpeed = GLOBAL.pers_default_speed
 var speed = defaultSpeed
 var spriteSet:Resource = preload("res://source/componentes/personajes/lalo/laloSprites.tres")
+var puedeMoverse:bool = true
 
 func _ready() -> void:
+	defaultSpeed = GLOBAL.pers_default_speed
 	cambiarSprite(spriteSet)
 
 func _physics_process(_delta: float) -> void:
+	if !puedeMoverse:
+		match(lastAnimation):
+			"caminar_der":
+				$sprite.play("idle_der")
+			"caminar_izq":
+				$sprite.play("idle_izq")
+			"caminar_arr":
+				$sprite.play("idle_arr")
+			"caminar_abj":
+				$sprite.play("idle_abj")
+		return
 	var direction:Vector2 = Vector2.ZERO
 	direction.x = Input.get_axis("ui_left", "ui_right")
 	direction.y = Input.get_axis("ui_up", "ui_down")
@@ -78,3 +91,6 @@ func _cambiarAnimacion(animacion:String) -> void:
 
 func cambiarSprite(spriteSetNew:Resource) -> void:
 	$sprite.set_sprite_frames(spriteSetNew)
+	
+func setPuedeMoverse(valor:bool) -> void:
+	puedeMoverse = valor

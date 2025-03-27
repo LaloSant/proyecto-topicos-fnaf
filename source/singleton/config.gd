@@ -2,7 +2,7 @@
 	Modulo Config
 	Creado por: Eduardo Jair Bautista Santiesteban
 	Fecha de creacion: 21 / 02 / 2025
-	Fecha de ultima modificacion: 21 / 02 / 2025
+	Fecha de ultima modificacion: 24 / 03 / 2025
 	Descripcion: Se implementa singleton de configuracion
 '''
 
@@ -18,6 +18,10 @@ func _ready() -> void:
 		
 		#Seccion Personaje
 		config.set_value("Personaje", "default_speed", 150)
+		
+		#Seccion partida
+		config.set_value("Partida", "dia", 1)
+		
 		config.save(file_path)
 	else:
 		config.load(file_path)
@@ -51,4 +55,18 @@ func load_personaje_setting():
 	var personaje_settings = {}
 	for key in config.get_section_keys("Personaje"):
 		personaje_settings[key]=config.get_value("Personaje", key)
+	return personaje_settings
+	
+#Seccion partida
+func save_partida_setting(key:String, value):
+	config.set_value("Partida", key, value)
+	config.save(file_path)
+
+func update_partida_setting(key:String, value):
+	config.set_value("Partida", key, value)
+	
+func load_partida_setting():
+	var personaje_settings = {}
+	for key in config.get_section_keys("Partida"):
+		personaje_settings[key]=config.get_value("Partida", key)
 	return personaje_settings

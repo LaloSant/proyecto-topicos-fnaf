@@ -1,13 +1,16 @@
-id,es,en,fr
-btn_iniciar,Iniciar Juego,Start Game,Commencer le jeu
-btn_salir,Salir del Juego,Exit Game,Jeu de sortie
-btn_config,Configuracion,Settings,Paramètres
-btn_pant_principal,Pantalla principal,Main menu,Menu principal
-btn_idioma,Cambiar Idioma,Change Language,Changer de langue
-btn_guardar,Guardar,Save,Saveguarder
-btn_AMenuPrin,Ir a menu,Go to menu,Aller au menu
-btn_creditos,Creditos,Credits,Crédits
-btn_start,Empezar,Start,Commencer
-btn_A_Pant_Intro,Saltar,Skip,Sautiller
-lbl_titulo,Cinco noches en Hugo,Five Nights at Hugo's,Cinq nuits chez Hugo
-lbl_idioma,Espanol,English,Français
+id,es,en,fr,,,
+btn_iniciar,Iniciar Juego,Start Game,Commencer le jeu,,,
+btn_salir,Salir del Juego,Exit Game,Jeu de sortie,,,
+btn_config,Configuracion,Settings,Paramètres,,,
+btn_pant_principal,Pantalla principal,Main menu,Menu principal,,,
+btn_idioma,Cambiar Idioma,Change Language,Changer de langue,,,
+btn_guardar,Guardar,Save,Saveguarder,,,
+btn_AMenuPrin,Ir a menu,Go to menu,Aller au menu,,,
+btn_creditos,Creditos,Credits,Crédits,,,
+btn_start,Empezar,Start,Commencer,,,
+btn_A_Pant_Intro,Saltar,Skip,Sautiller,,,
+lbl_titulo,Cinco noches en Hugo,Five Nights at Hugo's,Cinq nuits chez Hugo,,,
+lbl_idioma,Espanol,English,Français,,,
+lbl_Salon,Salon,Classroom,Classe,,,
+lbl_P1,Piso 1,Floor 1,Étage 1,,,
+lbl_Pb,Planta baja,Ground floor,Rez-de-chaussée,,,

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0a4ucxe160yd"]
+
+[ext_resource type="PackedScene" uid="uid://rerxv8lts2mu" path="res://source/componentes/btn_a_menu_prin.tscn" id="1_7xdas"]
+[ext_resource type="Script" path="res://source/screens/juego/HUD/hud.gd" id="1_s75c2"]
+[ext_resource type="FontFile" uid="uid://bqc8jwwk78iqu" path="res://resources/lang/MinecraftBoldItalic-1y1e.otf" id="2_8tycl"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_s75c2")
+
+[node name="btn_AMenuPrin" parent="." instance=ExtResource("1_7xdas")]
+theme_type_variation = &""
+
+[node name="lblInfo" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.5
+offset_top = 30.0
+offset_right = 31.5
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_8tycl")
+theme_override_font_sizes/font_size = 30
+text = "lblInfo"

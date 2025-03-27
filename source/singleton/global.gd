@@ -7,9 +7,12 @@
 '''
 
 extends Node
+enum MarkerEscena{mk_FrenteT}
 
 #Declaraciones de variables globales
 var pers_default_speed:int
+var contador_dia:int
+var lugarATp:Marker2D
 
 func _ready() -> void:
 	#Carga de idioma activo
@@ -18,3 +21,7 @@ func _ready() -> void:
 	#Asignacion de datos
 	var personaje_settings = CONFIG_FILE.load_personaje_setting()
 	pers_default_speed = personaje_settings.default_speed
+	#Carga datos partida
+	var partida_settings = CONFIG_FILE.load_partida_setting()
+	contador_dia = partida_settings.dia
+	

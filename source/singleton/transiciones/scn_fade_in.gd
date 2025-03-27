@@ -1,5 +1,5 @@
 '''
-	Modulo scn transition
+	Modulo scn transition fade in
 	Creado por: Eduardo Jair Bautista Santiesteban
 	Fecha de creacion: 10 / 03 / 2025
 	Fecha de ultima modificacion: 11 / 03 / 2025
