@@ -18,17 +18,24 @@ func _ready() -> void:
 		
 		#Seccion Personaje
 		config.set_value("Personaje", "default_speed", 150)
+		config.set_value("Personaje", "maxHealth", 100)
+		config.set_value("Personaje", "baseDamage", 10)
+		config.set_value("Personaje", "lowAguaLoca", 20)
+		config.set_value("Personaje", "highAguaLoca", 50)
+		config.set_value("Personaje", "factorSneak", 0.75)
+		config.set_value("Personaje", "factorRun", 1.5)
+		config.set_value("Personaje", "nombre", "Alan")
 		
 		#Seccion partida
 		config.set_value("Partida", "dia", 1)
-		
+		config.set_value("Partida", "marcador", GLOBAL.MarkerPosicion.mk_EdificioTSalon)
 		config.save(file_path)
 	else:
 		config.load(file_path)
 
 func save_full_config():
 	config.save(file_path)
-	
+
 #Seccion Lenguaje	
 func save_lenguaje_setting(key:String, value):
 	config.set_value("Lenguaje", key, value)

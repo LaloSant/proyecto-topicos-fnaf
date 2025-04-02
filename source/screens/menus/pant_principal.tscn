@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bt2k7hof7sakh"]
+[gd_scene load_steps=7 format=3 uid="uid://bt2k7hof7sakh"]
 
-[ext_resource type="Script" path="res://source/screens/menus/pant_principal.gd" id="1_ut4m4"]
-[ext_resource type="FontFile" uid="uid://dhfqs3hiwwpc3" path="res://resources/lang/MinecraftRegular-Bmg3.otf" id="2_oughh"]
+[ext_resource type="Script" uid="uid://du8j6m4iym2tf" path="res://source/screens/menus/pant_principal.gd" id="1_ut4m4"]
 [ext_resource type="Texture2D" uid="uid://c3v7cdacugfc3" path="res://resources/images/FiveNigths.jpg" id="3_o7wbf"]
 [ext_resource type="AudioStream" uid="uid://1ehnfoqqyg11" path="res://resources/audio/musica/Main Menu.mp3" id="4_atong"]
+[ext_resource type="Theme" uid="uid://tanh1kklj0vh" path="res://source/screens/menus/pant_principal_tema.tres" id="4_y8nws"]
 
 [sub_resource type="Gradient" id="Gradient_0m4t8"]
 offsets = PackedFloat32Array(0.0324675, 0.454545)
@@ -14,10 +14,6 @@ metadata/_snap_count = 11
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_a3kqj"]
 gradient = SubResource("Gradient_0m4t8")
 
-[sub_resource type="Theme" id="Theme_hvvg4"]
-
-[sub_resource type="Theme" id="Theme_f3hh3"]
-
 [node name="PantPrincipal" type="Node2D"]
 script = ExtResource("1_ut4m4")
 
@@ -25,12 +21,9 @@ script = ExtResource("1_ut4m4")
 offset_right = 1280.0
 offset_bottom = 720.0
 
-[node name="Musica" type="AudioStreamPlayer2D" parent="Panel"]
-position = Vector2(645, -25)
+[node name="Musica" type="AudioStreamPlayer" parent="Panel"]
 stream = ExtResource("4_atong")
 autoplay = true
-attenuation = 5.31342e-05
-panning_strength = 0.0
 bus = &"Musica"
 parameters/looping = true
 
@@ -44,97 +37,68 @@ position = Vector2(892, 357)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_o7wbf")
 
-[node name="btn_salir" type="Button" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -540.0
-offset_top = 181.0
-offset_right = -360.0
-offset_bottom = 241.0
-grow_horizontal = 2
-grow_vertical = 2
-focus_neighbor_top = NodePath("../btn_creditos")
-focus_neighbor_bottom = NodePath("../btn_iniciar")
-theme = SubResource("Theme_hvvg4")
-theme_type_variation = &"FlatButton"
-theme_override_fonts/font = ExtResource("2_oughh")
-theme_override_font_sizes/font_size = 24
-text = "btn_salir"
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 512.0
+offset_bottom = 664.0
+theme_override_constants/separation = 90
+alignment = 1
 
-[node name="btn_creditos" type="Button" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -540.0
-offset_top = 41.0
-offset_right = -360.0
-offset_bottom = 101.0
-grow_horizontal = 2
-grow_vertical = 2
-focus_neighbor_top = NodePath("../btn_config")
-focus_neighbor_bottom = NodePath("../btn_salir")
-theme = SubResource("Theme_hvvg4")
-theme_type_variation = &"FlatButton"
-theme_override_fonts/font = ExtResource("2_oughh")
-theme_override_font_sizes/font_size = 24
-text = "btn_creditos"
-
-[node name="btn_iniciar" type="Button" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -540.0
-offset_top = -239.0
-offset_right = -360.0
-offset_bottom = -179.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="btn_iniciar" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
 focus_neighbor_top = NodePath("../btn_salir")
-focus_neighbor_bottom = NodePath("../btn_config")
-theme = SubResource("Theme_f3hh3")
+focus_neighbor_bottom = NodePath("../btn_continuar")
+theme = ExtResource("4_y8nws")
 theme_type_variation = &"FlatButton"
-theme_override_fonts/font = ExtResource("2_oughh")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 40
 text = "btn_iniciar"
 
-[node name="btn_config" type="Button" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -540.0
-offset_top = -99.0
-offset_right = -360.0
-offset_bottom = -39.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="btn_continuar" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
 focus_neighbor_top = NodePath("../btn_iniciar")
-focus_neighbor_bottom = NodePath("../btn_creditos")
-theme = SubResource("Theme_hvvg4")
+focus_neighbor_bottom = NodePath("../btn_config")
+theme = ExtResource("4_y8nws")
 theme_type_variation = &"FlatButton"
-theme_override_fonts/font = ExtResource("2_oughh")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 40
+text = "btn_continuar"
+
+[node name="btn_config" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../btn_continuar")
+focus_neighbor_bottom = NodePath("../btn_creditos")
+theme = ExtResource("4_y8nws")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 40
 text = "btn_config"
+
+[node name="btn_creditos" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../btn_config")
+focus_neighbor_bottom = NodePath("../btn_salir")
+theme = ExtResource("4_y8nws")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 40
+text = "btn_creditos"
+
+[node name="btn_salir" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../btn_creditos")
+focus_neighbor_bottom = NodePath("../btn_iniciar")
+theme = ExtResource("4_y8nws")
+theme_type_variation = &"FlatButton"
+theme_override_font_sizes/font_size = 40
+text = "btn_salir"
 
 [node name="TimerVideoIntro" type="Timer" parent="."]
 wait_time = 20.0
 one_shot = true
 autostart = true
 
-[connection signal="pressed" from="Panel/btn_salir" to="." method="_on_btn_salir_pressed"]
-[connection signal="pressed" from="Panel/btn_creditos" to="." method="_on_btn_creditos_pressed"]
-[connection signal="pressed" from="Panel/btn_iniciar" to="." method="_on_btn_iniciar_pressed"]
-[connection signal="pressed" from="Panel/btn_config" to="." method="_on_btn_config_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/btn_iniciar" to="." method="_on_btn_iniciar_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/btn_continuar" to="." method="_on_btn_continuar_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/btn_config" to="." method="_on_btn_config_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/btn_creditos" to="." method="_on_btn_creditos_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/btn_salir" to="." method="_on_btn_salir_pressed"]
 [connection signal="timeout" from="TimerVideoIntro" to="." method="_on_timer_video_intro_timeout"]

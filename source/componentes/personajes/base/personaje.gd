@@ -10,11 +10,13 @@ class_name Personaje extends CharacterBody2D
 
 var lastAnimation = "idle_abj"
 var defaultSpeed = GLOBAL.pers_default_speed
-var speed = defaultSpeed
-var spriteSet:Resource = preload("res://source/componentes/personajes/lalo/laloSprites.tres")
+var speed:float = defaultSpeed
+var spriteSet:Resource
+var nombre:String = GLOBAL.pers_nombre
 var puedeMoverse:bool = true
 
 func _ready() -> void:
+	spriteSet = getSpritePorNombre(nombre)
 	defaultSpeed = GLOBAL.pers_default_speed
 	cambiarSprite(spriteSet)
 
@@ -74,16 +76,16 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	
 func _process(_delta: float) -> void:
-	if Input.is_action_pressed("CntlKey"):
-		speed = defaultSpeed / 1.5
-		$sprite.speed_scale = 0.75
-	elif Input.is_action_pressed("ShiftKey"):
-		speed = defaultSpeed * 1.5
-		$sprite.speed_scale = 1.5
+	if Input.is_action_pressed("CntlKey") or Input.is_action_pressed("Control_B_Circ"):
+		speed = defaultSpeed * GLOBAL.pers_factorSneak
+		$sprite.speed_scale = GLOBAL.pers_factorSneak
+	elif Input.is_action_pressed("ShiftKey") or Input.is_action_pressed("Control_L3"):
+		speed = defaultSpeed * GLOBAL.pers_factorRun
+		$sprite.speed_scale = GLOBAL.pers_factorRun
 	else:
 		speed = defaultSpeed
 	if Input.is_action_pressed("ui_accept"):
-		cambiarSprite(preload("res://source/componentes/personajes/yael/yaelSprites.tres"))
+		cambiarSprite(getSpritePorNombre("Yael"))
 
 func _cambiarAnimacion(animacion:String) -> void:
 	$sprite.play(animacion)
@@ -94,3 +96,13 @@ func cambiarSprite(spriteSetNew:Resource) -> void:
 	
 func setPuedeMoverse(valor:bool) -> void:
 	puedeMoverse = valor
+
+func getSpritePorNombre(nom:String) -> Resource:
+	match(nom):
+		"Lalo":
+			return preload("res://source/componentes/personajes/lalo/laloSprites.tres")
+		"Yael":
+			return preload("res://source/componentes/personajes/yael/yaelSprites.tres")
+		"Alan":
+			return preload("res://source/componentes/personajes/alan/alanSprites.tres")
+	return preload("res://source/componentes/personajes/yael/yaelSprites.tres")

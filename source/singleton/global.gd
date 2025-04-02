@@ -7,12 +7,15 @@
 '''
 
 extends Node
-enum MarkerEscena{mk_FrenteT}
+enum MarkerPosicion{mk_EdificioTSalon,mk_EdificioTEntrada ,mk_EdificioTFuera, mk_EPrinFuera}
 
 #Declaraciones de variables globales
 var pers_default_speed:int
+var pers_factorSneak:float 
+var pers_factorRun:float 
+var pers_nombre:String
 var contador_dia:int
-var lugarATp:Marker2D
+var marker_actual = MarkerPosicion.mk_EdificioTSalon
 
 func _ready() -> void:
 	#Carga de idioma activo
@@ -21,7 +24,22 @@ func _ready() -> void:
 	#Asignacion de datos
 	var personaje_settings = CONFIG_FILE.load_personaje_setting()
 	pers_default_speed = personaje_settings.default_speed
+	pers_factorRun = personaje_settings.factorRun
+	pers_factorSneak = personaje_settings.factorSneak
+	pers_nombre = personaje_settings.nombre
 	#Carga datos partida
 	var partida_settings = CONFIG_FILE.load_partida_setting()
 	contador_dia = partida_settings.dia
+	marker_actual = partida_settings.marcador
+
+## Guarda datos importantes de la partida
+func guardarPartida() -> void:
+	CONFIG_FILE.save_partida_setting("dia", contador_dia)
+	CONFIG_FILE.save_partida_setting("marcador", marker_actual)
 	
+##Evalua posicion y que escena cargar
+func continuarPartida() -> void:
+	if GLOBAL.marker_actual == GLOBAL.MarkerPosicion.mk_EdificioTSalon:
+		SCN_FADE_IN.cambia_escena("res://source/screens/juego/edifT/edificio_t.tscn")
+	else:
+		SCN_FADE_IN.cambia_escena("res://source/screens/juego/mundo/mundo.tscn")

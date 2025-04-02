@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bhlxn44bu662y"]
 
-[ext_resource type="Shader" path="res://source/singleton/transiciones/scn_circular_fade.gdshader" id="1_12v4u"]
-[ext_resource type="Script" path="res://source/singleton/transiciones/scn_circular_fade.gd" id="1_evew1"]
+[ext_resource type="Shader" uid="uid://bfn1h4bagurro" path="res://source/singleton/transiciones/scn_circular_fade.gdshader" id="1_12v4u"]
+[ext_resource type="Script" uid="uid://uccry0opt5x0" path="res://source/singleton/transiciones/scn_circular_fade.gd" id="1_evew1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ee11t"]
 shader = ExtResource("1_12v4u")
@@ -39,8 +39,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_15mqg"]
 _data = {
-"Circular_Fade": SubResource("Animation_rr88j"),
-"RESET": SubResource("Animation_m2bdk")
+&"Circular_Fade": SubResource("Animation_rr88j"),
+&"RESET": SubResource("Animation_m2bdk")
 }
 
 [node name="CanvasLayer" type="CanvasLayer"]

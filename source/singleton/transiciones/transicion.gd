@@ -8,9 +8,21 @@
 
 class_name transicion extends Area2D
 @export var escena:String
+@export var puntoSalida:String
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Personaje:
 		body.setPuedeMoverse(false)
-		GLOBAL.lugarATp = "FrenteEdifT"
+		defPuntoSalida() 
 		await SCN_FADE_IN.cambia_escena(escena)
+
+func defPuntoSalida() -> void:
+	match puntoSalida:
+		"mk_EdificioTEntrada":
+			GLOBAL.marker_actual = GLOBAL.MarkerPosicion.mk_EdificioTEntrada
+		"mk_EdificioTFuera":
+			GLOBAL.marker_actual = GLOBAL.MarkerPosicion.mk_EdificioTFuera
+			print(GLOBAL.marker_actual)
+		"mk_EPrinFuera":
+			GLOBAL.marker_actual = GLOBAL.MarkerPosicion.mk_EPrinFuera
+	

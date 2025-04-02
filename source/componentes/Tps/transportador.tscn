@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bna2yasfy1opo"]
 
-[ext_resource type="Script" path="res://source/componentes/Tps/transportador.gd" id="1_25a64"]
+[ext_resource type="Script" uid="uid://cebu4ypl0kfwy" path="res://source/componentes/Tps/transportador.gd" id="1_25a64"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_geq71"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cb5bijsn3lnd4"]
 
-[ext_resource type="Script" path="res://source/singleton/transiciones/scn_fade_in.gd" id="1_2g4jb"]
+[ext_resource type="Script" uid="uid://bkk67xcyjfoy4" path="res://source/singleton/transiciones/scn_fade_in.gd" id="1_2g4jb"]
 
 [sub_resource type="Animation" id="Animation_3of84"]
 resource_name = "Fade_in"
@@ -34,8 +34,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y756o"]
 _data = {
-"Fade_in": SubResource("Animation_3of84"),
-"RESET": SubResource("Animation_e8tim")
+&"Fade_in": SubResource("Animation_3of84"),
+&"RESET": SubResource("Animation_e8tim")
 }
 
 [node name="SCN_FadeIn" type="CanvasLayer"]
@@ -45,9 +45,9 @@ script = ExtResource("1_2g4jb")
 modulate = Color(1, 1, 1, 0)
 offset_right = 1280.0
 offset_bottom = 720.0
-color = Color(0.2, 0, 0, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="ANPFade" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_y756o")
+&"": SubResource("AnimationLibrary_y756o")
 }

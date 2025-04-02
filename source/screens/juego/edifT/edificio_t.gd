@@ -11,7 +11,12 @@ extends Node2D
 
 func _ready() -> void:
 	$Personaje/HUD/lblInfo.text = "lbl_Salon"
-	$Personaje.defaultSpeed = $Personaje.defaultSpeed * 0.75
+	$Personaje.defaultSpeed = $Personaje.defaultSpeed * 0.65
+	match GLOBAL.marker_actual:
+		GLOBAL.MarkerPosicion.mk_EdificioTSalon:
+			$Personaje.position = $TpNuevo/Salon.position
+		GLOBAL.MarkerPosicion.mk_EPrinFuera:
+			$Personaje.position = $TpNuevo/Entrada.position
 
 func _on_salon_p_1_tp_cambio_lugar() -> void:
 	$Personaje/HUD/lblInfo.text = "lbl_P1"

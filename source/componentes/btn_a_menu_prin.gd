@@ -1,5 +1,5 @@
 '''
-	Modulo Config
+	Modulo btn a menu principal
 	Creado por: Eduardo Jair Bautista Santiesteban
 	Fecha de creacion: 24 / 02 / 2025
 	Fecha de ultima modificacion: 11 / 03 / 2025

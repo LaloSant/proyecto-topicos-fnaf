@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://ciyad5p3oge3u"]
 
-[ext_resource type="Script" path="res://source/componentes/personajes/base/personaje.gd" id="1_pkvuc"]
+[ext_resource type="Script" uid="uid://cxh0wtsp3wd65" path="res://source/componentes/personajes/base/personaje.gd" id="1_pkvuc"]
 [ext_resource type="SpriteFrames" uid="uid://mmr1yoqjk6at" path="res://source/componentes/personajes/lalo/laloSprites.tres" id="2_6g65x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdach"]
@@ -20,7 +20,6 @@ fill_from = Vector2(0.493213, 0.502262)
 fill_to = Vector2(0, 0)
 
 [node name="Personaje" type="CharacterBody2D"]
-scale = Vector2(0.4, 0.4)
 collision_layer = 2
 script = ExtResource("1_pkvuc")
 

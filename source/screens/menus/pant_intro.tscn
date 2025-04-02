@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://36fc6air06j6"]
+[gd_scene load_steps=10 format=3 uid="uid://36fc6air06j6"]
 
 [ext_resource type="FontFile" uid="uid://bqc8jwwk78iqu" path="res://resources/lang/MinecraftBoldItalic-1y1e.otf" id="1_2hftb"]
-[ext_resource type="Script" path="res://source/screens/menus/pant_intro.gd" id="1_3jl3o"]
+[ext_resource type="Script" uid="uid://b31c2cepenln8" path="res://source/screens/menus/pant_intro.gd" id="1_3jl3o"]
 [ext_resource type="PackedScene" uid="uid://rerxv8lts2mu" path="res://source/componentes/btn_a_menu_prin.tscn" id="2_ij8cx"]
+[ext_resource type="AudioStream" uid="uid://8qlkafu1awr8" path="res://resources/audio/musica/Opening.mp3" id="4_5wqp8"]
 
 [sub_resource type="Gradient" id="Gradient_mhdur"]
 offsets = PackedFloat32Array(0.149351, 0.915584)
@@ -50,8 +51,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_habs0"]
 _data = {
-"CircleOut": SubResource("Animation_wfc18"),
-"RESET": SubResource("Animation_iwe7g")
+&"CircleOut": SubResource("Animation_wfc18"),
+&"RESET": SubResource("Animation_iwe7g")
 }
 
 [node name="PantIntro" type="Node2D"]
@@ -96,15 +97,20 @@ text = "btn_start"
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
-wait_time = 20.0
+wait_time = 45.0
 one_shot = true
 autostart = true
 
 [node name="ANPCircle" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_habs0")
+&"": SubResource("AnimationLibrary_habs0")
 }
 autoplay = "CircleOut"
 playback_auto_capture_transition_type = 5
+
+[node name="Soundtrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_5wqp8")
+autoplay = true
+bus = &"Musica"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://be4ajke3n2l0g"]
 
-[ext_resource type="Script" path="res://source/screens/menus/pant_config.gd" id="1_25cpi"]
+[ext_resource type="Script" uid="uid://b66phe1ykqyy8" path="res://source/screens/menus/pant_config.gd" id="1_25cpi"]
 [ext_resource type="FontFile" uid="uid://dhfqs3hiwwpc3" path="res://resources/lang/MinecraftRegular-Bmg3.otf" id="1_a6jwc"]
 
 [sub_resource type="Gradient" id="Gradient_wagfi"]
@@ -37,6 +37,8 @@ offset_right = 115.5
 offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
+focus_neighbor_top = NodePath("../btn_idioma")
+focus_neighbor_right = NodePath("../btn_guardar")
 theme_override_fonts/font = ExtResource("1_a6jwc")
 theme_override_font_sizes/font_size = 24
 text = "btn_pant_principal"
@@ -54,11 +56,12 @@ offset_right = 115.5
 offset_bottom = 193.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_neighbor_right = NodePath("../btn_guardar")
 theme_override_fonts/font = ExtResource("1_a6jwc")
 theme_override_font_sizes/font_size = 24
 text = "btn_idioma"
 
-[node name="btn_guardarIdioma" type="Button" parent="Panel"]
+[node name="btn_guardar" type="Button" parent="Panel"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -71,6 +74,8 @@ offset_right = 458.5
 offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
+focus_neighbor_left = NodePath("../btn_pant_principal")
+focus_neighbor_top = NodePath("../btn_idioma")
 theme_override_fonts/font = ExtResource("1_a6jwc")
 theme_override_font_sizes/font_size = 24
 text = "btn_guardar"
@@ -95,4 +100,4 @@ horizontal_alignment = 1
 
 [connection signal="pressed" from="Panel/btn_pant_principal" to="." method="_on_btn_pant_principal_pressed"]
 [connection signal="pressed" from="Panel/btn_idioma" to="." method="_on_btn_idioma_pressed"]
-[connection signal="pressed" from="Panel/btn_guardarIdioma" to="." method="_on_btn_guardar_idioma_pressed"]
+[connection signal="pressed" from="Panel/btn_guardar" to="." method="_on_btn_guardar_idioma_pressed"]

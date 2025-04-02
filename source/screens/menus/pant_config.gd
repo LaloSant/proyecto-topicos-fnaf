@@ -8,6 +8,9 @@
 
 extends Node2D
 
+func _ready() -> void:
+	$Panel/btn_idioma.grab_focus()
+
 func _on_btn_pant_principal_pressed() -> void:
 	SCN_FADE_IN.cambia_escena("res://source/screens/menus/pant_principal.tscn")
 
