@@ -8,11 +8,6 @@
 
 class_name btnAMenuPrin extends Button
 
-func _input(event):
-	#if event.is_action_pressed("ui_accept"):
-	#	a_menu_prin()
-	pass
-
 func _on_pressed() -> void:
 	a_menu_prin()
 	

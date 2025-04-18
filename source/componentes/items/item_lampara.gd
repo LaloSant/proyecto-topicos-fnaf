@@ -13,8 +13,8 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Personaje:
 		if !body.has_lamp():
 			var tween = create_tween()
-			tween.tween_property(self, "position", position + Vector2(0, -20), 0.3)
-			tween.tween_property(self, "modulate:a", 0.0, 0.3)
+			tween.tween_property(self, "position", position + Vector2(0, -20), 0.7)
+			tween.tween_property(self, "modulate:a", 0.0, 1)
 			body.tieneLampara = true
 			emit_signal("item_obtenido")
 			tween.tween_callback(self.queue_free)

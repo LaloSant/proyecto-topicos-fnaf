@@ -48,7 +48,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_16q4e")
 }],
-"loop": true,
+"loop": false,
 "name": &"salud",
 "speed": 5.0
 }]

@@ -42,5 +42,6 @@ scale = Vector2(4.68018, 4.68018)
 sprite_frames = ExtResource("5_atmrw")
 animation = &"salud"
 autoplay = "salud"
+frame = 10
 
 [connection signal="pressed" from="btn_GuardarPartida" to="btn_GuardarPartida" method="_on_pressed"]

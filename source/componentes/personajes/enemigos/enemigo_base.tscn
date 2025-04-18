@@ -1,8 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bddno62kg4il7"]
+[gd_scene load_steps=7 format=3 uid="uid://bddno62kg4il7"]
 
 [ext_resource type="SpriteFrames" uid="uid://kag7yirkasv3" path="res://source/componentes/personajes/alan/alanSprites.tres" id="1_bxy6r"]
 [ext_resource type="Script" uid="uid://bul7rvf1h3i0u" path="res://source/componentes/personajes/enemigos/enemigo_base.gd" id="1_f2cju"]
 [ext_resource type="AudioStream" uid="uid://bbukpr4afgaec" path="res://resources/audio/zombie.wav" id="1_igk5n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f2cju"]
+size = Vector2(13, 14)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_f2cju"]
+polygon = PackedVector2Array(-3, -3, 3, -3, 3, 8, -3, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_igk5n"]
 size = Vector2(15, 17)
@@ -18,12 +24,26 @@ autoplay = true
 max_distance = 300.0
 bus = &"SFX"
 
-[node name="HB" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_igk5n")
+[node name="HB(disabled)" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_f2cju")
+disabled = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_bxy6r")
 animation = &"caminar_abj"
 autoplay = "idle_abj"
 frame_progress = 0.233341
+
+[node name="Sombra" type="LightOccluder2D" parent="."]
+visible = false
+occluder = SubResource("OccluderPolygon2D_f2cju")
+
+[node name="AreaDanio" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="HB2" type="CollisionShape2D" parent="AreaDanio"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_igk5n")
+
+[connection signal="body_entered" from="AreaDanio" to="." method="_on_area_danio_body_entered"]

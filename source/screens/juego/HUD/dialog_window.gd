@@ -34,7 +34,11 @@ func mostrar_dialogo():
 
 func _on_timer_timeout() -> void:
 	var tiempoL = lblTexto.get_total_character_count() * 0.05
+	$Timer2.wait_time = tiempoL
 	var tween = create_tween()
-	tween.tween_property(lblTexto, "visible_characters", 1 - lblTexto.get_total_character_count(), tiempoL)
-	await (tween.finished)
+	tween.tween_property(lblTexto, "visible_characters", 0, tiempoL)
+	$Timer2.start()
+
+
+func _on_timer_2_timeout() -> void:
 	layer = -5

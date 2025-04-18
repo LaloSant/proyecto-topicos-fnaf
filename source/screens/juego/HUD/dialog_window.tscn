@@ -37,6 +37,9 @@ one_shot = true
 
 [node name="ASP" type="AudioStreamPlayer" parent="."]
 
-[node name="TimerTween" type="Timer" parent="."]
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
 
 [connection signal="timeout" from="Timer1" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

@@ -2,7 +2,7 @@
 	Modulo Personaje
 	Creado por: Eduardo Jair Bautista Santiesteban
 	Fecha de creacion: 27 / 02 / 2025
-	Fecha de ultima modificacion: 23 / 03 / 2025
+	Fecha de ultima modificacion: 17 / 04 / 2025
 	Descripcion: Se implementa la logica del personaje.
 '''
 
@@ -15,15 +15,21 @@ var lastAnimation = "idle_abj"
 var defaultSpeed = GLOBAL.pers_default_speed
 var speed:float = defaultSpeed
 var spriteSet:Resource
-var puedeMoverse:bool = true
 var salud:int = GLOBAL.pers_salud
+var puedeMoverse:bool = true
+var golpeando:bool = false
+var daniado:bool = false
 
 func _ready() -> void:
 	spriteSet = getSpritePorNombre(nombre)
+	salud = GLOBAL.pers_salud
 	defaultSpeed = GLOBAL.pers_default_speed
 	cambiarSprite(spriteSet)
 
 func _physics_process(_delta: float) -> void:
+	if daniado:
+		move_and_slide()
+		return
 	if !puedeMoverse:
 		match(lastAnimation):
 			"caminar_der":
@@ -44,38 +50,40 @@ func _physics_process(_delta: float) -> void:
 		velocity.x = direction.x * speed
 		velocity.y = direction.y * speed
 		if direction.y > 0:
-			_cambiarAnimacion("caminar_abj")
+			cambiar_animacion("caminar_abj")
 		else:
-			_cambiarAnimacion("caminar_arr")
+			cambiar_animacion("caminar_arr")
 		move_and_slide()
 		return
 	
 	if direction.x != 0:
 		velocity.x = direction.x * speed
 		if direction.x > 0:
-			_cambiarAnimacion("caminar_der")
+			cambiar_animacion("caminar_der")
 		else:
-			_cambiarAnimacion("caminar_izq")
+			cambiar_animacion("caminar_izq")
 	else:
 		velocity.x = 0
-		match(lastAnimation):
-			"caminar_der":
-				$sprite.play("idle_der")
-			"caminar_izq":
-				$sprite.play("idle_izq")
+		if not golpeando:
+			match(lastAnimation):
+				"caminar_der":
+					$sprite.play("idle_der")
+				"caminar_izq":
+					$sprite.play("idle_izq")
 	if direction.y != 0:
 		velocity.y = direction.y * speed
 		if direction.y > 0:
-			_cambiarAnimacion("caminar_abj")
+			cambiar_animacion("caminar_abj")
 		else:
-			_cambiarAnimacion("caminar_arr")
+			cambiar_animacion("caminar_arr")
 	else:
 		velocity.y = 0
-		match(lastAnimation):
-			"caminar_arr":
-				$sprite.play("idle_arr")
-			"caminar_abj":
-				$sprite.play("idle_abj")
+		if not golpeando:
+			match(lastAnimation):
+				"caminar_arr":
+					$sprite.play("idle_arr")
+				"caminar_abj":
+					$sprite.play("idle_abj")
 	move_and_slide()
 	
 func _process(_delta: float) -> void:
@@ -88,15 +96,35 @@ func _process(_delta: float) -> void:
 	else:
 		speed = defaultSpeed
 
-func _cambiarAnimacion(animacion:String) -> void:
-	$sprite.play(animacion)
-	lastAnimation = animacion
+func cambiar_animacion(animacion:String) -> void:
+	if not golpeando:
+		$sprite.play(animacion)
+		lastAnimation = animacion
 
 func cambiarSprite(spriteSetNew:Resource) -> void:
 	$sprite.set_sprite_frames(spriteSetNew)
 	
 func setPuedeMoverse(valor:bool) -> void:
 	puedeMoverse = valor
+		
+##DesdeX = 1 si es de la derecha, -1 si es de la izquierda.
+##DesdeY = 1 si es de abajo, -1 si es de arriba.
+func recibe_danio(danio:int, desdeX:int, desdeY:int) -> void:
+	salud -= danio
+	if salud <= 0:
+		setPuedeMoverse(false)
+	$HUD.actualizar_salud(salud)
+	if velocity == Vector2.ZERO:
+		velocity.x = defaultSpeed * desdeX
+		velocity.y = defaultSpeed * desdeY
+	else:
+		velocity = -velocity
+	daniado = true
+	$KnockBackTimer.start()
+
+func _on_knock_back_timer_timeout() -> void:
+	daniado = false
+	velocity = Vector2.ZERO
 
 func getSpritePorNombre(nom:String) -> Resource:
 	match(nom):
@@ -113,7 +141,8 @@ func has_lamp() -> bool:
 
 func toggle_lamp() -> void:
 	if has_lamp():
-		#Sonido de clickeo
+		$SFX.stream = preload("res://resources/audio/Flashlight.ogg")
+		$SFX.play()
 		$Linterna.visible = !$Linterna.visible
 	else:
 		$Linterna.visible = false
@@ -121,3 +150,31 @@ func toggle_lamp() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("TECLA_Q") or event.is_action_pressed("Control_X_cuad"):
 		toggle_lamp()
+	if event.is_action_pressed("TECLA_E") or event.is_action_pressed("Control_RT_R2"):
+		if not golpeando:
+			golpeando = true
+			golpear()
+
+func golpear() -> void:
+	match lastAnimation:
+		"caminar_abj":
+			$sprite.play("punch_abj")
+		"idle_abj":
+			$sprite.play("punch_abj")
+		"caminar_arr":
+			$sprite.play("punch_arr")
+		"idle_arr":
+			$sprite.play("punch_arr")
+		"caminar_der":
+			$sprite.play("punch_der")
+		"idle_der":
+			$sprite.play("punch_der")
+		"caminar_izq":
+			$sprite.play("punch_izq")
+		"idle_izq":
+			$sprite.play("punch_izq")
+
+func _on_sprite_animation_finished() -> void:
+	if golpeando:
+		golpeando = false
+		cambiar_animacion(lastAnimation)

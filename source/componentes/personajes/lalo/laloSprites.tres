@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=19 format=3 uid="uid://mmr1yoqjk6at"]
+[gd_resource type="SpriteFrames" load_steps=32 format=3 uid="uid://mmr1yoqjk6at"]
 
 [ext_resource type="Texture2D" uid="uid://e5qeawporx1i" path="res://source/componentes/personajes/lalo/frente0.png" id="1_a3i28"]
 [ext_resource type="Texture2D" uid="uid://b0v5cylj0cx5l" path="res://source/componentes/personajes/lalo/frente1.png" id="2_w2fuq"]
@@ -18,6 +18,19 @@
 [ext_resource type="Texture2D" uid="uid://cvpsex6kwwhd4" path="res://source/componentes/personajes/lalo/idle arriba.png" id="16_wbswj"]
 [ext_resource type="Texture2D" uid="uid://4nldce7n1q73" path="res://source/componentes/personajes/lalo/idle derecha.png" id="17_iy6xf"]
 [ext_resource type="Texture2D" uid="uid://cgjtuxiae7h0w" path="res://source/componentes/personajes/lalo/idle izquierda.png" id="18_icsmo"]
+[ext_resource type="Texture2D" uid="uid://cspxlf10e6k62" path="res://source/componentes/personajes/lalo/back_punch1.png" id="19_vd4g8"]
+[ext_resource type="Texture2D" uid="uid://cvdyj3w74q2nh" path="res://source/componentes/personajes/lalo/front_punch.png" id="19_ygk1u"]
+[ext_resource type="Texture2D" uid="uid://dupkjtg6frhi4" path="res://source/componentes/personajes/lalo/back_punch2.png" id="20_oluvl"]
+[ext_resource type="Texture2D" uid="uid://lb0go2718nq2" path="res://source/componentes/personajes/lalo/right_punch1.png" id="22_0qgqw"]
+[ext_resource type="Texture2D" uid="uid://s22qb6jgem5i" path="res://source/componentes/personajes/lalo/right_punch2.png" id="23_iux45"]
+[ext_resource type="Texture2D" uid="uid://c8s8qlo78rcss" path="res://source/componentes/personajes/lalo/right_punch3 (1).png" id="24_vmsln"]
+[ext_resource type="Texture2D" uid="uid://8e64k411ffhm" path="res://source/componentes/personajes/lalo/right_punch4.png" id="25_qk8lo"]
+[ext_resource type="Texture2D" uid="uid://6hv8wq560gtd" path="res://source/componentes/personajes/lalo/right_punch5.png" id="26_4ejts"]
+[ext_resource type="Texture2D" uid="uid://b1q2jgmfunke4" path="res://source/componentes/personajes/lalo/left_punch1.png" id="27_btmvw"]
+[ext_resource type="Texture2D" uid="uid://di8x3fmtfq755" path="res://source/componentes/personajes/lalo/left_puch2.png" id="28_f8s5e"]
+[ext_resource type="Texture2D" uid="uid://qsowuthdvfdt" path="res://source/componentes/personajes/lalo/left_punch3 (1).png" id="29_53s8t"]
+[ext_resource type="Texture2D" uid="uid://c2r3x42f3mkwb" path="res://source/componentes/personajes/lalo/left_punch4.png" id="31_b0a7g"]
+[ext_resource type="Texture2D" uid="uid://bxxgoev4cp532" path="res://source/componentes/personajes/lalo/left_punch5.png" id="32_trvf4"]
 
 [resource]
 animations = [{
@@ -135,4 +148,96 @@ animations = [{
 "loop": true,
 "name": &"idle_izq",
 "speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_a3i28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ygk1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ygk1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ygk1u")
+}],
+"loop": false,
+"name": &"punch_abj",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_vd4g8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_oluvl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_oluvl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_oluvl")
+}],
+"loop": false,
+"name": &"punch_arr",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_0qgqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_iux45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_vmsln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_qk8lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_4ejts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_qk8lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_vmsln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_iux45")
+}],
+"loop": false,
+"name": &"punch_der",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_btmvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_f8s5e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_53s8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_b0a7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_trvf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_b0a7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_53s8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_f8s5e")
+}],
+"loop": false,
+"name": &"punch_izq",
+"speed": 10.0
 }]

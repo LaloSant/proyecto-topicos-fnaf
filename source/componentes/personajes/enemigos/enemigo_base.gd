@@ -9,6 +9,7 @@
 class_name Enemigo extends CharacterBody2D
 var speed:float = 50
 var posicionAnt:Vector2 = position
+var currentAnim:String
 
 func actualizarPos(ruta:PathFollow2D, delta:float):
 	var anim:String
@@ -21,5 +22,20 @@ func actualizarPos(ruta:PathFollow2D, delta:float):
 	else:
 		anim = "caminar_abj" if dify > 0 else "caminar_arr"
 	$Sprite.play(anim)
+	currentAnim = anim
 	posicionAnt = position
-	
+
+func _on_area_danio_body_entered(body: Node2D) -> void:
+	if body is Personaje:
+		var desdeX:int
+		var desdeY:int
+		match currentAnim:
+			"caminar_der":
+				desdeX = 1
+			"caminar_izq":
+				desdeX = -1
+			"caminar_abj":
+				desdeY = 1
+			"caminar_arr":
+				desdeY = -1
+		body.recibe_danio(10, desdeX, desdeY)

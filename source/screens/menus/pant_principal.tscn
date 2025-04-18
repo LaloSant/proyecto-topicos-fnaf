@@ -23,6 +23,7 @@ offset_bottom = 720.0
 
 [node name="Musica" type="AudioStreamPlayer" parent="Panel"]
 stream = ExtResource("4_atong")
+volume_db = -10.0
 autoplay = true
 bus = &"Musica"
 parameters/looping = true

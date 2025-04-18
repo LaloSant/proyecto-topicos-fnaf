@@ -11,6 +11,8 @@ extends Node2D
 @onready var ruta_Pasillo_F = $Rutas/RtaPasillo/RtaFPasillo
 
 func _ready() -> void:
+	if not $Personaje.has_lamp():
+		$Items/DWNeedLampara.mostrar_dialogo()
 	$Personaje/HUD/lblInfo.text = "lbl_Salon"
 	$Personaje.defaultSpeed = $Personaje.defaultSpeed * 0.65
 	$Personaje/Linterna.visible = $Personaje.tieneLampara
@@ -40,4 +42,3 @@ func _on_item_lampara_item_obtenido() -> void:
 	$Items/DWLampara.mostrar_dialogo()
 	GLOBAL.pers_tieneLampara = true
 	$Personaje.tieneLampara = true
-	$Personaje/Linterna.visible = true
