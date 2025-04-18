@@ -14,6 +14,8 @@ var pers_default_speed:int
 var pers_factorSneak:float 
 var pers_factorRun:float 
 var pers_nombre:String
+var pers_salud:int
+var pers_tieneLampara:bool
 var contador_dia:int
 var marker_actual = MarkerPosicion.mk_EdificioTSalon
 
@@ -27,6 +29,8 @@ func _ready() -> void:
 	pers_factorRun = personaje_settings.factorRun
 	pers_factorSneak = personaje_settings.factorSneak
 	pers_nombre = personaje_settings.nombre
+	pers_salud = personaje_settings.currentHealth
+	pers_tieneLampara = personaje_settings.tieneLampara
 	#Carga datos partida
 	var partida_settings = CONFIG_FILE.load_partida_setting()
 	contador_dia = partida_settings.dia
@@ -36,6 +40,7 @@ func _ready() -> void:
 func guardarPartida() -> void:
 	CONFIG_FILE.save_partida_setting("dia", contador_dia)
 	CONFIG_FILE.save_partida_setting("marcador", marker_actual)
+	CONFIG_FILE.save_partida_setting("tieneLampara", pers_tieneLampara)
 	
 ##Evalua posicion y que escena cargar
 func continuarPartida() -> void:

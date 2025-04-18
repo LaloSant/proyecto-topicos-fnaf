@@ -6,7 +6,7 @@
 	Descripcion: Se implementa componente de teletransportador
 '''
 
-class_name transportador extends Area2D
+extends Area2D
 @export var destino:Marker2D
 signal cambio_lugar
 

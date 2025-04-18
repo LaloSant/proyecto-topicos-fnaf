@@ -1,37 +1,39 @@
-[gd_scene load_steps=8 format=4 uid="uid://b5hj1agndq0u6"]
+[gd_scene load_steps=11 format=4 uid="uid://b5hj1agndq0u6"]
 
 [ext_resource type="PackedScene" uid="uid://ciyad5p3oge3u" path="res://source/componentes/personajes/base/personaje.tscn" id="1_ghekp"]
 [ext_resource type="Script" uid="uid://bcokrb4kb46j" path="res://source/screens/juego/edifT/edificio_t.gd" id="1_i38r3"]
 [ext_resource type="AudioStream" uid="uid://8sb45u14ewm6" path="res://resources/audio/musica/Never Let Me Down.mp3" id="1_n6ms6"]
 [ext_resource type="TileSet" uid="uid://buyircn635ffw" path="res://source/screens/juego/edifT/edificio_tTileSet.tres" id="3_ytj8a"]
-[ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/Tps/transportador.tscn" id="5_pf4qd"]
+[ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/tps/transportador.tscn" id="5_pf4qd"]
 [ext_resource type="PackedScene" uid="uid://dfphplmv1hblj" path="res://source/singleton/transiciones/transicion.tscn" id="6_sr0qs"]
-[ext_resource type="PackedScene" uid="uid://d0a4ucxe160yd" path="res://source/screens/juego/HUD/hud.tscn" id="7_s3tdo"]
+[ext_resource type="PackedScene" uid="uid://lmhgy8eugrgv" path="res://source/componentes/items/item_lampara.tscn" id="7_gm1lj"]
+[ext_resource type="PackedScene" uid="uid://c8hbcu3tjoig" path="res://source/screens/juego/HUD/dialog_window.tscn" id="8_63xdy"]
+[ext_resource type="PackedScene" uid="uid://bddno62kg4il7" path="res://source/componentes/personajes/enemigos/enemigo_base.tscn" id="8_tjhh6"]
+
+[sub_resource type="Curve2D" id="Curve2D_63xdy"]
+_data = {
+"points": PackedVector2Array(-0.138687, 0, 0.138687, 0, -320, 0, 0, 0, 0, 0, -200, 0, 0, 0, 0, 0, -208, 144, 0, 0, 0, 0, -336, 144, 0, 0, 0, 0, -336, 96, 0, 0, 0, 0, -256, 96, 0, 0, 0, 0, -256, 64, 0, 0, 0, 0, -336, 64, 0, 0, 0, 0, -448, 64, 0, 0, 0, 0, -448, 0, 0, 0, 0, 0, -320, 0)
+}
+point_count = 11
 
 [node name="EdificioT" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_i38r3")
 
 [node name="Luz" type="CanvasModulate" parent="."]
-color = Color(0.601223, 0.601223, 0.601223, 1)
+color = Color(0.0605303, 0.0605303, 0.0605303, 1)
 
-[node name="Musica" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(0, 32)
-scale = Vector2(0.4, 0.4)
+[node name="Musica" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_n6ms6")
-volume_db = -20.0
 autoplay = true
-max_distance = 100000.0
-attenuation = 1e-05
-panning_strength = 0.05
 bus = &"Musica"
 parameters/looping = true
 
 [node name="Fondo" type="ColorRect" parent="."]
-offset_left = -953.0
-offset_top = -685.0
-offset_right = 1183.0
-offset_bottom = 940.0
+offset_left = -1046.0
+offset_top = -624.0
+offset_right = 1090.0
+offset_bottom = 1001.0
 color = Color(0, 0, 0, 1)
 
 [node name="Mundo" type="Node2D" parent="."]
@@ -50,8 +52,26 @@ tile_set = ExtResource("3_ytj8a")
 [node name="Personaje" parent="." instance=ExtResource("1_ghekp")]
 position = Vector2(749, -36)
 scale = Vector2(0.4, 0.4)
+nombre = "Lalo"
 
-[node name="HUD" parent="Personaje" instance=ExtResource("7_s3tdo")]
+[node name="Enemigos" type="Node" parent="."]
+
+[node name="GuardianP" parent="Enemigos" instance=ExtResource("8_tjhh6")]
+position = Vector2(-320, 0)
+rotation = -0.0102037
+
+[node name="Rutas" type="Node" parent="."]
+
+[node name="RtaPasillo" type="Path2D" parent="Rutas"]
+curve = SubResource("Curve2D_63xdy")
+
+[node name="RtaFPasillo" type="PathFollow2D" parent="Rutas/RtaPasillo"]
+position = Vector2(-320, 0)
+rotation = -0.0102037
+rotates = false
+
+[node name="RtfPasillo" type="RemoteTransform2D" parent="Rutas/RtaPasillo/RtaFPasillo"]
+remote_path = NodePath("../../../../Enemigos/GuardianP")
 
 [node name="Hitboxes" type="Node" parent="."]
 
@@ -97,6 +117,7 @@ visible = false
 polygon = PackedVector2Array(-512, 431, -257, 431, -257.6, 384.4, -222, 384.4, -223, 431, 319, 430, 320.4, 528.4, -223.2, 528.4, -223.6, 608.8, -255, 609, -257, 620, -287, 620, -289, 609, -320.4, 608.8, -320, 528, -512.4, 528, -513, 432, -517.6, 418.8, -517.6, 533.2, -324.8, 533.6, -324.8, 614, -288.4, 614, -288, 624, -256, 624, -254, 614, -218.8, 614.4, -218.4, 532.4, 324.8, 533.2, 324.8, 379.2, -517.2, 379.2, -517.6, 416.8)
 
 [node name="HitboxP1" type="StaticBody2D" parent="Hitboxes"]
+visible = false
 collision_mask = 2
 
 [node name="PoligonoP1" type="CollisionPolygon2D" parent="Hitboxes/HitboxP1"]
@@ -139,6 +160,15 @@ destino = NodePath("../Pb_P1Dest")
 [node name="Pb_P1Dest" type="Marker2D" parent="TpNuevo"]
 position = Vector2(-304, -22)
 
+[node name="Items" type="Node" parent="."]
+
+[node name="item_lampara" parent="Items" instance=ExtResource("7_gm1lj")]
+position = Vector2(896, 56)
+scale = Vector2(0.7, 0.7)
+
+[node name="DWLampara" parent="Items" instance=ExtResource("8_63xdy")]
+texto = "Obtuviste lampara. Presiona \"q\" o boton \"X\"."
+
 [node name="Transicion" parent="." instance=ExtResource("6_sr0qs")]
 position = Vector2(-272, 625)
 escena = "res://source/screens/juego/mundo/mundo.tscn"
@@ -148,3 +178,4 @@ puntoSalida = "mk_EdificioTFuera"
 [connection signal="cambio_lugar" from="TpNuevo/P1_SalonTp" to="." method="_on_p_1_salon_tp_cambio_lugar"]
 [connection signal="cambio_lugar" from="TpNuevo/P1_PbTp" to="." method="_on_p_1_pb_tp_cambio_lugar"]
 [connection signal="cambio_lugar" from="TpNuevo/Pb_P1Tp" to="." method="_on_pb_p_1_tp_cambio_lugar"]
+[connection signal="item_obtenido" from="Items/item_lampara" to="." method="_on_item_lampara_item_obtenido"]

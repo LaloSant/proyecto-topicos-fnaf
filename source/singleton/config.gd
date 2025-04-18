@@ -19,12 +19,14 @@ func _ready() -> void:
 		#Seccion Personaje
 		config.set_value("Personaje", "default_speed", 150)
 		config.set_value("Personaje", "maxHealth", 100)
+		config.set_value("Personaje", "currentHealth", 100)
 		config.set_value("Personaje", "baseDamage", 10)
 		config.set_value("Personaje", "lowAguaLoca", 20)
 		config.set_value("Personaje", "highAguaLoca", 50)
 		config.set_value("Personaje", "factorSneak", 0.75)
 		config.set_value("Personaje", "factorRun", 1.5)
 		config.set_value("Personaje", "nombre", "Alan")
+		config.set_value("Personaje", "tieneLampara", false)
 		
 		#Seccion partida
 		config.set_value("Partida", "dia", 1)

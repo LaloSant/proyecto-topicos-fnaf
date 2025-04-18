@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ciyad5p3oge3u"]
+[gd_scene load_steps=8 format=3 uid="uid://ciyad5p3oge3u"]
 
 [ext_resource type="Script" uid="uid://cxh0wtsp3wd65" path="res://source/componentes/personajes/base/personaje.gd" id="1_pkvuc"]
 [ext_resource type="SpriteFrames" uid="uid://mmr1yoqjk6at" path="res://source/componentes/personajes/lalo/laloSprites.tres" id="2_6g65x"]
+[ext_resource type="PackedScene" uid="uid://d0a4ucxe160yd" path="res://source/screens/juego/HUD/hud.tscn" id="3_i4ev6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdach"]
 size = Vector2(30, 32.5)
@@ -9,22 +10,23 @@ size = Vector2(30, 32.5)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cemx0"]
 polygon = PackedVector2Array(-10, -10, 10, -10, 10, 5, 15, 5, 15, 15, 10, 15, 10, 22.5, -10, 22.5, -10, 15, -15, 15, -15, 5, -10, 5)
 
-[sub_resource type="Gradient" id="Gradient_wciv2"]
+[sub_resource type="Gradient" id="Gradient_i4ev6"]
 offsets = PackedFloat32Array(0, 0.656051)
 colors = PackedColorArray(0.446777, 0.446777, 0.446777, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_2cc2v"]
-gradient = SubResource("Gradient_wciv2")
+gradient = SubResource("Gradient_i4ev6")
 fill = 1
 fill_from = Vector2(0.493213, 0.502262)
 fill_to = Vector2(0, 0)
 
 [node name="Personaje" type="CharacterBody2D"]
 collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_pkvuc")
+nombre = "Alan"
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-4.47035e-07, 8.75)
 shape = SubResource("RectangleShape2D_vdach")
 
@@ -39,11 +41,15 @@ animation = &"idle_abj"
 autoplay = "idle_abj"
 
 [node name="LightOc" type="LightOccluder2D" parent="."]
-visible = false
 occluder = SubResource("OccluderPolygon2D_cemx0")
 
-[node name="Luz2" type="PointLight2D" parent="."]
+[node name="Linterna" type="PointLight2D" parent="."]
 scale = Vector2(6.30664, 6.30664)
 color = Color(1, 0.956863, 0.772549, 1)
-energy = 0.8
+energy = 1.3
 texture = SubResource("GradientTexture2D_2cc2v")
+texture_scale = 1.5
+
+[node name="HUD" parent="." instance=ExtResource("3_i4ev6")]
+
+[node name="Orejas" type="AudioListener2D" parent="."]

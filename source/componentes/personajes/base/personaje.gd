@@ -8,12 +8,15 @@
 
 class_name Personaje extends CharacterBody2D
 
+##Nombres: Lalo, Yael, Alan
+@export var nombre:String = GLOBAL.pers_nombre
+@export var tieneLampara:bool = GLOBAL.pers_tieneLampara
 var lastAnimation = "idle_abj"
 var defaultSpeed = GLOBAL.pers_default_speed
 var speed:float = defaultSpeed
 var spriteSet:Resource
-var nombre:String = GLOBAL.pers_nombre
 var puedeMoverse:bool = true
+var salud:int = GLOBAL.pers_salud
 
 func _ready() -> void:
 	spriteSet = getSpritePorNombre(nombre)
@@ -84,8 +87,6 @@ func _process(_delta: float) -> void:
 		$sprite.speed_scale = GLOBAL.pers_factorRun
 	else:
 		speed = defaultSpeed
-	if Input.is_action_pressed("ui_accept"):
-		cambiarSprite(getSpritePorNombre("Yael"))
 
 func _cambiarAnimacion(animacion:String) -> void:
 	$sprite.play(animacion)
@@ -106,3 +107,17 @@ func getSpritePorNombre(nom:String) -> Resource:
 		"Alan":
 			return preload("res://source/componentes/personajes/alan/alanSprites.tres")
 	return preload("res://source/componentes/personajes/yael/yaelSprites.tres")
+
+func has_lamp() -> bool:
+	return tieneLampara
+
+func toggle_lamp() -> void:
+	if has_lamp():
+		#Sonido de clickeo
+		$Linterna.visible = !$Linterna.visible
+	else:
+		$Linterna.visible = false
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("TECLA_Q") or event.is_action_pressed("Control_X_cuad"):
+		toggle_lamp()

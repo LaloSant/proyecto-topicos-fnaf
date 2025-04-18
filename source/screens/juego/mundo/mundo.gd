@@ -13,16 +13,12 @@ func _ready() -> void:
 	$Personaje/HUD/lblInfo.text = "lbl_dia" + str(GLOBAL.contador_dia)
 
 func setPosicionJugador() -> void: #Para cuando salga de un edificio o empieze partida
+	$Personaje.toggle_lamp()
 	match GLOBAL.marker_actual:
 		GLOBAL.MarkerPosicion.mk_EdificioTFuera:
 			$Personaje.position = $Marcadores/EdificioTFuera.position
 		GLOBAL.MarkerPosicion.mk_EPrinFuera:
 			$Personaje.position = $Marcadores/EPrincFuera.position
-
-
-func _on_transicion_area_entered(_area: Area2D) -> void:
-	GLOBAL.marker_actual = GLOBAL.MarkerPosicion.mk_EdificioTEntrada
-
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	transparentar(body)
@@ -37,3 +33,12 @@ func transparentar(body:Node2D) -> void:
 func de_transparentar(body:Node2D) -> void:
 	if body is Personaje:
 		$Transparentar/ANPModulate.play_backwards("Fade_Edificios")
+
+func _on_item_lampara_item_obtenido() -> void:
+	$Items/DWLampara.mostrar_dialogo()
+	GLOBAL.pers_tieneLampara = true
+	$Personaje.tieneLampara = true
+
+func _on_tc_edif_t_body_entered(body: Node2D) -> void:
+	if body is Personaje:
+		GLOBAL.marker_actual = GLOBAL.MarkerPosicion.mk_EdificioTEntrada

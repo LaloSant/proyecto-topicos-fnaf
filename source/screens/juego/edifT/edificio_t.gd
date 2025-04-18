@@ -8,15 +8,21 @@
 '''
 
 extends Node2D
+@onready var ruta_Pasillo_F = $Rutas/RtaPasillo/RtaFPasillo
 
 func _ready() -> void:
 	$Personaje/HUD/lblInfo.text = "lbl_Salon"
 	$Personaje.defaultSpeed = $Personaje.defaultSpeed * 0.65
+	$Personaje/Linterna.visible = $Personaje.tieneLampara
 	match GLOBAL.marker_actual:
 		GLOBAL.MarkerPosicion.mk_EdificioTSalon:
 			$Personaje.position = $TpNuevo/Salon.position
-		GLOBAL.MarkerPosicion.mk_EPrinFuera:
+		GLOBAL.MarkerPosicion.mk_EdificioTEntrada:
 			$Personaje.position = $TpNuevo/Entrada.position
+	$Items/item_lampara.visible = !GLOBAL.pers_tieneLampara
+	
+func _process(delta: float) -> void:
+	$Enemigos/GuardianP.actualizarPos($Rutas/RtaPasillo/RtaFPasillo, delta)
 
 func _on_salon_p_1_tp_cambio_lugar() -> void:
 	$Personaje/HUD/lblInfo.text = "lbl_P1"
@@ -29,3 +35,9 @@ func _on_p_1_pb_tp_cambio_lugar() -> void:
 
 func _on_pb_p_1_tp_cambio_lugar() -> void:
 	$Personaje/HUD/lblInfo.text = "lbl_P1"
+
+func _on_item_lampara_item_obtenido() -> void:
+	$Items/DWLampara.mostrar_dialogo()
+	GLOBAL.pers_tieneLampara = true
+	$Personaje.tieneLampara = true
+	$Personaje/Linterna.visible = true
