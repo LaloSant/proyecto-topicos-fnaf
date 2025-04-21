@@ -22,9 +22,9 @@ var daniado:bool = false
 
 func _ready() -> void:
 	spriteSet = getSpritePorNombre(nombre)
+	cambiarSprite(spriteSet)
 	salud = GLOBAL.pers_salud
 	defaultSpeed = GLOBAL.pers_default_speed
-	cambiarSprite(spriteSet)
 
 func _physics_process(_delta: float) -> void:
 	if daniado:
@@ -148,6 +148,12 @@ func toggle_lamp() -> void:
 		$Linterna.visible = false
 
 func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("TECLA_1"):
+		cambiarSprite(getSpritePorNombre("Yael"))
+	if event.is_action_pressed("TECLA_2"):
+		cambiarSprite(getSpritePorNombre("Lalo"))
+	if event.is_action_pressed("TECLA_3"):
+		cambiarSprite(getSpritePorNombre("Alan"))
 	if event.is_action_pressed("TECLA_Q") or event.is_action_pressed("Control_X_cuad"):
 		toggle_lamp()
 	if event.is_action_pressed("TECLA_E") or event.is_action_pressed("Control_RT_R2"):

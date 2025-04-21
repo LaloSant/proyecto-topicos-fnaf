@@ -181,7 +181,7 @@ polygon = PackedVector2Array(-215.2, -18.8, 187.8, -19.8, 208, -46.8, 226.8, -46
 [node name="TpNuevo" type="Node" parent="."]
 
 [node name="Entrada" type="Marker2D" parent="TpNuevo"]
-position = Vector2(-272, 579)
+position = Vector2(-272, 568)
 
 [node name="Salon" type="Marker2D" parent="TpNuevo"]
 position = Vector2(808, -120)
@@ -228,7 +228,7 @@ texto = "Deberia buscar una lampara."
 sound = ExtResource("9_tjhh6")
 
 [node name="Transicion" parent="." instance=ExtResource("6_sr0qs")]
-position = Vector2(-272, 625)
+position = Vector2(-272, 592)
 escena = "res://source/screens/juego/mundo/mundo.tscn"
 puntoSalida = "mk_EdificioTFuera"
 
