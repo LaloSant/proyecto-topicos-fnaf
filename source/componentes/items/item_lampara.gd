@@ -16,5 +16,6 @@ func _on_body_entered(body: Node2D) -> void:
 			tween.tween_property(self, "position", position + Vector2(0, -20), 0.7)
 			tween.tween_property(self, "modulate:a", 0.0, 1)
 			body.tieneLampara = true
+			GLOBAL.pers_tieneLampara = true
 			emit_signal("item_obtenido")
 			tween.tween_callback(self.queue_free)

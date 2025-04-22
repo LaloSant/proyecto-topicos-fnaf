@@ -27,6 +27,8 @@ func actualizarPos(ruta:PathFollow2D, delta:float):
 
 func _on_area_danio_body_entered(body: Node2D) -> void:
 	if body is Personaje:
+		if body.muerto:
+			return
 		var desdeX:int
 		var desdeY:int
 		match currentAnim:

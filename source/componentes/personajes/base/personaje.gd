@@ -10,7 +10,7 @@ class_name Personaje extends CharacterBody2D
 
 ##Nombres: Lalo, Yael, Alan
 @export var nombre:String = GLOBAL.pers_nombre
-@export var tieneLampara:bool = GLOBAL.pers_tieneLampara
+var tieneLampara:bool = GLOBAL.pers_tieneLampara
 var lastAnimation = "idle_abj"
 var defaultSpeed = GLOBAL.pers_default_speed
 var speed:float = defaultSpeed
@@ -19,6 +19,7 @@ var salud:int = GLOBAL.pers_salud
 var puedeMoverse:bool = true
 var golpeando:bool = false
 var daniado:bool = false
+var muerto:bool = false
 
 func _ready() -> void:
 	spriteSet = getSpritePorNombre(nombre)
@@ -31,6 +32,7 @@ func _physics_process(_delta: float) -> void:
 		move_and_slide()
 		return
 	if !puedeMoverse:
+		golpeando = false
 		match(lastAnimation):
 			"caminar_der":
 				$sprite.play("idle_der")
@@ -110,15 +112,21 @@ func setPuedeMoverse(valor:bool) -> void:
 ##DesdeX = 1 si es de la derecha, -1 si es de la izquierda.
 ##DesdeY = 1 si es de abajo, -1 si es de arriba.
 func recibe_danio(danio:int, desdeX:int, desdeY:int) -> void:
+	reproduceSonido("Bonk")
 	salud -= danio
 	if salud <= 0:
+		muerto = true
 		setPuedeMoverse(false)
+		reproduceSonido("Muerte")
+		cambiar_animacion("muerte")
 	$HUD.actualizar_salud(salud)
 	if velocity == Vector2.ZERO:
 		velocity.x = defaultSpeed * desdeX
 		velocity.y = defaultSpeed * desdeY
 	else:
-		velocity = -velocity
+		velocity.x = velocity.x / abs(velocity.x) if velocity.x != 0 else 0.0
+		velocity.y = velocity.y / abs(velocity.y) if velocity.y != 0 else 0.0
+		velocity = -1 * velocity * defaultSpeed
 	daniado = true
 	$KnockBackTimer.start()
 
@@ -141,8 +149,7 @@ func has_lamp() -> bool:
 
 func toggle_lamp() -> void:
 	if has_lamp():
-		$SFX.stream = preload("res://resources/audio/Flashlight.ogg")
-		$SFX.play()
+		reproduceSonido("Linterna")
 		$Linterna.visible = !$Linterna.visible
 	else:
 		$Linterna.visible = false
@@ -184,3 +191,15 @@ func _on_sprite_animation_finished() -> void:
 	if golpeando:
 		golpeando = false
 		cambiar_animacion(lastAnimation)
+
+##Linterna, Bonk, Muerte
+func reproduceSonido(nombreAud:String) -> void:
+	match nombreAud:
+		"Linterna":
+			$SFX.stream = preload("res://resources/audio/Flashlight.ogg")
+		"Bonk":
+			$SFX.stream = preload("res://resources/audio/Bonk.mp3")
+		"Muerte":
+			$SFX.stream = preload("res://resources/audio/muerte.mp3")
+			$SFX.volume_db = 0
+	$SFX.play()

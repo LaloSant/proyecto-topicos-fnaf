@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ciyad5p3oge3u" path="res://source/componentes/personajes/base/personaje.tscn" id="1_ghekp"]
 [ext_resource type="Script" uid="uid://bcokrb4kb46j" path="res://source/screens/juego/edifT/edificio_t.gd" id="1_i38r3"]
-[ext_resource type="AudioStream" uid="uid://8sb45u14ewm6" path="res://resources/audio/musica/Never Let Me Down.mp3" id="1_n6ms6"]
+[ext_resource type="AudioStream" uid="uid://cblj3wxb5ean2" path="res://resources/audio/musica/LuigiMansion.mp3" id="2_tjhh6"]
 [ext_resource type="TileSet" uid="uid://buyircn635ffw" path="res://source/screens/juego/edifT/edificio_tTileSet.tres" id="3_ytj8a"]
 [ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/tps/transportador.tscn" id="5_pf4qd"]
 [ext_resource type="PackedScene" uid="uid://dfphplmv1hblj" path="res://source/singleton/transiciones/transicion.tscn" id="6_sr0qs"]
@@ -35,8 +35,7 @@ script = ExtResource("1_i38r3")
 color = Color(0.0605303, 0.0605303, 0.0605303, 1)
 
 [node name="Musica" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_n6ms6")
-volume_db = -10.0
+stream = ExtResource("2_tjhh6")
 autoplay = true
 bus = &"Musica"
 parameters/looping = true
@@ -64,7 +63,6 @@ tile_set = ExtResource("3_ytj8a")
 [node name="Personaje" parent="." instance=ExtResource("1_ghekp")]
 position = Vector2(-192, 24)
 scale = Vector2(0.4, 0.4)
-tieneLampara = false
 
 [node name="Sombras" type="Node" parent="."]
 

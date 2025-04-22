@@ -13,7 +13,7 @@ func _ready() -> void:
 	$Personaje/HUD/lblInfo.text = "lbl_dia" + str(GLOBAL.contador_dia)
 
 func setPosicionJugador() -> void: #Para cuando salga de un edificio o empieze partida
-	$Personaje.toggle_lamp()
+	$Personaje/Linterna.visible = false
 	match GLOBAL.marker_actual:
 		GLOBAL.MarkerPosicion.mk_EdificioTFuera:
 			$Personaje.position = $Marcadores/EdificioTFuera.position

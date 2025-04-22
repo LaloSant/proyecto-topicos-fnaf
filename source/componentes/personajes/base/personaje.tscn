@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://ciyad5p3oge3u"]
 
 [ext_resource type="Script" uid="uid://cxh0wtsp3wd65" path="res://source/componentes/personajes/base/personaje.gd" id="1_pkvuc"]
-[ext_resource type="SpriteFrames" uid="uid://mmr1yoqjk6at" path="res://source/componentes/personajes/lalo/laloSprites.tres" id="2_6g65x"]
+[ext_resource type="SpriteFrames" uid="uid://cbeep7olcpvdr" path="res://source/componentes/personajes/yael/yaelSprites.tres" id="2_i4ev6"]
 [ext_resource type="PackedScene" uid="uid://d0a4ucxe160yd" path="res://source/screens/juego/HUD/hud.tscn" id="3_i4ev6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdach"]
@@ -28,17 +28,17 @@ script = ExtResource("1_pkvuc")
 nombre = "Lalo"
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="."]
+volume_db = -10.0
 bus = &"SFX"
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3, 3)
-sprite_frames = ExtResource("2_6g65x")
-animation = &"punch_der"
+sprite_frames = ExtResource("2_i4ev6")
+animation = &"muerte"
 autoplay = "idle_abj"
-frame = 7
-frame_progress = 1.0
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-4.47035e-07, 8.75)
 shape = SubResource("RectangleShape2D_vdach")
 debug_color = Color(0.234351, 0.607851, 0.669646, 0.376471)
@@ -48,10 +48,12 @@ scale = Vector2(0.5, 0.5)
 zoom = Vector2(3.7, 3.7)
 
 [node name="LightOc" type="LightOccluder2D" parent="."]
+visible = false
 occluder = SubResource("OccluderPolygon2D_cemx0")
 occluder_light_mask = 2
 
 [node name="Linterna" type="PointLight2D" parent="."]
+visible = false
 scale = Vector2(6.30664, 6.30664)
 color = Color(1, 0.956863, 0.772549, 1)
 energy = 1.3

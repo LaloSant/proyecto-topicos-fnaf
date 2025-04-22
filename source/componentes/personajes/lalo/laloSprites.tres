@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=32 format=3 uid="uid://mmr1yoqjk6at"]
+[gd_resource type="SpriteFrames" load_steps=37 format=3 uid="uid://mmr1yoqjk6at"]
 
 [ext_resource type="Texture2D" uid="uid://e5qeawporx1i" path="res://source/componentes/personajes/lalo/frente0.png" id="1_a3i28"]
 [ext_resource type="Texture2D" uid="uid://b0v5cylj0cx5l" path="res://source/componentes/personajes/lalo/frente1.png" id="2_w2fuq"]
@@ -18,10 +18,15 @@
 [ext_resource type="Texture2D" uid="uid://cvpsex6kwwhd4" path="res://source/componentes/personajes/lalo/idle arriba.png" id="16_wbswj"]
 [ext_resource type="Texture2D" uid="uid://4nldce7n1q73" path="res://source/componentes/personajes/lalo/idle derecha.png" id="17_iy6xf"]
 [ext_resource type="Texture2D" uid="uid://cgjtuxiae7h0w" path="res://source/componentes/personajes/lalo/idle izquierda.png" id="18_icsmo"]
+[ext_resource type="Texture2D" uid="uid://chqngnnwpp78f" path="res://source/componentes/personajes/lalo/lalo_death1.png" id="19_qk8lo"]
 [ext_resource type="Texture2D" uid="uid://cspxlf10e6k62" path="res://source/componentes/personajes/lalo/back_punch1.png" id="19_vd4g8"]
 [ext_resource type="Texture2D" uid="uid://cvdyj3w74q2nh" path="res://source/componentes/personajes/lalo/front_punch.png" id="19_ygk1u"]
+[ext_resource type="Texture2D" uid="uid://dpmxs3kdse5mh" path="res://source/componentes/personajes/lalo/lalo_death2.png" id="20_4ejts"]
 [ext_resource type="Texture2D" uid="uid://dupkjtg6frhi4" path="res://source/componentes/personajes/lalo/back_punch2.png" id="20_oluvl"]
+[ext_resource type="Texture2D" uid="uid://c2htnnxwjly8m" path="res://source/componentes/personajes/lalo/lalo_death3.png" id="21_btmvw"]
 [ext_resource type="Texture2D" uid="uid://lb0go2718nq2" path="res://source/componentes/personajes/lalo/right_punch1.png" id="22_0qgqw"]
+[ext_resource type="Texture2D" uid="uid://dimood6esum3q" path="res://source/componentes/personajes/lalo/lalo_death4.png" id="22_f8s5e"]
+[ext_resource type="Texture2D" uid="uid://dfmapdfsxsx8g" path="res://source/componentes/personajes/lalo/lalo_death5.png" id="23_53s8t"]
 [ext_resource type="Texture2D" uid="uid://s22qb6jgem5i" path="res://source/componentes/personajes/lalo/right_punch2.png" id="23_iux45"]
 [ext_resource type="Texture2D" uid="uid://c8s8qlo78rcss" path="res://source/componentes/personajes/lalo/right_punch3 (1).png" id="24_vmsln"]
 [ext_resource type="Texture2D" uid="uid://8e64k411ffhm" path="res://source/componentes/personajes/lalo/right_punch4.png" id="25_qk8lo"]
@@ -148,6 +153,26 @@ animations = [{
 "loop": true,
 "name": &"idle_izq",
 "speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_qk8lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_4ejts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_btmvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_f8s5e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_53s8t")
+}],
+"loop": false,
+"name": &"muerte",
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
