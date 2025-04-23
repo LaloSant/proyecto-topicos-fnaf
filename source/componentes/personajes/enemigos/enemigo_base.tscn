@@ -26,12 +26,13 @@ max_distance = 300.0
 bus = &"SFX"
 
 [node name="HB(disabled)" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("RectangleShape2D_f2cju")
 disabled = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("3_f2cju")
-animation = &"caminar_izq"
+animation = &"caminar_abj"
 
 [node name="Sombra" type="LightOccluder2D" parent="."]
 visible = false
@@ -42,6 +43,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="HB2" type="CollisionShape2D" parent="AreaDanio"]
+visible = false
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_igk5n")
 

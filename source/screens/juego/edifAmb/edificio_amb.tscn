@@ -5,7 +5,7 @@
 [ext_resource type="TileSet" uid="uid://diumo1fqsdv2j" path="res://source/screens/juego/edifAmb/edificio_ambTileSet.tres" id="3_ylvr1"]
 [ext_resource type="PackedScene" uid="uid://ciyad5p3oge3u" path="res://source/componentes/personajes/base/personaje.tscn" id="4_h1tbr"]
 [ext_resource type="PackedScene" uid="uid://bddno62kg4il7" path="res://source/componentes/personajes/enemigos/enemigo_base.tscn" id="5_ueu2e"]
-[ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/Tps/transportador.tscn" id="6_5h5ae"]
+[ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/tps/transportador.tscn" id="6_5h5ae"]
 [ext_resource type="PackedScene" uid="uid://lmhgy8eugrgv" path="res://source/componentes/items/item_lampara.tscn" id="7_ngs8f"]
 [ext_resource type="PackedScene" uid="uid://c8hbcu3tjoig" path="res://source/screens/juego/HUD/dialog_window.tscn" id="8_shijo"]
 [ext_resource type="AudioStream" uid="uid://cyox8ywkadgcp" path="res://resources/audio/gowMisterio.mp3" id="9_at3cn"]
@@ -99,17 +99,20 @@ remote_path = NodePath("../../../../Enemigos/GuardianP")
 [node name="Hitboxes" type="Node" parent="."]
 
 [node name="HitboxSalon" type="StaticBody2D" parent="Hitboxes"]
+visible = false
 collision_mask = 2
 
 [node name="PoligonoSalon" type="CollisionPolygon2D" parent="Hitboxes/HitboxSalon"]
 polygon = PackedVector2Array(992, 64, 992, -128, 736, -128, 734, 63, 745.6, 63.2, 750.4, 76.8, 769.6, 76.8, 778, 64.4, 910, 64.4, 910, 69.2, 778.4, 69.2, 772.8, 79.6, 750.4, 79.6, 743.6, 69.2, 715.2, 69.2, 712, -184, 1000, -184, 1000, 72, 912, 72, 912, 64)
 
 [node name="HitboxPB" type="StaticBody2D" parent="Hitboxes"]
+visible = false
 
 [node name="PoligonoPB" type="CollisionPolygon2D" parent="Hitboxes/HitboxPB"]
 polygon = PackedVector2Array(-512, 431, -54, 432, -34, 398, -16, 398, 10, 431, 128, 431, 128, 386, 159, 386, 159, 430, 319, 430, 320.4, 528.4, -223.2, 528.4, -320, 528, -512.4, 528, -513, 432, -517.6, 418.8, -517.6, 533.2, -324.8, 533.6, -218.4, 532.4, 324.8, 533.2, 324.8, 379.2, -517.2, 379.2, -517.6, 416.8)
 
 [node name="HitboxP1" type="StaticBody2D" parent="Hitboxes"]
+visible = false
 collision_mask = 2
 
 [node name="PoligonoP1" type="CollisionPolygon2D" parent="Hitboxes/HitboxP1"]
@@ -117,6 +120,7 @@ position = Vector2(-0.8, 0.799988)
 polygon = PackedVector2Array(-213.2, -16.8, -202.2, -19.8, -185.2, -53.8, -156.2, -52.8, -136.2, -18.8, 128.8, -17.8, 127.8, -61.8, 162.8, -62.8, 162.8, -17.8, 191.8, -17.8, 190.8, -61.8, 226.8, -61.8, 226.8, -19.8, 317.8, -19.8, 320.8, 80.8, -191.2, 79.2, -341.2, 79.2, -349.2, 80.2, -510.8, 80, -510.2, -18.8, -320.2, -17.8, -286.2, -16.8, -215.2, -15.8, -216.2, -69.8, -517.2, -70, -517.6, 84, -356.191, 84.1532, -185.2, 86.2, 325.2, 84.8, 324.8, -69.2, 279.833, -69.2, -215.2, -69.8)
 
 [node name="HitboxSalon2" type="StaticBody2D" parent="Hitboxes"]
+visible = false
 position = Vector2(-3, 465)
 collision_mask = 2
 
@@ -124,6 +128,7 @@ collision_mask = 2
 polygon = PackedVector2Array(992, 64, 992, -128, 736, -128, 734, 63, 745.6, 63.2, 750.4, 76.8, 769.6, 76.8, 778, 64.4, 910, 64.4, 910, 69.2, 778.4, 69.2, 772.8, 79.6, 750.4, 79.6, 743.6, 69.2, 715.2, 69.2, 712, -184, 1000, -184, 1000, 72, 912, 72, 912, 64)
 
 [node name="HitboxP2" type="StaticBody2D" parent="Hitboxes"]
+visible = false
 position = Vector2(2, -240)
 collision_mask = 2
 

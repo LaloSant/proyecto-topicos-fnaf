@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://bcedmut05i6ho"]
+[gd_scene load_steps=21 format=4 uid="uid://bcedmut05i6ho"]
 
 [ext_resource type="Script" uid="uid://7aic3ebec30s" path="res://source/screens/juego/mundo/mundo.gd" id="1_woy8x"]
 [ext_resource type="AudioStream" uid="uid://dp1m1k357d67x" path="res://resources/audio/musica/Mundo Tec.mp3" id="2_r2syo"]
@@ -88,6 +88,9 @@ size = Vector2(446, 65)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpmyi"]
 size = Vector2(508, 290)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cmn6"]
+size = Vector2(375, 117)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qt2rr"]
 size = Vector2(738, 61)
@@ -330,6 +333,10 @@ shape = SubResource("RectangleShape2D_r8mfa")
 position = Vector2(459, -322)
 shape = SubResource("RectangleShape2D_rpmyi")
 
+[node name="T" type="CollisionShape2D" parent="Transparentar/Edificios"]
+position = Vector2(82, -1641)
+shape = SubResource("RectangleShape2D_2cmn6")
+
 [node name="Gradas" type="CollisionShape2D" parent="Transparentar/Edificios"]
 position = Vector2(-1603, -2114.5)
 shape = SubResource("RectangleShape2D_qt2rr")
@@ -369,10 +376,10 @@ shape = SubResource("RectangleShape2D_2g8f8")
 [node name="Items" type="Node" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -10055.0
-offset_top = -8544.0
-offset_right = -2146.0
-offset_bottom = -621.0
+offset_left = -4838.0
+offset_top = -5525.0
+offset_right = 3071.0
+offset_bottom = 2398.0
 
 [connection signal="body_entered" from="Transiciones/TCEdifT" to="." method="_on_tc_edif_t_body_entered"]
 [connection signal="body_entered" from="Transiciones/TCEdifAmb" to="." method="_on_tc_edif_amb_body_entered"]

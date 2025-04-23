@@ -7,7 +7,9 @@
 '''
 
 extends Node
-enum MarkerPosicion{mk_EdificioAmbSalon,mk_EdificioAmbEntrada,mk_EdificioAmbFuera,mk_EdificioTSalon,mk_EdificioTEntrada ,mk_EdificioTFuera, mk_EPrinFuera}
+enum MarkerPosicion{mk_EdificioAmbSalon,mk_EdificioAmbEntrada,mk_EdificioAmbFuera,
+		mk_EdificioTSalon,mk_EdificioTEntrada ,mk_EdificioTFuera, 
+		mk_EPrinFuera}
 
 #Declaraciones de variables globales
 var pers_default_speed:int
