@@ -7,13 +7,14 @@
 '''
 
 extends Node
-enum MarkerPosicion{mk_EdificioTSalon,mk_EdificioTEntrada ,mk_EdificioTFuera, mk_EPrinFuera}
+enum MarkerPosicion{mk_EdificioAmbSalon,mk_EdificioAmbEntrada,mk_EdificioAmbFuera,mk_EdificioTSalon,mk_EdificioTEntrada ,mk_EdificioTFuera, mk_EPrinFuera}
 
 #Declaraciones de variables globales
 var pers_default_speed:int
 var pers_factorSneak:float 
 var pers_factorRun:float 
 var pers_nombre:String
+var enem_tipo:String
 var pers_salud:int
 var pers_tieneLampara:bool
 var contador_dia:int

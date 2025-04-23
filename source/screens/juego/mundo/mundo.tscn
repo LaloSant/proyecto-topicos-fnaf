@@ -293,6 +293,10 @@ position = Vector2(-117, -1301)
 [node name="EPrincFuera" type="Marker2D" parent="Marcadores"]
 position = Vector2(430, 553)
 
+[node name="EdificioAmbFuera" type="Marker2D" parent="Marcadores"]
+position = Vector2(459, -3375)
+scale = Vector2(1.5, 1.5)
+
 [node name="Transiciones" type="Node" parent="."]
 
 [node name="TCEdifT" parent="Transiciones" instance=ExtResource("6_r8mfa")]
@@ -301,6 +305,11 @@ scale = Vector2(1.5, 1.5)
 audio_bus_name = &"SFX"
 escena = "res://source/screens/juego/edifT/edificio_t.tscn"
 puntoSalida = "mk_EdificioTEntrada"
+
+[node name="TCEdifAmb" parent="Transiciones" instance=ExtResource("6_r8mfa")]
+position = Vector2(460, -3401)
+escena = "res://source/screens/juego/edifAmb/edificio_amb.tscn"
+puntoSalida = "mk_EdificioAmbEntrada"
 
 [node name="Transparentar" type="Node2D" parent="."]
 visible = false
@@ -366,5 +375,6 @@ offset_right = -2146.0
 offset_bottom = -621.0
 
 [connection signal="body_entered" from="Transiciones/TCEdifT" to="." method="_on_tc_edif_t_body_entered"]
+[connection signal="body_entered" from="Transiciones/TCEdifAmb" to="." method="_on_tc_edif_amb_body_entered"]
 [connection signal="body_entered" from="Transparentar/Edificios" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Transparentar/Edificios" to="." method="_on_area_2d_body_exited"]

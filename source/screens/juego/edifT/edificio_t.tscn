@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bcokrb4kb46j" path="res://source/screens/juego/edifT/edificio_t.gd" id="1_i38r3"]
 [ext_resource type="AudioStream" uid="uid://cblj3wxb5ean2" path="res://resources/audio/musica/LuigiMansion.mp3" id="2_tjhh6"]
 [ext_resource type="TileSet" uid="uid://buyircn635ffw" path="res://source/screens/juego/edifT/edificio_tTileSet.tres" id="3_ytj8a"]
-[ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/tps/transportador.tscn" id="5_pf4qd"]
+[ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/Tps/transportador.tscn" id="5_pf4qd"]
 [ext_resource type="PackedScene" uid="uid://dfphplmv1hblj" path="res://source/singleton/transiciones/transicion.tscn" id="6_sr0qs"]
 [ext_resource type="PackedScene" uid="uid://lmhgy8eugrgv" path="res://source/componentes/items/item_lampara.tscn" id="7_gm1lj"]
 [ext_resource type="PackedScene" uid="uid://c8hbcu3tjoig" path="res://source/screens/juego/HUD/dialog_window.tscn" id="8_63xdy"]
@@ -13,19 +13,19 @@
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tjhh6"]
 cull_mode = 2
-polygon = PackedVector2Array(768, -128, 768, -104, 784, -104, 784, -128)
+polygon = PackedVector2Array(768, -128, 768, -95, 783, -95, 784, -128)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_a7uyv"]
 polygon = PackedVector2Array(-520, 536, -328, 536, -328, 640, -216, 640, -216, 536, 328, 536, 328, 376, 336, 376, 344, 648, -544, 648, -544, 360, 320, 376, -221.959, 376, -256.481, 376, -520, 376, -520, 384)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_fcnty"]
-polygon = PackedVector2Array(-184, 88, -184, 168, -360, 168, -360, 88, -520, 88, -520, -72, -288, -72, -288, -16, -256, -16, -256, -72, 328, -72, 328, 88, 352, -112, -576, -96, -560, 112, -216, 240, 320, 88)
+polygon = PackedVector2Array(-184, 88, -360, 88, -520, 88, -520, -72, 129, -67, 128, -17, 161, -18, 161, -66, 328, -72, 328, 88, 352, -112, -576, -96, -560, 112, -216, 240, 320, 88)
 
 [sub_resource type="Curve2D" id="Curve2D_63xdy"]
 _data = {
-"points": PackedVector2Array(-0.138687, 0, 0.138687, 0, -320, 0, 0, 0, 0, 0, -208, 0, 0, 0, 0, 0, -208, 144, 0, 0, 0, 0, -336, 144, 0, 0, 0, 0, -336, 96, 0, 0, 0, 0, -256, 96, 0, 0, 0, 0, -256, 64, 0, 0, 0, 0, -336, 64, 0, 0, 0, 0, -448, 64, 0, 0, 0, 0, -448, 0, 0, 0, 0, 0, -320, 0)
+"points": PackedVector2Array(-0.138687, 0, 0.138687, 0, -320, 0, 0, 0, 0, 0, 286, 1, 0, 0, 0, 0, 285, 65, 0, 0, 0, 0, -336, 65, 0, 0, 0, 0, -448, 64, 0, 0, 0, 0, -448, 0, 0, 0, 0, 0, -320, 0)
 }
-point_count = 11
+point_count = 7
 
 [node name="EdificioT" type="Node2D"]
 y_sort_enabled = true
@@ -61,7 +61,7 @@ tile_map_data = PackedByteArray("AAATAP//AAADAAMAAAATAAAAAAADAAQAAADw//z/AAABAAY
 tile_set = ExtResource("3_ytj8a")
 
 [node name="Personaje" parent="." instance=ExtResource("1_ghekp")]
-position = Vector2(-192, 24)
+position = Vector2(751, -120)
 scale = Vector2(0.4, 0.4)
 
 [node name="Sombras" type="Node" parent="."]
@@ -163,13 +163,11 @@ collision_mask = 2
 polygon = PackedVector2Array(992, 64, 992, -128, 736, -128, 734, 63, 745.6, 63.2, 750.4, 76.8, 769.6, 76.8, 778, 64.4, 910, 64.4, 910, 69.2, 778.4, 69.2, 772.8, 79.6, 750.4, 79.6, 743.6, 69.2, 715.2, 69.2, 712, -184, 1000, -184, 1000, 72, 912, 72, 912, 64)
 
 [node name="HitboxPB" type="StaticBody2D" parent="Hitboxes"]
-visible = false
 
 [node name="PoligonoPB" type="CollisionPolygon2D" parent="Hitboxes/HitboxPB"]
 polygon = PackedVector2Array(-512, 431, -257, 431, -257.6, 384.4, -222, 384.4, -223, 431, 319, 430, 320.4, 528.4, -223.2, 528.4, -223.6, 608.8, -255, 609, -257, 620, -287, 620, -289, 609, -320.4, 608.8, -320, 528, -512.4, 528, -513, 432, -517.6, 418.8, -517.6, 533.2, -324.8, 533.6, -324.8, 614, -288.4, 614, -288, 624, -256, 624, -254, 614, -218.8, 614.4, -218.4, 532.4, 324.8, 533.2, 324.8, 379.2, -517.2, 379.2, -517.6, 416.8)
 
 [node name="HitboxP1" type="StaticBody2D" parent="Hitboxes"]
-visible = false
 collision_mask = 2
 
 [node name="PoligonoP1" type="CollisionPolygon2D" parent="Hitboxes/HitboxP1"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bddno62kg4il7"]
 
-[ext_resource type="SpriteFrames" uid="uid://kag7yirkasv3" path="res://source/componentes/personajes/alan/alanSprites.tres" id="1_bxy6r"]
 [ext_resource type="Script" uid="uid://bul7rvf1h3i0u" path="res://source/componentes/personajes/enemigos/enemigo_base.gd" id="1_f2cju"]
 [ext_resource type="AudioStream" uid="uid://bbukpr4afgaec" path="res://resources/audio/zombie.wav" id="1_igk5n"]
+[ext_resource type="SpriteFrames" uid="uid://dadddakkfagni" path="res://source/componentes/personajes/enemigos/police/policeSprites.tres" id="3_f2cju"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f2cju"]
 size = Vector2(13, 14)
@@ -30,10 +30,8 @@ shape = SubResource("RectangleShape2D_f2cju")
 disabled = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("1_bxy6r")
-animation = &"caminar_abj"
-autoplay = "idle_abj"
-frame_progress = 0.233341
+sprite_frames = ExtResource("3_f2cju")
+animation = &"caminar_izq"
 
 [node name="Sombra" type="LightOccluder2D" parent="."]
 visible = false

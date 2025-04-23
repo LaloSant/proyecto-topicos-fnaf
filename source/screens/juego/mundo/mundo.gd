@@ -19,6 +19,8 @@ func setPosicionJugador() -> void: #Para cuando salga de un edificio o empieze p
 			$Personaje.position = $Marcadores/EdificioTFuera.position
 		GLOBAL.MarkerPosicion.mk_EPrinFuera:
 			$Personaje.position = $Marcadores/EPrincFuera.position
+		GLOBAL.MarkerPosicion.mk_EdificioAmbFuera:
+			$Personaje.position = $Marcadores/EdificioAmbFuera.position
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	transparentar(body)
@@ -42,3 +44,7 @@ func _on_item_lampara_item_obtenido() -> void:
 func _on_tc_edif_t_body_entered(body: Node2D) -> void:
 	if body is Personaje:
 		GLOBAL.marker_actual = GLOBAL.MarkerPosicion.mk_EdificioTEntrada
+
+func _on_tc_edif_amb_body_entered(body: Node2D) -> void:
+	if body is Personaje:
+		GLOBAL.marker_actual = GLOBAL.MarkerPosicion.mk_EdificioAmbEntrada

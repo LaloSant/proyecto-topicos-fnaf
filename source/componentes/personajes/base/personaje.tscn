@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://ciyad5p3oge3u"]
 
 [ext_resource type="Script" uid="uid://cxh0wtsp3wd65" path="res://source/componentes/personajes/base/personaje.gd" id="1_pkvuc"]
-[ext_resource type="SpriteFrames" uid="uid://cbeep7olcpvdr" path="res://source/componentes/personajes/yael/yaelSprites.tres" id="2_i4ev6"]
+[ext_resource type="SpriteFrames" uid="uid://kag7yirkasv3" path="res://source/componentes/personajes/alan/alanSprites.tres" id="2_i4ev6"]
 [ext_resource type="PackedScene" uid="uid://d0a4ucxe160yd" path="res://source/screens/juego/HUD/hud.tscn" id="3_i4ev6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdach"]
@@ -34,7 +34,7 @@ bus = &"SFX"
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3, 3)
 sprite_frames = ExtResource("2_i4ev6")
-animation = &"muerte"
+animation = &"idle_izq"
 autoplay = "idle_abj"
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
