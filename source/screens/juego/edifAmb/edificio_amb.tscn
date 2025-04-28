@@ -32,6 +32,7 @@ y_sort_enabled = true
 script = ExtResource("1_ylvr1")
 
 [node name="Luz" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0.0605303, 0.0605303, 0.0605303, 1)
 
 [node name="Musica" type="AudioStreamPlayer" parent="."]
@@ -121,6 +122,7 @@ position = Vector2(-3, 465)
 collision_mask = 2
 
 [node name="PoligonoSalon" type="CollisionPolygon2D" parent="Hitboxes/HitboxSalon2"]
+position = Vector2(-14, -32)
 polygon = PackedVector2Array(992, 64, 992, -128, 736, -128, 734, 63, 745.6, 63.2, 750.4, 76.8, 769.6, 76.8, 778, 64.4, 910, 64.4, 910, 69.2, 778.4, 69.2, 772.8, 79.6, 750.4, 79.6, 743.6, 69.2, 715.2, 69.2, 712, -184, 1000, -184, 1000, 72, 912, 72, 912, 64)
 
 [node name="HitboxP2" type="StaticBody2D" parent="Hitboxes"]

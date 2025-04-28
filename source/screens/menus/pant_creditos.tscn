@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dquhxwhrmnp7e"]
 
 [ext_resource type="Script" uid="uid://cmukdfuqprdg8" path="res://source/screens/menus/pant_creditos.gd" id="1_lkht7"]
-[ext_resource type="VideoStream" uid="uid://b83iasmnu2qs0" path="res://resources/videos/Batalla epica short.ogv" id="2_0fkvu"]
+[ext_resource type="VideoStream" uid="uid://cl6tey6c3w6go" path="res://resources/videos/Batalla epica short.ogv" id="2_0fkvu"]
 [ext_resource type="PackedScene" uid="uid://rerxv8lts2mu" path="res://source/componentes/btn_a_menu_prin.tscn" id="3_dqu32"]
 
 [node name="PantCreditos" type="Node2D"]
