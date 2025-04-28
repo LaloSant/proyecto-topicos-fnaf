@@ -27,7 +27,7 @@ func _ready() -> void:
 		config.set_value("Personaje", "factorRun", 1.5)
 		config.set_value("Personaje", "nombre", "Alan")
 		config.set_value("Personaje", "tieneLampara", false)
-		
+ 
 		#Seccion partida
 		config.set_value("Partida", "dia", 1)
 		config.set_value("Partida", "marcador", GLOBAL.MarkerPosicion.mk_EdificioTSalon)
