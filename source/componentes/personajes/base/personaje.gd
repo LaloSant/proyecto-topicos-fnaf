@@ -2,7 +2,7 @@
 	Modulo Personaje
 	Creado por: Eduardo Jair Bautista Santiesteban
 	Fecha de creacion: 27 / 02 / 2025
-	Fecha de ultima modificacion: 17 / 04 / 2025
+	Fecha de ultima modificacion: 22 / 04 / 2025
 	Descripcion: Se implementa la logica del personaje.
 '''
 

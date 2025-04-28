@@ -22,7 +22,8 @@ func defPuntoSalida() -> void:
 			GLOBAL.marker_actual = GLOBAL.MarkerPosicion.mk_EdificioTEntrada
 		"mk_EdificioTFuera":
 			GLOBAL.marker_actual = GLOBAL.MarkerPosicion.mk_EdificioTFuera
-			print(GLOBAL.marker_actual)
 		"mk_EPrinFuera":
 			GLOBAL.marker_actual = GLOBAL.MarkerPosicion.mk_EPrinFuera
+		"mk_EdificioAmbFuera":
+			GLOBAL.marker_actual = GLOBAL.MarkerPosicion.mk_EdificioAmbFuera
 	

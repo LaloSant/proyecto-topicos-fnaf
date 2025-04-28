@@ -17,8 +17,7 @@ var currentAnim:String
 func _ready() -> void:
 	spriteSet = getSpritePorNombre(tipo)
 	cambiarSprite(spriteSet)
-	
-	
+
 func cambiarSprite(spriteSetNew:Resource) -> void:
 	$Sprite.set_sprite_frames(spriteSetNew)
 
@@ -31,6 +30,7 @@ func getSpritePorNombre(nom:String) -> Resource:
 			
 
 	return preload("res://source/componentes/personajes/enemigos/police/policeSprites.tres")
+
 func actualizarPos(ruta:PathFollow2D, delta:float):
 	var anim:String
 	ruta.progress += speed * delta

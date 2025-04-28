@@ -29,7 +29,7 @@ animations = [{
 "texture": ExtResource("3_my38i")
 }],
 "loop": true,
-"name": &"camiar_abj",
+"name": &"caminar_abj",
 "speed": 5.0
 }, {
 "frames": [{
