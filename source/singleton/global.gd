@@ -12,15 +12,29 @@ enum MarkerPosicion{mk_EdificioAmbSalon,mk_EdificioAmbEntrada,mk_EdificioAmbFuer
 		mk_EPrinFuera}
 
 #Declaraciones de variables globales
+@onready var audioMaster = AudioServer.get_bus_index("Master")
+@onready var audioMusica = AudioServer.get_bus_index("Musica")
+@onready var audioSFX = AudioServer.get_bus_index("SFX")
+@onready var audioVoz = AudioServer.get_bus_index("Voz")
+
+#Seccion personaje
 var pers_default_speed:int
 var pers_factorSneak:float 
 var pers_factorRun:float 
 var pers_nombre:String
 var enem_tipo:String
 var pers_salud:int
+
+#Seccion partida
 var pers_tieneLampara:bool
 var contador_dia:int
 var marker_actual = MarkerPosicion.mk_EdificioTSalon
+
+#Seccion audio
+var nivelAudioMaster:float
+var nivelAudioMusica:float
+var nivelAudioSFX:float
+var nivelAudioVoz:float
 
 func _ready() -> void:
 	#Carga de idioma activo
@@ -38,6 +52,12 @@ func _ready() -> void:
 	var partida_settings = CONFIG_FILE.load_partida_setting()
 	contador_dia = partida_settings.dia
 	marker_actual = partida_settings.marcador
+	#Carga de datos audio
+	var audio_settings = CONFIG_FILE.load_audio_setting()
+	nivelAudioMaster = audio_settings.master
+	nivelAudioMusica = audio_settings.musica
+	nivelAudioSFX = audio_settings.sfx
+	nivelAudioVoz = audio_settings.voz
 
 ## Guarda datos importantes de la partida
 func guardarPartida() -> void:
@@ -51,3 +71,7 @@ func continuarPartida() -> void:
 		SCN_FADE_IN.cambia_escena("res://source/screens/juego/edifT/edificio_t.tscn")
 	else:
 		SCN_FADE_IN.cambia_escena("res://source/screens/juego/mundo/mundo.tscn")
+
+func cambiar_bus_audio(bus, valor) -> void:
+	AudioServer.set_bus_volume_db(bus, linear_to_db(valor))
+	AudioServer.set_bus_mute(bus, valor<0.05)

@@ -19,3 +19,8 @@ lbl_dia1,Dia uno,Day one,Jour un
 lbl_dia2,Dia dos,Day two,Jour deux
 lbl_dia3,Dia tres,Day three,Jour trois
 lbl_dia4,Dia cuatro,Day four,Jour quatre
+lbl_master,Audio: maestro,Audio: Master,Audio: Master
+lbl_musica,Audio: Musica,Audio: Music,Audio: Musique
+lbl_sfx,Audio: SFX,Audio: SFX,Audio: SFX
+lbl_voz,Audio: Voz,Audio: voice,Audio: voix
+,,,
