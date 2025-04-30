@@ -31,6 +31,7 @@ func _ready() -> void:
 		#Seccion partida
 		config.set_value("Partida", "dia", 1)
 		config.set_value("Partida", "marcador", GLOBAL.MarkerPosicion.mk_EdificioTSalon)
+		config.set_value("Partida", "paginas", GLOBAL.paginas)
 		
 		#Seccion audio
 		config.set_value("Audio", "master", 1)

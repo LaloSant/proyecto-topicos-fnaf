@@ -1,10 +1,47 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0a4ucxe160yd"]
+[gd_scene load_steps=9 format=3 uid="uid://d0a4ucxe160yd"]
 
 [ext_resource type="PackedScene" uid="uid://rerxv8lts2mu" path="res://source/componentes/btn_a_menu_prin.tscn" id="1_7xdas"]
 [ext_resource type="Script" uid="uid://bsljbid08urdh" path="res://source/screens/juego/HUD/hud.gd" id="1_s75c2"]
 [ext_resource type="FontFile" uid="uid://bqc8jwwk78iqu" path="res://resources/lang/MinecraftBoldItalic-1y1e.otf" id="2_8tycl"]
 [ext_resource type="PackedScene" uid="uid://bbu2x8nmrqsdr" path="res://source/componentes/btn_guardar_partida.tscn" id="4_gxufb"]
 [ext_resource type="SpriteFrames" uid="uid://isubefltarb4" path="res://source/screens/juego/HUD/salud_bar.tres" id="5_atmrw"]
+
+[sub_resource type="Animation" id="Animation_atmrw"]
+resource_name = "danio"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(326, 669), Vector2(326, 650), Vector2(326, 669)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0335345, 0.1),
+"transitions": PackedFloat32Array(1, 0.124167, 1),
+"update": 0,
+"values": [0.0, 0.10472, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_dnx0k"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fse68"]
+_data = {
+&"RESET": SubResource("Animation_dnx0k"),
+&"danio": SubResource("Animation_atmrw")
+}
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_s75c2")
@@ -43,5 +80,10 @@ sprite_frames = ExtResource("5_atmrw")
 animation = &"salud"
 autoplay = "salud"
 frame = 10
+
+[node name="ANPSalud" type="AnimationPlayer" parent="Salud"]
+libraries = {
+&"": SubResource("AnimationLibrary_fse68")
+}
 
 [connection signal="pressed" from="btn_GuardarPartida" to="btn_GuardarPartida" method="_on_pressed"]

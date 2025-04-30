@@ -2,7 +2,7 @@
 	Modulo HUD
 	Creado por: Eduardo Jair Bautista Santiesteban
 	Fecha de creacion: 24 / 03 / 2025
-	Fecha de ultima modificacion: 24 / 03 / 2025
+	Fecha de ultima modificacion: 30 / 04 / 2025
 	Descripcion: Se implementa script de HUD
 '''
 
@@ -12,3 +12,4 @@ func actualizar_salud(salud) -> void:
 	var stage = (salud / 10) + 1 
 	stage = 10 if stage == 11 else stage
 	$Salud.frame = stage - 1
+	$Salud/ANPSalud.play("danio")

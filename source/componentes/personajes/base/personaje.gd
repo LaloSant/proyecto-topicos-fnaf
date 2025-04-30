@@ -2,7 +2,7 @@
 	Modulo Personaje
 	Creado por: Eduardo Jair Bautista Santiesteban
 	Fecha de creacion: 27 / 02 / 2025
-	Fecha de ultima modificacion: 22 / 04 / 2025
+	Fecha de ultima modificacion: 30 / 04 / 2025
 	Descripcion: Se implementa la logica del personaje.
 '''
 
@@ -10,20 +10,22 @@ class_name Personaje extends CharacterBody2D
 
 ##Nombres: Lalo, Yael, Alan
 @export var nombre:String = GLOBAL.pers_nombre
+#Items
 var tieneLampara:bool = GLOBAL.pers_tieneLampara
 var lastAnimation = "idle_abj"
+var paginas:Array[bool] = [false, false, false, false, false, false, false, false]
+#Propiedades
 var defaultSpeed = GLOBAL.pers_default_speed
 var speed:float = defaultSpeed
-var spriteSet:Resource
 var salud:int = GLOBAL.pers_salud
+#Estados
 var puedeMoverse:bool = true
 var golpeando:bool = false
 var daniado:bool = false
 var muerto:bool = false
 
 func _ready() -> void:
-	spriteSet = getSpritePorNombre(nombre)
-	cambiarSprite(spriteSet)
+	cambiarSprite(getSpritePorNombre(nombre))
 	salud = GLOBAL.pers_salud
 	defaultSpeed = GLOBAL.pers_default_speed
 

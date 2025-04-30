@@ -29,6 +29,7 @@ var pers_salud:int
 var pers_tieneLampara:bool
 var contador_dia:int
 var marker_actual = MarkerPosicion.mk_EdificioTSalon
+var paginas:Array[bool] = [false, false, false, false, false, false, false, false]
 
 #Seccion audio
 var nivelAudioMaster:float
@@ -52,6 +53,7 @@ func _ready() -> void:
 	var partida_settings = CONFIG_FILE.load_partida_setting()
 	contador_dia = partida_settings.dia
 	marker_actual = partida_settings.marcador
+	paginas = partida_settings.paginas
 	#Carga de datos audio
 	var audio_settings = CONFIG_FILE.load_audio_setting()
 	nivelAudioMaster = audio_settings.master
@@ -64,6 +66,7 @@ func guardarPartida() -> void:
 	CONFIG_FILE.save_partida_setting("dia", contador_dia)
 	CONFIG_FILE.save_partida_setting("marcador", marker_actual)
 	CONFIG_FILE.save_partida_setting("tieneLampara", pers_tieneLampara)
+	CONFIG_FILE.save_partida_setting("paginas", paginas)
 	
 ##Evalua posicion y que escena cargar
 func continuarPartida() -> void:
