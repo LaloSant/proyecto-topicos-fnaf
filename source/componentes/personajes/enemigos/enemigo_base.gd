@@ -61,3 +61,8 @@ func _on_area_danio_body_entered(body: Node2D) -> void:
 			"caminar_arr":
 				desdeY = -1
 		body.recibe_danio(10, desdeX, desdeY)
+
+func _on_hurt_box_damage_received() -> void:
+	$SFX.stream = preload("res://resources/audio/SteveHUrt.mp3")
+	$SFX.play()
+	$ANPEnemigo.play("hurt")

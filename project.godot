@@ -167,6 +167,10 @@ locale/translations=PackedStringArray("res://resources/traduccion/lenguajes.en.t
 2d_physics/layer_2="Jugador"
 2d_physics/layer_3="Enemigo"
 2d_physics/layer_4="Items"
+2d_physics/layer_5="HItBoxJugador"
+2d_physics/layer_6="HurtBoxJugador"
+2d_physics/layer_7="HitBoxNPC"
+2d_physics/layer_8="HurtBoxNPC"
 
 [rendering]
 

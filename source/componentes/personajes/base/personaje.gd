@@ -23,6 +23,10 @@ var puedeMoverse:bool = true
 var golpeando:bool = false
 var daniado:bool = false
 var muerto:bool = false
+# Recursos
+var flashlightSound = preload("res://resources/audio/Flashlight.ogg")
+var bonkSound = preload("res://resources/audio/Bonk.mp3")
+var muerteSound = preload("res://resources/audio/muerte.mp3")
 
 func _ready() -> void:
 	cambiarSprite(getSpritePorNombre(nombre))
@@ -171,6 +175,7 @@ func _input(event: InputEvent) -> void:
 			golpear()
 
 func golpear() -> void:
+	$HitBox/HitBoxShape.disabled = false
 	match lastAnimation:
 		"caminar_abj":
 			$sprite.play("punch_abj")
@@ -191,6 +196,7 @@ func golpear() -> void:
 
 func _on_sprite_animation_finished() -> void:
 	if golpeando:
+		$HitBox/HitBoxShape.disabled = true
 		golpeando = false
 		cambiar_animacion(lastAnimation)
 
@@ -198,10 +204,10 @@ func _on_sprite_animation_finished() -> void:
 func reproduceSonido(nombreAud:String) -> void:
 	match nombreAud:
 		"Linterna":
-			$SFX.stream = preload("res://resources/audio/Flashlight.ogg")
+			$SFX.stream = flashlightSound
 		"Bonk":
-			$SFX.stream = preload("res://resources/audio/Bonk.mp3")
+			$SFX.stream = bonkSound
 		"Muerte":
-			$SFX.stream = preload("res://resources/audio/muerte.mp3")
+			$SFX.stream = muerteSound
 			$SFX.volume_db = 0
 	$SFX.play()

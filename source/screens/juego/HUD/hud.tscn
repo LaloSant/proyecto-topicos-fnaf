@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bbu2x8nmrqsdr" path="res://source/componentes/btn_guardar_partida.tscn" id="4_gxufb"]
 [ext_resource type="SpriteFrames" uid="uid://isubefltarb4" path="res://source/screens/juego/HUD/salud_bar.tres" id="5_atmrw"]
 
+[sub_resource type="Animation" id="Animation_dnx0k"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_atmrw"]
 resource_name = "danio"
 length = 0.1
@@ -33,9 +36,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0, 0.10472, 0.0]
 }
-
-[sub_resource type="Animation" id="Animation_dnx0k"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fse68"]
 _data = {
