@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bcokrb4kb46j" path="res://source/screens/juego/edifT/edificio_t.gd" id="1_i38r3"]
 [ext_resource type="AudioStream" uid="uid://cblj3wxb5ean2" path="res://resources/audio/musica/LuigiMansion.mp3" id="2_tjhh6"]
 [ext_resource type="TileSet" uid="uid://buyircn635ffw" path="res://source/screens/juego/edifT/edificio_tTileSet.tres" id="3_ytj8a"]
-[ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/tps/transportador.tscn" id="5_pf4qd"]
+[ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/Tps/transportador.tscn" id="5_pf4qd"]
 [ext_resource type="PackedScene" uid="uid://dfphplmv1hblj" path="res://source/singleton/transiciones/transicion.tscn" id="6_sr0qs"]
 [ext_resource type="PackedScene" uid="uid://lmhgy8eugrgv" path="res://source/componentes/items/item_lampara.tscn" id="7_gm1lj"]
 [ext_resource type="PackedScene" uid="uid://c8hbcu3tjoig" path="res://source/screens/juego/HUD/dialog_window.tscn" id="8_63xdy"]
