@@ -13,6 +13,7 @@ extends Node2D
 func _ready() -> void:
 	if not $Personaje.has_lamp():
 		$Items/DWNeedLampara.mostrar_dialogo()
+		$Items/item_lampara.visible = true
 	$Personaje/HUD/lblInfo.text = "lbl_Salon"
 	$Personaje.defaultSpeed = $Personaje.defaultSpeed * 0.65
 	$Personaje/Linterna.visible = $Personaje.tieneLampara
@@ -21,7 +22,7 @@ func _ready() -> void:
 			$Personaje.position = $TpNuevo/Salon.position
 		GLOBAL.MarkerPosicion.mk_EdificioTEntrada:
 			$Personaje.position = $TpNuevo/Entrada.position
-	$Items/item_lampara.visible = !GLOBAL.pers_tieneLampara
+	$Items/item_lampara.visible = !GLOBAL.pers_tieneLampara 
 	
 func _process(delta: float) -> void:
 	$Enemigos/GuardianP.actualizarPos($Rutas/RtaPasillo/RtaFPasillo, delta)

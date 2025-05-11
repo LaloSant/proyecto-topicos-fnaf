@@ -11,10 +11,10 @@ class_name Personaje extends CharacterBody2D
 ##Nombres: Lalo, Yael, Alan
 @export var nombre:String = GLOBAL.pers_nombre
 #Items
-var tieneLampara:bool = GLOBAL.pers_tieneLampara
-var lastAnimation = "idle_abj"
-var paginas:Array[bool] = [false, false, false, false, false, false, false, false]
+@export var tieneLampara:bool = GLOBAL.pers_tieneLampara
+@export var paginas:Array[bool] = [false, false, false, false, false, false, false, false]
 #Propiedades
+var lastAnimation = "idle_abj"
 var defaultSpeed = GLOBAL.pers_default_speed
 var speed:float = defaultSpeed
 var salud:int = GLOBAL.pers_salud

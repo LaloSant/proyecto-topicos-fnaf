@@ -283,7 +283,7 @@ rotation = 1.5708
 scale = Vector2(491.889, 334.518)
 texture = SubResource("PlaceholderTexture2D_h71qy")
 
-[node name="Personaje" parent="." instance=ExtResource("5_21ka8")]
+[node name="Personaje" parent="." groups=["varo"] instance=ExtResource("5_21ka8")]
 y_sort_enabled = true
 position = Vector2(-114, -1180)
 scale = Vector2(0.4, 0.4)
