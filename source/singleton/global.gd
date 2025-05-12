@@ -16,6 +16,7 @@ enum MarkerPosicion{mk_EdificioAmbSalon,mk_EdificioAmbEntrada,mk_EdificioAmbFuer
 @onready var audioMusica = AudioServer.get_bus_index("Musica")
 @onready var audioSFX = AudioServer.get_bus_index("SFX")
 @onready var audioVoz = AudioServer.get_bus_index("Voz")
+@onready var continuar_partida:bool = false
 
 #Seccion personaje
 var pers_default_speed:int
@@ -62,14 +63,17 @@ func _ready() -> void:
 	nivelAudioVoz = audio_settings.voz
 
 ## Guarda datos importantes de la partida
-func guardarPartida() -> void:
+func guardarPartida(personaje:Personaje) -> void:
 	CONFIG_FILE.save_partida_setting("dia", contador_dia)
 	CONFIG_FILE.save_partida_setting("marcador", marker_actual)
-	CONFIG_FILE.save_partida_setting("tieneLampara", pers_tieneLampara)
-	CONFIG_FILE.save_partida_setting("paginas", paginas)
+	CONFIG_FILE.save_partida_setting("paginas", personaje.paginas)
 	
+	CONFIG_FILE.save_personaje_setting("tieneLampara", personaje.has_lamp())
+	CONFIG_FILE.save_personaje_setting("currentHealth", personaje.salud)
+
 ##Evalua posicion y que escena cargar
 func continuarPartida() -> void:
+	continuar_partida = true
 	if GLOBAL.marker_actual == GLOBAL.MarkerPosicion.mk_EdificioTSalon:
 		SCN_FADE_IN.cambia_escena("res://source/screens/juego/edifT/edificio_t.tscn")
 	else:

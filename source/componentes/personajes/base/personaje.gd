@@ -12,7 +12,7 @@ class_name Personaje extends CharacterBody2D
 @export var nombre:String = GLOBAL.pers_nombre
 #Items
 @export var tieneLampara:bool = GLOBAL.pers_tieneLampara
-@export var paginas:Array[bool] = [false, false, false, false, false, false, false, false]
+@export var paginas:Array[bool] = GLOBAL.paginas
 #Propiedades
 var lastAnimation = "idle_abj"
 var defaultSpeed = GLOBAL.pers_default_speed
@@ -29,8 +29,20 @@ var bonkSound = preload("res://resources/audio/Bonk.mp3")
 var muerteSound = preload("res://resources/audio/muerte.mp3")
 
 func _ready() -> void:
-	cambiarSprite(getSpritePorNombre(nombre))
-	salud = GLOBAL.pers_salud
+	if GLOBAL.continuar_partida:
+		cambiarSprite(getSpritePorNombre(nombre))
+		salud = GLOBAL.pers_salud
+		$HUD.actualizar_salud(salud)
+		paginas = GLOBAL.paginas
+		tieneLampara = GLOBAL.pers_tieneLampara
+	else:
+		salud = 100
+		GLOBAL.pers_salud = salud
+		paginas = [false, false, false, false, false, false, false, false]
+		GLOBAL.paginas
+		tieneLampara = false
+		GLOBAL.pers_tieneLampara = tieneLampara
+		GLOBAL.continuar_partida = true
 	defaultSpeed = GLOBAL.pers_default_speed
 
 func _physics_process(_delta: float) -> void:
@@ -120,6 +132,7 @@ func setPuedeMoverse(valor:bool) -> void:
 func recibe_danio(danio:int, desdeX:int, desdeY:int) -> void:
 	reproduceSonido("Bonk")
 	salud -= danio
+	GLOBAL.pers_salud = salud
 	if salud <= 0:
 		muerto = true
 		setPuedeMoverse(false)
@@ -152,6 +165,12 @@ func getSpritePorNombre(nom:String) -> Resource:
 
 func has_lamp() -> bool:
 	return tieneLampara
+
+func has_pagina_x(num_pagina:int) -> bool:
+	return paginas.get(num_pagina)
+
+func set_pagina_x(num_pagina:int) -> void:
+	paginas.set(num_pagina, true)
 
 func toggle_lamp() -> void:
 	if has_lamp():

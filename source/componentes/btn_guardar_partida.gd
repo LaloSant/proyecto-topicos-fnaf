@@ -10,7 +10,7 @@ class_name btnGuardarPartida extends Button
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
-		GLOBAL.guardarPartida()
+		_on_pressed()
 
 func _on_pressed() -> void:
-	GLOBAL.guardarPartida()
+	GLOBAL.guardarPartida(get_parent().get_parent())
