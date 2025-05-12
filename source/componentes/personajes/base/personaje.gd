@@ -9,7 +9,7 @@
 class_name Personaje extends CharacterBody2D
 
 ##Nombres: Lalo, Yael, Alan
-@export var nombre:String = GLOBAL.pers_nombre
+@export var nombre:String = "Lalo"
 #Items
 @export var tieneLampara:bool = GLOBAL.pers_tieneLampara
 @export var paginas:Array[bool] = GLOBAL.paginas
@@ -30,12 +30,13 @@ var muerteSound = preload("res://resources/audio/muerte.mp3")
 
 func _ready() -> void:
 	if GLOBAL.continuar_partida:
-		cambiarSprite(getSpritePorNombre(nombre))
+		nombre = GLOBAL.pers_nombre
 		salud = GLOBAL.pers_salud
 		$HUD.actualizar_salud(salud)
 		paginas = GLOBAL.paginas
 		tieneLampara = GLOBAL.pers_tieneLampara
 	else:
+		GLOBAL.pers_nombre = nombre
 		salud = 100
 		GLOBAL.pers_salud = salud
 		paginas = [false, false, false, false, false, false, false, false]
@@ -43,6 +44,7 @@ func _ready() -> void:
 		tieneLampara = false
 		GLOBAL.pers_tieneLampara = tieneLampara
 		GLOBAL.continuar_partida = true
+	cambiarSprite(getSpritePorNombre(nombre))
 	defaultSpeed = GLOBAL.pers_default_speed
 
 func _physics_process(_delta: float) -> void:
