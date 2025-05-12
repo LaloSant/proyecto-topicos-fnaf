@@ -196,6 +196,8 @@ func _input(event: InputEvent) -> void:
 			golpear()
 
 func golpear() -> void:
+	if muerto:
+		pass
 	$HitBox/HitBoxShape.disabled = false
 	match lastAnimation:
 		"caminar_abj":

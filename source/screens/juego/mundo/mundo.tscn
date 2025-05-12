@@ -377,10 +377,10 @@ shape = SubResource("RectangleShape2D_2g8f8")
 [node name="Items" type="Node" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -5044.0
-offset_top = -5317.0
-offset_right = 2865.0
-offset_bottom = 2606.0
+offset_left = -5074.0
+offset_top = -5349.0
+offset_right = 2835.0
+offset_bottom = 2574.0
 
 [connection signal="body_entered" from="Transiciones/TCEdifT" to="." method="_on_tc_edif_t_body_entered"]
 [connection signal="body_entered" from="Transiciones/TCEdifAmb" to="." method="_on_tc_edif_amb_body_entered"]
