@@ -17,7 +17,6 @@ func _ready() -> void:
 	$Personaje.defaultSpeed = $Personaje.defaultSpeed * 0.65
 	$Personaje/Linterna.visible = $Personaje.tieneLampara
 	match GLOBAL.marker_actual:
-		
 		GLOBAL.MarkerPosicion.mk_EdificioAmbEntrada:
 			$Personaje.position = $TpNuevo/Entrada.position
 	$Items/item_lampara.visible = !GLOBAL.pers_tieneLampara

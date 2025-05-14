@@ -1,0 +1,18 @@
+{
+	"contadorDia": 1.0,
+	"escenaActual": "",
+	"markerActual": 3.0,
+	"nombre": "Lalo",
+	"paginas": [
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false,
+		false
+	],
+	"pers_tieneLampara": false,
+	"salud": 100.0
+}

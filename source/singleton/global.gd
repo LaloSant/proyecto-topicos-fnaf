@@ -30,6 +30,7 @@ var pers_salud:int
 var pers_tieneLampara:bool
 var contador_dia:int
 var marker_actual = MarkerPosicion.mk_EdificioTSalon
+var escena_actual = ""
 var paginas:Array[bool] = [false, false, false, false, false, false, false, false]
 
 #Seccion audio
@@ -50,11 +51,6 @@ func _ready() -> void:
 	pers_nombre = personaje_settings.nombre
 	pers_salud = personaje_settings.currentHealth
 	pers_tieneLampara = personaje_settings.tieneLampara
-	#Carga datos partida
-	var partida_settings = CONFIG_FILE.load_partida_setting()
-	contador_dia = partida_settings.dia
-	marker_actual = partida_settings.marcador
-	paginas = partida_settings.paginas
 	#Carga de datos audio
 	var audio_settings = CONFIG_FILE.load_audio_setting()
 	nivelAudioMaster = audio_settings.master
@@ -63,17 +59,18 @@ func _ready() -> void:
 	nivelAudioVoz = audio_settings.voz
 
 ## Guarda datos importantes de la partida
-func guardarPartida(personaje:Personaje) -> void:
-	CONFIG_FILE.save_partida_setting("dia", contador_dia)
-	CONFIG_FILE.save_partida_setting("marcador", marker_actual)
-	CONFIG_FILE.save_partida_setting("paginas", personaje.paginas)
-	
-	CONFIG_FILE.save_personaje_setting("tieneLampara", personaje.has_lamp())
-	CONFIG_FILE.save_personaje_setting("currentHealth", personaje.salud)
+func guardarPartida() -> void:
+	SAVEFILE.salva_partida()
+	#CONFIG_FILE.save_partida_setting("dia", contador_dia)
+	#CONFIG_FILE.save_partida_setting("marcador", marker_actual)
+	#CONFIG_FILE.save_partida_setting("paginas", personaje.paginas)
+	#CONFIG_FILE.save_personaje_setting("tieneLampara", personaje.has_lamp())
+	#CONFIG_FILE.save_personaje_setting("currentHealth", personaje.salud)
 
 ##Evalua posicion y que escena cargar
 func continuarPartida() -> void:
 	continuar_partida = true
+	SAVEFILE.carga_partida()
 	if GLOBAL.marker_actual == GLOBAL.MarkerPosicion.mk_EdificioTSalon:
 		SCN_FADE_IN.cambia_escena("res://source/screens/juego/edifT/edificio_t.tscn")
 	else:

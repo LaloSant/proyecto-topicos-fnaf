@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3e7cljx2pkqk"]
+
+[ext_resource type="Script" uid="uid://6fyr23ywsolu" path="res://source/screens/juego/HUD/pant_pausa.gd" id="1_okash"]
+[ext_resource type="Theme" uid="uid://tanh1kklj0vh" path="res://source/screens/menus/pant_principal_tema.tres" id="2_k7li3"]
+[ext_resource type="AudioStream" uid="uid://c11xdhsjd2n08" path="res://resources/audio/pausa.mp3" id="3_cpyyw"]
+
+[node name="pantPausa" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_okash")
+
+[node name="fondo" type="ColorRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.537255)
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.317647, 0.690196, 1, 1)
+
+[node name="Label" type="Label" parent="fondo"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 64.0
+offset_right = 150.0
+offset_bottom = 124.0
+grow_horizontal = 2
+theme = ExtResource("2_k7li3")
+theme_override_font_sizes/font_size = 60
+text = "lblPausa"
+
+[node name="hbox" type="HBoxContainer" parent="fondo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -475.5
+offset_top = -20.0
+offset_right = 475.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 60
+
+[node name="btnContinuar" type="Button" parent="fondo/hbox"]
+layout_mode = 2
+theme = ExtResource("2_k7li3")
+theme_override_font_sizes/font_size = 30
+text = "btn_continuar"
+
+[node name="btnMenuPrin" type="Button" parent="fondo/hbox"]
+layout_mode = 2
+theme = ExtResource("2_k7li3")
+theme_override_font_sizes/font_size = 30
+text = "btn_pant_principal"
+
+[node name="btnGuardar" type="Button" parent="fondo/hbox"]
+layout_mode = 2
+theme = ExtResource("2_k7li3")
+theme_override_font_sizes/font_size = 30
+text = "btn_guardar"
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_cpyyw")
+autoplay = true
+bus = &"SFX"
+
+[connection signal="pressed" from="fondo/hbox/btnContinuar" to="." method="_on_btn_continuar_pressed"]
+[connection signal="pressed" from="fondo/hbox/btnMenuPrin" to="." method="_on_btn_menu_prin_pressed"]
+[connection signal="pressed" from="fondo/hbox/btnGuardar" to="." method="_on_btn_guardar_pressed"]

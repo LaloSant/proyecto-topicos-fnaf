@@ -40,7 +40,7 @@ func _ready() -> void:
 		salud = 100
 		GLOBAL.pers_salud = salud
 		paginas = [false, false, false, false, false, false, false, false]
-		GLOBAL.paginas
+		GLOBAL.paginas = paginas
 		tieneLampara = false
 		GLOBAL.pers_tieneLampara = tieneLampara
 		GLOBAL.continuar_partida = true
@@ -182,12 +182,9 @@ func toggle_lamp() -> void:
 		$Linterna.visible = false
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("TECLA_1"):
-		cambiarSprite(getSpritePorNombre("Yael"))
-	if event.is_action_pressed("TECLA_2"):
-		cambiarSprite(getSpritePorNombre("Lalo"))
-	if event.is_action_pressed("TECLA_3"):
-		cambiarSprite(getSpritePorNombre("Alan"))
+	if event.is_action_pressed("TECLA_P") or event.is_action_pressed("Control_Start"):
+		if !get_tree().paused and !$HUD/pantPausa.on_pause:
+			$HUD/pantPausa.procesar()
 	if event.is_action_pressed("TECLA_Q") or event.is_action_pressed("Control_X_cuad"):
 		toggle_lamp()
 	if event.is_action_pressed("TECLA_E") or event.is_action_pressed("Control_RT_R2"):

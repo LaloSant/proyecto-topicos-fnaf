@@ -10,6 +10,8 @@ extends Node2D
 
 func _ready() -> void:
 	$Panel/VBoxContainer/btn_iniciar.grab_focus()
+	$Panel/VBoxContainer/btn_continuar.disabled = !FileAccess.file_exists("res://gamesave.json")
+	
 
 func _on_btn_iniciar_pressed() -> void:
 	GLOBAL.contador_dia = 1

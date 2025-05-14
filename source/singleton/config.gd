@@ -27,12 +27,7 @@ func _ready() -> void:
 		config.set_value("Personaje", "factorRun", 1.5)
 		config.set_value("Personaje", "nombre", "Alan")
 		config.set_value("Personaje", "tieneLampara", false)
- 
-		#Seccion partida
-		config.set_value("Partida", "dia", 1)
-		config.set_value("Partida", "marcador", GLOBAL.MarkerPosicion.mk_EdificioTSalon)
-		config.set_value("Partida", "paginas", GLOBAL.paginas)
-		
+
 		#Seccion audio
 		config.set_value("Audio", "master", 1)
 		config.set_value("Audio", "musica", 1)
@@ -71,20 +66,6 @@ func load_personaje_setting():
 	var personaje_settings = {}
 	for key in config.get_section_keys("Personaje"):
 		personaje_settings[key]=config.get_value("Personaje", key)
-	return personaje_settings
-	
-#Seccion partida
-func save_partida_setting(key:String, value):
-	config.set_value("Partida", key, value)
-	config.save(file_path)
-
-func update_partida_setting(key:String, value):
-	config.set_value("Partida", key, value)
-	
-func load_partida_setting():
-	var personaje_settings = {}
-	for key in config.get_section_keys("Partida"):
-		personaje_settings[key]=config.get_value("Partida", key)
 	return personaje_settings
 
 #Seccion audio
