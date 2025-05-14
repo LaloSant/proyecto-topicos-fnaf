@@ -9,7 +9,7 @@
 extends Node
 enum MarkerPosicion{mk_EdificioAmbSalon,mk_EdificioAmbEntrada,mk_EdificioAmbFuera,
 		mk_EdificioTSalon,mk_EdificioTEntrada ,mk_EdificioTFuera, 
-		mk_EPrinFuera}
+		mk_EPrinFuera,mk_EnsambleEntrada,mk_EnsambleFuera}
 
 #Declaraciones de variables globales
 @onready var audioMaster = AudioServer.get_bus_index("Master")

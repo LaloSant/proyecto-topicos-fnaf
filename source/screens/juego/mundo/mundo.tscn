@@ -302,6 +302,9 @@ position = Vector2(430, 553)
 position = Vector2(459, -3375)
 scale = Vector2(1.5, 1.5)
 
+[node name="EnsambleFuera" type="Marker2D" parent="Marcadores"]
+position = Vector2(-1634, -2024)
+
 [node name="Transiciones" type="Node" parent="."]
 
 [node name="TCEdifT" parent="Transiciones" instance=ExtResource("6_r8mfa")]
@@ -315,6 +318,11 @@ puntoSalida = "mk_EdificioTEntrada"
 position = Vector2(460, -3401)
 escena = "res://source/screens/juego/edifAmb/edificio_amb.tscn"
 puntoSalida = "mk_EdificioAmbEntrada"
+
+[node name="TCEnsamble" parent="Transiciones" instance=ExtResource("6_r8mfa")]
+position = Vector2(-1644, -2049)
+escena = "res://source/screens/juego/ensamble/ensamble.tscn"
+puntoSalida = "mk_EnsambleEntrada"
 
 [node name="Transparentar" type="Node2D" parent="."]
 
@@ -377,12 +385,13 @@ shape = SubResource("RectangleShape2D_2g8f8")
 [node name="Items" type="Node" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -5074.0
-offset_top = -5349.0
-offset_right = 2835.0
-offset_bottom = 2574.0
+offset_left = -5055.0
+offset_top = -5365.0
+offset_right = 2854.0
+offset_bottom = 2558.0
 
 [connection signal="body_entered" from="Transiciones/TCEdifT" to="." method="_on_tc_edif_t_body_entered"]
 [connection signal="body_entered" from="Transiciones/TCEdifAmb" to="." method="_on_tc_edif_amb_body_entered"]
+[connection signal="body_entered" from="Transiciones/TCEnsamble" to="." method="_on_tc_ensamble_body_entered"]
 [connection signal="body_entered" from="Transparentar/Edificios" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Transparentar/Edificios" to="." method="_on_area_2d_body_exited"]

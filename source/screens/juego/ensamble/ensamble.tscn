@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://yxp4as0p4056"]
+[gd_scene load_steps=7 format=4 uid="uid://yxp4as0p4056"]
 
 [ext_resource type="Script" uid="uid://dqnerykki1msb" path="res://source/screens/juego/ensamble/ensamble.gd" id="1_5q1jj"]
 [ext_resource type="TileSet" uid="uid://diumo1fqsdv2j" path="res://source/screens/juego/edifAmb/edificio_ambTileSet.tres" id="1_6omo8"]
 [ext_resource type="PackedScene" uid="uid://ciyad5p3oge3u" path="res://source/componentes/personajes/base/personaje.tscn" id="3_gh3gk"]
 [ext_resource type="PackedScene" uid="uid://dfphplmv1hblj" path="res://source/singleton/transiciones/transicion.tscn" id="3_ui7o3"]
-[ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/tps/transportador.tscn" id="4_gh3gk"]
+[ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/Tps/transportador.tscn" id="4_gh3gk"]
+[ext_resource type="AudioStream" uid="uid://diqtm5bnb3xrg" path="res://resources/audio/musica/SpongeBob Production Music Hello Blues.mp3" id="6_4yhqt"]
 
 [node name="Ensamble" type="Node2D"]
 script = ExtResource("1_5q1jj")
@@ -46,14 +47,22 @@ polygon = PackedVector2Array(992, 64, 994.354, -115.086, 972.263, -142.216, 935.
 [node name="Ensamble_Cambiador" type="Marker2D" parent="."]
 position = Vector2(894.881, 315.567)
 
+[node name="Salida" parent="." instance=ExtResource("3_ui7o3")]
+position = Vector2(881, 458)
+escena = "res://source/screens/juego/mundo/mundo.tscn"
+puntoSalida = "mk_EnsambleFuera"
+
 [node name="Ensamble" type="Marker2D" parent="."]
 position = Vector2(879.076, 432.282)
-
-[node name="Transicion" parent="Ensamble" instance=ExtResource("3_ui7o3")]
-position = Vector2(1.92401, 25.7183)
 
 [node name="Tp" parent="." node_paths=PackedStringArray("destino") instance=ExtResource("4_gh3gk")]
 position = Vector2(895, 281)
 destino = NodePath("../Ensamble_Cambiador")
+
+[node name="Musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_4yhqt")
+autoplay = true
+bus = &"Musica"
+parameters/looping = true
 
 [connection signal="body_entered" from="Tp" to="." method="_on_tp_body_entered"]
