@@ -71,10 +71,13 @@ func guardarPartida() -> void:
 func continuarPartida() -> void:
 	continuar_partida = true
 	SAVEFILE.carga_partida()
-	if GLOBAL.marker_actual == GLOBAL.MarkerPosicion.mk_EdificioTSalon:
-		SCN_FADE_IN.cambia_escena("res://source/screens/juego/edifT/edificio_t.tscn")
-	else:
-		SCN_FADE_IN.cambia_escena("res://source/screens/juego/mundo/mundo.tscn")
+	match GLOBAL.marker_actual:
+		GLOBAL.MarkerPosicion.mk_EdificioTSalon:
+			SCN_FADE_IN.cambia_escena("res://source/screens/juego/edifT/edificio_t.tscn")
+		GLOBAL.MarkerPosicion.mk_EdificioAmbEntrada:
+			SCN_FADE_IN.cambia_escena("res://source/screens/juego/edifT/edificio_t.tscn")
+		GLOBAL.MarkerPosicion.mk_EPrinFuera:
+			SCN_FADE_IN.cambia_escena("res://source/screens/juego/mundo/mundo.tscn")
 
 func cambiar_bus_audio(bus, valor) -> void:
 	AudioServer.set_bus_volume_db(bus, linear_to_db(valor))
