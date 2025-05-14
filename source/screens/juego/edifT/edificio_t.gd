@@ -17,13 +17,14 @@ func _ready() -> void:
 	$Personaje/Linterna.visible = $Personaje.tieneLampara
 	$Items/item_lampara.visible = !$Personaje.has_lamp()
 	$Personaje.defaultSpeed = $Personaje.defaultSpeed * 0.65
-	match GLOBAL.marker_actual:
-		GLOBAL.MarkerPosicion.mk_EdificioTSalon:
-			$Personaje.position = $TpNuevo/Salon.position
-			$Personaje/HUD/lblInfo.text = "lbl_Salon"
-		GLOBAL.MarkerPosicion.mk_EdificioTEntrada:
-			$Personaje.position = $TpNuevo/Entrada.position
-			$Personaje/HUD/lblInfo.text = "lbl_Pb"
+	
+	if GLOBAL.marker_actual == GLOBAL.MarkerPosicion.mk_EdificioTSalon:
+		$Personaje.position = $TpNuevo/Salon.position
+		$Personaje/HUD/lblInfo.text = "lbl_Salon"
+	elif GLOBAL.marker_actual == GLOBAL.MarkerPosicion.mk_EdificioTEntrada:
+		$Personaje.position = $TpNuevo/Entrada.position
+		$Personaje/HUD/lblInfo.text = "lbl_Pb"
+
 	
 func _process(delta: float) -> void:
 	$Enemigos/GuardianP.actualizarPos($Rutas/RtaPasillo/RtaFPasillo, delta)

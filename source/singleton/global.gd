@@ -7,9 +7,9 @@
 '''
 
 extends Node
-enum MarkerPosicion{mk_EdificioAmbSalon,mk_EdificioAmbEntrada,mk_EdificioAmbFuera,
-		mk_EdificioTSalon,mk_EdificioTEntrada ,mk_EdificioTFuera, 
-		mk_EPrinFuera,mk_EnsambleEntrada,mk_EnsambleFuera}
+enum MarkerPosicion{mk_EdificioAmbSalon, mk_EdificioAmbEntrada, mk_EdificioAmbFuera,
+		mk_EdificioTSalon, mk_EdificioTEntrada, mk_EdificioTFuera, 
+		mk_EPrinFuera, mk_EnsambleEntrada, mk_EnsambleFuera}
 
 #Declaraciones de variables globales
 @onready var audioMaster = AudioServer.get_bus_index("Master")
@@ -71,13 +71,23 @@ func guardarPartida() -> void:
 func continuarPartida() -> void:
 	continuar_partida = true
 	SAVEFILE.carga_partida()
-	match GLOBAL.marker_actual:
-		GLOBAL.MarkerPosicion.mk_EdificioTSalon:
-			SCN_FADE_IN.cambia_escena("res://source/screens/juego/edifT/edificio_t.tscn")
-		GLOBAL.MarkerPosicion.mk_EdificioAmbEntrada:
-			SCN_FADE_IN.cambia_escena("res://source/screens/juego/edifT/edificio_t.tscn")
-		GLOBAL.MarkerPosicion.mk_EPrinFuera:
-			SCN_FADE_IN.cambia_escena("res://source/screens/juego/mundo/mundo.tscn")
+	print(GLOBAL.marker_actual)
+	if GLOBAL.marker_actual == GLOBAL.MarkerPosicion.mk_EdificioTSalon:
+		SCN_FADE_IN.cambia_escena("res://source/screens/juego/edifT/edificio_t.tscn")
+	elif GLOBAL.marker_actual == GLOBAL.MarkerPosicion.mk_EdificioTEntrada:
+		SCN_FADE_IN.cambia_escena("res://source/screens/juego/edifT/edificio_t.tscn")
+	elif GLOBAL.marker_actual == GLOBAL.MarkerPosicion.mk_EdificioAmbEntrada:
+		SCN_FADE_IN.cambia_escena("res://source/screens/juego/edifAmb/edificio_amb.tscn")
+	elif GLOBAL.marker_actual == GLOBAL.MarkerPosicion.mk_EdificioTFuera:
+		SCN_FADE_IN.cambia_escena("res://source/screens/juego/mundo/mundo.tscn")
+	elif GLOBAL.marker_actual == GLOBAL.MarkerPosicion.mk_EdificioAmbFuera:
+		SCN_FADE_IN.cambia_escena("res://source/screens/juego/mundo/mundo.tscn")
+	elif GLOBAL.marker_actual == GLOBAL.MarkerPosicion.mk_EnsambleFuera:
+		SCN_FADE_IN.cambia_escena("res://source/screens/juego/mundo/mundo.tscn")
+	elif GLOBAL.marker_actual == GLOBAL.MarkerPosicion.mk_EnsambleEntrada:
+		SCN_FADE_IN.cambia_escena("res://source/screens/juego/ensamble/ensamble.tscn")
+	else: 
+		print("Configura en GLOBAL:gs continuar partida")
 
 func cambiar_bus_audio(bus, valor) -> void:
 	AudioServer.set_bus_volume_db(bus, linear_to_db(valor))

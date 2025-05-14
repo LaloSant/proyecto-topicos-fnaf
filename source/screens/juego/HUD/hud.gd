@@ -9,7 +9,6 @@
 class_name HUD extends CanvasLayer
 
 func actualizar_salud(salud) -> void:
-	print(salud)
 	var stage = (salud / 10) + 1 
 	stage = 10 if stage == 11 else stage
 	$Salud.frame = stage - 1
