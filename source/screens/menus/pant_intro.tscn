@@ -81,7 +81,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_2hftb")
 theme_override_font_sizes/font_size = 80
-text = "lbl_titulo"
+text = "lbl_titulo "
 
 [node name="btn_AMenuPrin" parent="Panel" instance=ExtResource("2_ij8cx")]
 layout_mode = 1
