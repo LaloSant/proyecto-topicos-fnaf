@@ -1,18 +1,1 @@
-{
-	"contadorDia": 1.0,
-	"escenaActual": "",
-	"markerActual": 8.0,
-	"nombre": "Alan",
-	"paginas": [
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false,
-		false
-	],
-	"pers_tieneLampara": true,
-	"salud": 90.0
-}
+{"contadorDia":0,"escenaActual":"","markerActual":8,"nombre":"Yael","paginas":[false,false,false,false,false,false,false,false],"pers_tieneLampara":false,"salud":100}

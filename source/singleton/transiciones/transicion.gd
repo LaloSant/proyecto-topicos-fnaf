@@ -30,3 +30,7 @@ func defPuntoSalida() -> void:
 			GLOBAL.marker_actual = GLOBAL.MarkerPosicion.mk_EnsambleFuera
 		"mk_EdificioAmbEntrada":
 			GLOBAL.marker_actual = GLOBAL.MarkerPosicion.mk_EdificioAmbEntrada
+		"mk_CristalFuera":
+			GLOBAL.marker_actual = GLOBAL.MarkerPosicion.mk_CristalFuera
+		"mk_CristalEntrada":
+			GLOBAL.marker_actual = GLOBAL.MarkerPosicion.mk_CristalEntrada

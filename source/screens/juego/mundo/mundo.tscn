@@ -287,7 +287,15 @@ scale = Vector2(1.5, 1.5)
 [node name="EnsambleFuera" type="Marker2D" parent="Marcadores"]
 position = Vector2(-1634, -2024)
 
+[node name="CristalFuera" type="Marker2D" parent="Marcadores"]
+position = Vector2(-1703.85, -691.822)
+
 [node name="Transiciones" type="Node" parent="."]
+
+[node name="TCCristal" parent="Transiciones" instance=ExtResource("6_r8mfa")]
+position = Vector2(-1704, -718)
+escena = "res://source/screens/juego/cristal/cristal.tscn"
+puntoSalida = "mk_CristalEntrada"
 
 [node name="TCEdifT" parent="Transiciones" instance=ExtResource("6_r8mfa")]
 position = Vector2(-86, -1299)
@@ -376,10 +384,10 @@ shape = SubResource("RectangleShape2D_0qnft")
 [node name="Items" type="Node" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -5055.0
-offset_top = -5365.0
-offset_right = 2854.0
-offset_bottom = 2558.0
+offset_left = -5041.0
+offset_top = -5364.0
+offset_right = 2868.0
+offset_bottom = 2559.0
 
 [connection signal="body_entered" from="Transiciones/TCEdifT" to="." method="_on_tc_edif_t_body_entered"]
 [connection signal="body_entered" from="Transiciones/TCEdifAmb" to="." method="_on_tc_edif_amb_body_entered"]

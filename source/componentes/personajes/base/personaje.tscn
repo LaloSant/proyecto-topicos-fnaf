@@ -42,8 +42,10 @@ bus = &"SFX"
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3, 3)
 sprite_frames = ExtResource("2_i4ev6")
-animation = &"idle_izq"
+animation = &"muerte"
 autoplay = "idle_abj"
+frame = 16
+frame_progress = 1.0
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
 visible = false
