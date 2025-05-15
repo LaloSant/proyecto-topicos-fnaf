@@ -128,7 +128,6 @@ autoplay = "Ciclo_DN"
 
 [node name="MusicaAmbiente" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_r2syo")
-volume_db = -20.0
 autoplay = true
 bus = &"Musica"
 parameters/looping = true

@@ -11,10 +11,10 @@ extends Node2D
 
 
 func _ready() -> void:
-		match GLOBAL.marker_actual:
-		
-			GLOBAL.MarkerPosicion.mk_EnsambleEntrada:
-				$Personaje.position = $Ensamble.position
+	$Personaje/Linterna.visible = false
+	match GLOBAL.marker_actual:
+		GLOBAL.MarkerPosicion.mk_EnsambleEntrada:
+			$Personaje.position = $Ensamble.position
 
 func _on_tp_body_entered(body: Node2D) -> void:
 	if GLOBAL.pers_nombre == "Yael":
