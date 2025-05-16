@@ -173,7 +173,12 @@ Control_Start={
 
 [internationalization]
 
+locale/translation_remaps={
+"res://resources/images/wiiButtonContinuar_es.png": PackedStringArray("res://resources/images/wiiButtonContinuar_en.png:en", "res://resources/images/wiiButtonContinuar_es.png:es", "res://resources/images/wiiButtonContinuar_fr.png:fr"),
+"res://resources/images/wiiButtonGuardar_es.png": PackedStringArray("res://resources/images/wiiButtonGuardar_eN.png:en", "res://resources/images/wiiButtonGuardar_es.png:es", "res://resources/images/wiiButtonGuardar_fr.png:fr")
+}
 locale/translations=PackedStringArray("res://resources/traduccion/lenguajes.en.translation", "res://resources/traduccion/lenguajes.es.translation", "res://resources/traduccion/lenguajes.fr.translation", "res://resources/traduccion/lenguajes.id.translation")
+locale/locale_filter_mode=0
 
 [layer_names]
 
