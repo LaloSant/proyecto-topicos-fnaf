@@ -107,7 +107,7 @@ scale = Vector2(3, 3)
 sprite_frames = ExtResource("2_i4ev6")
 animation = &"muerte"
 autoplay = "idle_abj"
-frame = 16
+frame = 25
 frame_progress = 1.0
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
