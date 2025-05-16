@@ -27,6 +27,7 @@ var muerto:bool = false
 var flashlightSound = preload("res://resources/audio/Flashlight.ogg")
 var bonkSound = preload("res://resources/audio/Bonk.mp3")
 var muerteSound = preload("res://resources/audio/muerte.mp3")
+var pagSound= preload("res://resources/audio/tururu.mp3")
 
 func _ready() -> void:
 	if GLOBAL.continuar_partida:
@@ -173,6 +174,7 @@ func has_pagina_x(num_pagina:int) -> bool:
 
 func set_pagina_x(num_pagina:int) -> void:
 	paginas.set(num_pagina, true)
+	
 
 func toggle_lamp() -> void:
 	if has_lamp():
@@ -180,6 +182,10 @@ func toggle_lamp() -> void:
 		$Linterna.visible = !$Linterna.visible
 	else:
 		$Linterna.visible = false
+
+func pick_pag(indice: int) -> void:
+	reproduceSonido("Pagina")
+	paginas.set(indice,true) 
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("TECLA_P") or event.is_action_pressed("Control_Start"):
@@ -220,7 +226,7 @@ func _on_sprite_animation_finished() -> void:
 		golpeando = false
 		cambiar_animacion(lastAnimation)
 
-##Linterna, Bonk, Muerte
+##Linterna, Bonk, Muerte, Pag
 func reproduceSonido(nombreAud:String) -> void:
 	match nombreAud:
 		"Linterna":
@@ -230,4 +236,6 @@ func reproduceSonido(nombreAud:String) -> void:
 		"Muerte":
 			$SFX.stream = muerteSound
 			$SFX.volume_db = 0
+		"Pagina":
+			$SFX.stream= pagSound
 	$SFX.play()

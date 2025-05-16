@@ -1,15 +1,16 @@
-[gd_scene load_steps=15 format=4 uid="uid://ckp8mg1snkfpe"]
+[gd_scene load_steps=16 format=4 uid="uid://ckp8mg1snkfpe"]
 
 [ext_resource type="Script" uid="uid://bpebvnns0ych4" path="res://source/screens/juego/edifAmb/edificio_amb.gd" id="1_ylvr1"]
 [ext_resource type="AudioStream" uid="uid://c6d2d6wt32dnk" path="res://resources/audio/musica/solin.mp3" id="2_ylvr1"]
 [ext_resource type="TileSet" uid="uid://diumo1fqsdv2j" path="res://source/screens/juego/edifAmb/edificio_ambTileSet.tres" id="3_ylvr1"]
 [ext_resource type="PackedScene" uid="uid://ciyad5p3oge3u" path="res://source/componentes/personajes/base/personaje.tscn" id="4_h1tbr"]
 [ext_resource type="PackedScene" uid="uid://bddno62kg4il7" path="res://source/componentes/personajes/enemigos/enemigo_base.tscn" id="5_ueu2e"]
-[ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/tps/transportador.tscn" id="6_5h5ae"]
+[ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/Tps/transportador.tscn" id="6_5h5ae"]
 [ext_resource type="PackedScene" uid="uid://lmhgy8eugrgv" path="res://source/componentes/items/item_lampara.tscn" id="7_ngs8f"]
 [ext_resource type="PackedScene" uid="uid://c8hbcu3tjoig" path="res://source/screens/juego/HUD/dialog_window.tscn" id="8_shijo"]
 [ext_resource type="AudioStream" uid="uid://cyox8ywkadgcp" path="res://resources/audio/gowMisterio.mp3" id="9_at3cn"]
 [ext_resource type="PackedScene" uid="uid://dfphplmv1hblj" path="res://source/singleton/transiciones/transicion.tscn" id="10_86rvo"]
+[ext_resource type="PackedScene" uid="uid://bblj0ey40hflo" path="res://source/componentes/items/item_pagina.tscn" id="10_ylvr1"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tjhh6"]
 cull_mode = 2
@@ -32,6 +33,7 @@ y_sort_enabled = true
 script = ExtResource("1_ylvr1")
 
 [node name="Luz" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0.0605303, 0.0605303, 0.0605303, 1)
 
 [node name="Musica" type="AudioStreamPlayer" parent="."]
@@ -352,6 +354,47 @@ texto = "Obtuviste lampara. Presiona \"q\" o boton \"X\"."
 [node name="DWNeedLampara" parent="Items" instance=ExtResource("8_shijo")]
 texto = "Deberia buscar una lampara."
 sound = ExtResource("9_at3cn")
+
+[node name="Paginas" type="Node" parent="Items"]
+
+[node name="Pag0" parent="Items/Paginas" instance=ExtResource("10_ylvr1")]
+position = Vector2(751, 314)
+scale = Vector2(0.5, 0.5)
+
+[node name="Pag1" parent="Items/Paginas" instance=ExtResource("10_ylvr1")]
+position = Vector2(1325, 316)
+scale = Vector2(0.5, 0.5)
+num_pagina = 1
+
+[node name="Pag2" parent="Items/Paginas" instance=ExtResource("10_ylvr1")]
+position = Vector2(769, -111)
+scale = Vector2(0.5, 0.5)
+num_pagina = 2
+
+[node name="Pag3" parent="Items/Paginas" instance=ExtResource("10_ylvr1")]
+position = Vector2(1376, -111)
+scale = Vector2(0.5, 0.5)
+num_pagina = 3
+
+[node name="Pag4" parent="Items/Paginas" instance=ExtResource("10_ylvr1")]
+position = Vector2(2048.26, -110.531)
+scale = Vector2(0.5, 0.5)
+num_pagina = 4
+
+[node name="Pag5" parent="Items/Paginas" instance=ExtResource("10_ylvr1")]
+position = Vector2(767.889, -654.914)
+scale = Vector2(0.5, 0.5)
+num_pagina = 5
+
+[node name="Pag6" parent="Items/Paginas" instance=ExtResource("10_ylvr1")]
+position = Vector2(1376.44, -656.431)
+scale = Vector2(0.5, 0.5)
+num_pagina = 6
+
+[node name="Pag7" parent="Items/Paginas" instance=ExtResource("10_ylvr1")]
+position = Vector2(2049, -657)
+scale = Vector2(0.5, 0.5)
+num_pagina = 7
 
 [node name="Transicion" parent="." instance=ExtResource("10_86rvo")]
 position = Vector2(314, 451)
