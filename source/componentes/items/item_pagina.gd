@@ -11,7 +11,6 @@ signal item_obtenido
 @export var num_pagina:int
 
 func _ready() -> void:
-	print(GLOBAL.paginas)
 	if GLOBAL.paginas.get(num_pagina):
 		self.visible= false
 		self.monitoring = false

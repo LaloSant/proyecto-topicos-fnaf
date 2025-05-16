@@ -13,7 +13,9 @@ func _ready() -> void:
 	$Panel/HBox/VButtons/slider_musica.set_value_no_signal(GLOBAL.nivelAudioMusica)
 	$Panel/HBox/VButtons/slider_sfx.set_value_no_signal(GLOBAL.nivelAudioSFX)
 	$Panel/HBox/VButtons/slider_voz.set_value_no_signal(GLOBAL.nivelAudioVoz)
-	$Panel/btn_guardar.grab_focus()
+	if !FileAccess.file_exists("res://gamesave.json"):
+		$Panel/HBoxBtn/btn_eliminarPart.disabled = true
+	$Panel/HBoxBtn/btn_guardar.grab_focus()
 
 func _on_btn_pant_principal_pressed() -> void:
 	SCN_FADE_IN.cambia_escena("res://source/screens/menus/pant_principal.tscn")
@@ -52,3 +54,9 @@ func _on_slider_sfx_value_changed(value: float) -> void:
 func _on_slider_voz_value_changed(value: float) -> void:
 	GLOBAL.cambiar_bus_audio(GLOBAL.audioVoz, value)
 	CONFIG_FILE.update_audio_setting("voz", value)
+
+
+func _on_btn_eliminar_part_pressed() -> void:
+	if FileAccess.file_exists("res://gamesave.json"):
+		SAVEFILE.elimina_partida()
+		$Panel/HBoxBtn/btn_eliminarPart.disabled = true

@@ -25,7 +25,6 @@ func salva_partida():
 	var jsonFile = FileAccess.open("res://gamesave.json", FileAccess.WRITE)
 	jsonFile.store_line(jsonString)
 	jsonFile.close()
-	print("Archivo guardado")
 
 func carga_partida():
 	if !FileAccess.file_exists("res://gamesave.json"):
@@ -36,9 +35,16 @@ func carga_partida():
 	var datos=JSON.parse_string(jsonString)
 	GLOBAL.pers_salud = datos.salud
 	GLOBAL.pers_tieneLampara =datos.pers_tieneLampara
+	var contador:int = 0
+	for pag in datos.paginas:
+		GLOBAL.paginas.set(contador, pag)
+		contador += 1
 	GLOBAL.set("paginas", datos.paginas)
 	GLOBAL.contador_dia = datos.contadorDia
 	GLOBAL.marker_actual = datos.markerActual
 	GLOBAL.escena_actual = datos.escenaActual
 	GLOBAL.pers_nombre = datos.nombre
-	print("Archivo Cargado")
+
+func elimina_partida():
+	if FileAccess.file_exists("res://gamesave.json"):
+		DirAccess.remove_absolute("res://gamesave.json")

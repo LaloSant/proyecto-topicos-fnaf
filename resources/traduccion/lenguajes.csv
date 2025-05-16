@@ -5,6 +5,7 @@ btn_salir,Salir del Juego,Exit Game,Jeu de sortie
 btn_config,Configuracion,Settings,Paramètres
 btn_pant_principal,Pantalla principal,Main menu,Menu principal
 btn_idioma,Cambiar Idioma,Change Language,Changer de langue
+btn_eliminar_part,Eliminar guardado,Erase save,Effacer la sauvegarde
 btn_guardar,Guardar,Save,Saveguarder
 btn_AMenuPrin,Ir a menu,Go to menu,Aller au menu
 btn_creditos,Creditos,Credits,Crédits
@@ -23,4 +24,3 @@ lbl_master,Audio: maestro,Audio: Master,Audio: Master
 lbl_musica,Audio: Musica,Audio: Music,Audio: Musique
 lbl_sfx,Audio: SFX,Audio: SFX,Audio: SFX
 lbl_voz,Audio: Voz,Audio: voice,Audio: voix
-,,,

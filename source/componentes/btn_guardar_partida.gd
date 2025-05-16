@@ -13,4 +13,4 @@ func _input(event):
 		_on_pressed()
 
 func _on_pressed() -> void:
-	GLOBAL.guardarPartida(get_parent().get_parent())
+	GLOBAL.guardarPartida()
