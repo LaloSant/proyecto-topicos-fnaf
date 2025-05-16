@@ -57,3 +57,8 @@ func _on_tc_edif_amb_body_entered(body: Node2D) -> void:
 func _on_tc_ensamble_body_entered(body: Node2D) -> void:
 	if body is Personaje:
 		GLOBAL.marker_actual = GLOBAL.MarkerPosicion.mk_EnsambleEntrada
+
+
+func _on_tc_cristal_body_entered(body: Node2D) -> void:
+	if body is Personaje:
+		GLOBAL.marker_actual = GLOBAL.MarkerPosicion.mk_CristalEntrada

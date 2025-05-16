@@ -388,6 +388,7 @@ offset_top = -5364.0
 offset_right = 2868.0
 offset_bottom = 2559.0
 
+[connection signal="body_entered" from="Transiciones/TCCristal" to="." method="_on_tc_cristal_body_entered"]
 [connection signal="body_entered" from="Transiciones/TCEdifT" to="." method="_on_tc_edif_t_body_entered"]
 [connection signal="body_entered" from="Transiciones/TCEdifAmb" to="." method="_on_tc_edif_amb_body_entered"]
 [connection signal="body_entered" from="Transiciones/TCEnsamble" to="." method="_on_tc_ensamble_body_entered"]
