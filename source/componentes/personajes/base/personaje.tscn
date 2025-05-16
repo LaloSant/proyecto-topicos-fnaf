@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ciyad5p3oge3u"]
+[gd_scene load_steps=16 format=3 uid="uid://ciyad5p3oge3u"]
 
 [ext_resource type="Script" uid="uid://cxh0wtsp3wd65" path="res://source/componentes/personajes/base/personaje.gd" id="1_pkvuc"]
 [ext_resource type="SpriteFrames" uid="uid://kag7yirkasv3" path="res://source/componentes/personajes/alan/alanSprites.tres" id="2_i4ev6"]
@@ -31,12 +31,75 @@ size = Vector2(84, 87)
 radius = 15.0
 height = 52.0
 
+[sub_resource type="Animation" id="Animation_xk7y5"]
+resource_name = "Muerte"
+length = 5.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camara:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3.7, 3.7), Vector2(7, 7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("camara:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.39626]
+}
+
+[sub_resource type="Animation" id="Animation_0yiej"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("camara:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3.7, 3.7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("camara:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0yiej"]
+_data = {
+&"Muerte": SubResource("Animation_xk7y5"),
+&"RESET": SubResource("Animation_0yiej")
+}
+
 [node name="Personaje" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_pkvuc")
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="."]
+max_polyphony = 5
 bus = &"SFX"
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
@@ -96,6 +159,11 @@ collision_mask = 64
 
 [node name="HurtBoxShape" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("CapsuleShape2D_o8nm6")
+
+[node name="ANPPers" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_0yiej")
+}
 
 [connection signal="animation_finished" from="sprite" to="." method="_on_sprite_animation_finished"]
 [connection signal="timeout" from="KnockBackTimer" to="." method="_on_knock_back_timer_timeout"]

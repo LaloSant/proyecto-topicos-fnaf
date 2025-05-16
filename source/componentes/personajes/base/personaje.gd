@@ -7,6 +7,7 @@
 '''
 
 class_name Personaje extends CharacterBody2D
+signal finMuerte
 
 ##Nombres: Lalo, Yael, Alan
 @export var nombre:String = "Lalo"
@@ -126,10 +127,10 @@ func cambiar_animacion(animacion:String) -> void:
 
 func cambiarSprite(spriteSetNew:Resource) -> void:
 	$sprite.set_sprite_frames(spriteSetNew)
-	
+
 func setPuedeMoverse(valor:bool) -> void:
 	puedeMoverse = valor
-		
+
 ##DesdeX = 1 si es de la derecha, -1 si es de la izquierda.
 ##DesdeY = 1 si es de abajo, -1 si es de arriba.
 func recibe_danio(danio:int, desdeX:int, desdeY:int) -> void:
@@ -174,7 +175,6 @@ func has_pagina_x(num_pagina:int) -> bool:
 
 func set_pagina_x(num_pagina:int) -> void:
 	paginas.set(num_pagina, true)
-	
 
 func toggle_lamp() -> void:
 	if has_lamp():
@@ -225,6 +225,9 @@ func _on_sprite_animation_finished() -> void:
 		$HitBox/HitBoxShape.disabled = true
 		golpeando = false
 		cambiar_animacion(lastAnimation)
+	elif muerto:
+		emit_signal("finMuerte")
+		muerte()
 
 ##Linterna, Bonk, Muerte, Pag
 func reproduceSonido(nombreAud:String) -> void:
@@ -238,4 +241,11 @@ func reproduceSonido(nombreAud:String) -> void:
 			$SFX.volume_db = 0
 		"Pagina":
 			$SFX.stream= pagSound
+		"MusicaMuerte":
+			$SFX.stream = preload("res://resources/audio/musica/MusicaGameOver.mp3")
 	$SFX.play()
+
+func muerte():
+	reproduceSonido("MusicaMuerte")
+	$ANPPers.play("Muerte")
+	

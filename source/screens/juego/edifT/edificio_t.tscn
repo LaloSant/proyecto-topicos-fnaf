@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bcokrb4kb46j" path="res://source/screens/juego/edifT/edificio_t.gd" id="1_i38r3"]
 [ext_resource type="AudioStream" uid="uid://cblj3wxb5ean2" path="res://resources/audio/musica/LuigiMansion.mp3" id="2_tjhh6"]
 [ext_resource type="TileSet" uid="uid://buyircn635ffw" path="res://source/screens/juego/edifT/edificio_tTileSet.tres" id="3_ytj8a"]
-[ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/Tps/transportador.tscn" id="5_pf4qd"]
+[ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/tps/transportador.tscn" id="5_pf4qd"]
 [ext_resource type="PackedScene" uid="uid://dfphplmv1hblj" path="res://source/singleton/transiciones/transicion.tscn" id="6_sr0qs"]
 [ext_resource type="PackedScene" uid="uid://lmhgy8eugrgv" path="res://source/componentes/items/item_lampara.tscn" id="7_gm1lj"]
 [ext_resource type="PackedScene" uid="uid://c8hbcu3tjoig" path="res://source/screens/juego/HUD/dialog_window.tscn" id="8_63xdy"]
@@ -31,14 +31,15 @@ point_count = 7
 y_sort_enabled = true
 script = ExtResource("1_i38r3")
 
-[node name="Luz" type="CanvasModulate" parent="."]
-color = Color(0.0605303, 0.0605303, 0.0605303, 1)
-
 [node name="Musica" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_tjhh6")
 autoplay = true
 bus = &"Musica"
 parameters/looping = true
+
+[node name="Luz" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0.0605303, 0.0605303, 0.0605303, 1)
 
 [node name="Fondo" type="ColorRect" parent="."]
 offset_left = -1088.0
@@ -229,6 +230,7 @@ position = Vector2(-272, 592)
 escena = "res://source/screens/juego/mundo/mundo.tscn"
 puntoSalida = "mk_EdificioTFuera"
 
+[connection signal="finMuerte" from="Personaje" to="." method="_on_personaje_fin_muerte"]
 [connection signal="cambio_lugar" from="TpNuevo/Salon_P1Tp" to="." method="_on_salon_p_1_tp_cambio_lugar"]
 [connection signal="cambio_lugar" from="TpNuevo/P1_SalonTp" to="." method="_on_p_1_salon_tp_cambio_lugar"]
 [connection signal="cambio_lugar" from="TpNuevo/P1_PbTp" to="." method="_on_p_1_pb_tp_cambio_lugar"]

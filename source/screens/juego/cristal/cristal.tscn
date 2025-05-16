@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://nigs7oc8bv4h" path="res://source/screens/juego/cristal/cristalTileSet.tres" id="2_01jm5"]
 [ext_resource type="AudioStream" uid="uid://dol5dcv8amu2w" path="res://resources/audio/musica/Africa [8 Bit Tribute to Toto] - 8 Bit Universe.mp3" id="2_f0bs0"]
 [ext_resource type="PackedScene" uid="uid://ciyad5p3oge3u" path="res://source/componentes/personajes/base/personaje.tscn" id="3_01jm5"]
-[ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/Tps/transportador.tscn" id="5_838pq"]
+[ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/tps/transportador.tscn" id="5_838pq"]
 [ext_resource type="PackedScene" uid="uid://dfphplmv1hblj" path="res://source/singleton/transiciones/transicion.tscn" id="6_qqxdb"]
 [ext_resource type="PackedScene" uid="uid://lmhgy8eugrgv" path="res://source/componentes/items/item_lampara.tscn" id="7_f0bs0"]
 [ext_resource type="PackedScene" uid="uid://c8hbcu3tjoig" path="res://source/screens/juego/HUD/dialog_window.tscn" id="8_u2qk3"]
@@ -36,6 +36,12 @@ polygon = PackedVector2Array(0.0975342, -0.0819092, 0.0975342, -18.0819, 66.0975
 
 [node name="Cristal" type="Node2D"]
 script = ExtResource("1_b8l5q")
+
+[node name="Musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_f0bs0")
+autoplay = true
+bus = &"Musica"
+parameters/looping = true
 
 [node name="Luz" type="CanvasModulate" parent="."]
 color = Color(0.0605303, 0.0605303, 0.0605303, 1)
@@ -71,12 +77,6 @@ occluder = SubResource("OccluderPolygon2D_f0bs0")
 [node name="LightOccluder2D8" type="LightOccluder2D" parent="Oclusores"]
 position = Vector2(1130.9, 491.082)
 occluder = SubResource("OccluderPolygon2D_u2qk3")
-
-[node name="Musica" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_f0bs0")
-autoplay = true
-bus = &"Musica"
-parameters/looping = true
 
 [node name="Fondo" type="ColorRect" parent="."]
 offset_left = -1042.0

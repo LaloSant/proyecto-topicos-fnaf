@@ -117,6 +117,12 @@ size = Vector2(288, 24)
 y_sort_enabled = true
 script = ExtResource("1_woy8x")
 
+[node name="Musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_r2syo")
+autoplay = true
+bus = &"Musica"
+parameters/looping = true
+
 [node name="CicloDia" type="CanvasModulate" parent="."]
 color = Color(0.729474, 0.710779, 0.672147, 1)
 
@@ -125,12 +131,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_rpmyi")
 }
 autoplay = "Ciclo_DN"
-
-[node name="MusicaAmbiente" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_r2syo")
-autoplay = true
-bus = &"Musica"
-parameters/looping = true
 
 [node name="Mundo" type="Node2D" parent="."]
 y_sort_enabled = true
