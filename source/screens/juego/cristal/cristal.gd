@@ -6,7 +6,6 @@ func _ready() -> void:
 	$Personaje.defaultSpeed = GLOBAL.pers_default_speed * 0.5
 	$Enemigos/Guardia1.speed*=2.5
 	$Enemigos/Guardia2.speed*=3
-
 	match GLOBAL.marker_actual:
 		
 			GLOBAL.MarkerPosicion.mk_CristalEntrada:
@@ -15,6 +14,8 @@ func _ready() -> void:
 		$Items/DWNeedLampara.mostrar_dialogo()
 	$Personaje/Linterna.visible = $Personaje.tieneLampara
 	$Items/item_lampara.visible = !GLOBAL.pers_tieneLampara
+	$Items/ItemPliego.visible = !GLOBAL.pliego
+	$Items/ItemPliego.monitorable =!GLOBAL.pliego
 
 func _process(delta: float) -> void:
 	$Enemigos/Guardia1.actualizarPos(ruta_parte_1F,delta)
