@@ -27,6 +27,7 @@ var enem_tipo:String
 var pers_salud:int
 
 #Seccion partida
+var pliego:bool
 var pers_tieneLampara:bool
 var contador_dia:int
 var marker_actual = MarkerPosicion.mk_EdificioTSalon
@@ -51,6 +52,7 @@ func _ready() -> void:
 	pers_nombre = personaje_settings.nombre
 	pers_salud = personaje_settings.currentHealth
 	pers_tieneLampara = personaje_settings.tieneLampara
+	##pliego = personaje_settings.pliego
 	#Carga de datos audio
 	var audio_settings = CONFIG_FILE.load_audio_setting()
 	nivelAudioMaster = audio_settings.master

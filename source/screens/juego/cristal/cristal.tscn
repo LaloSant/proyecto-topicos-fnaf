@@ -1,14 +1,18 @@
-[gd_scene load_steps=18 format=4 uid="uid://dj28fq6fy51w4"]
+[gd_scene load_steps=26 format=4 uid="uid://dj28fq6fy51w4"]
 
 [ext_resource type="Script" uid="uid://dpcx62mjiyapr" path="res://source/screens/juego/cristal/cristal.gd" id="1_b8l5q"]
 [ext_resource type="TileSet" uid="uid://nigs7oc8bv4h" path="res://source/screens/juego/cristal/cristalTileSet.tres" id="2_01jm5"]
-[ext_resource type="AudioStream" uid="uid://dol5dcv8amu2w" path="res://resources/audio/musica/Africa [8 Bit Tribute to Toto] - 8 Bit Universe.mp3" id="2_f0bs0"]
+[ext_resource type="AudioStream" uid="uid://cgdc5vmar6dcl" path="res://resources/audio/musica/Grupo Soñador en 8-Bit - El paso del gigante - VRC6 Famitracker.mp3" id="2_xf01l"]
 [ext_resource type="PackedScene" uid="uid://ciyad5p3oge3u" path="res://source/componentes/personajes/base/personaje.tscn" id="3_01jm5"]
-[ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/tps/transportador.tscn" id="5_838pq"]
+[ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/Tps/transportador.tscn" id="5_838pq"]
 [ext_resource type="PackedScene" uid="uid://dfphplmv1hblj" path="res://source/singleton/transiciones/transicion.tscn" id="6_qqxdb"]
 [ext_resource type="PackedScene" uid="uid://lmhgy8eugrgv" path="res://source/componentes/items/item_lampara.tscn" id="7_f0bs0"]
 [ext_resource type="PackedScene" uid="uid://c8hbcu3tjoig" path="res://source/screens/juego/HUD/dialog_window.tscn" id="8_u2qk3"]
 [ext_resource type="AudioStream" uid="uid://cyox8ywkadgcp" path="res://resources/audio/gowMisterio.mp3" id="9_dwt70"]
+[ext_resource type="Texture2D" uid="uid://bdoacyyprryt5" path="res://resources/images/sprites/chairo_xd/chairo1.png" id="10_dwt70"]
+[ext_resource type="PackedScene" uid="uid://d3pk4f2vhkgfs" path="res://source/componentes/items/item_pliego.tscn" id="10_xf01l"]
+[ext_resource type="Texture2D" uid="uid://bexslbcjwmp5c" path="res://resources/images/sprites/chairo_xd/chairo2 (1).png" id="11_ac5ol"]
+[ext_resource type="PackedScene" uid="uid://bddno62kg4il7" path="res://source/componentes/personajes/enemigos/enemigo_base.tscn" id="12_ac5ol"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_838pq"]
 polygon = PackedVector2Array(250.766, 211.974, 250.766, 46.9744, 353.766, 46.9744, 353.766, 66.9744, 269.766, 66.9744, 269.766, 221.974, 306.766, 220.974, 307.766, 252.974, 338.766, 252.974, 336.766, 374.974, 329.766, 374.974, 328.766, 306.974, 304.766, 306.974, 304.766, 373.974, 295.766, 373.974, 295.766, 299.974, 331.766, 299.974, 331.766, 260.974, 254.766, 260.974, 254.766, 340.974, 216.766, 340.974, 216.766, 252.974, 226.766, 252.974, 225.766, 334.974, 250.766, 334.974, 249.766, 253.974, 249.766, 228.974, 255.766, 228.974, 260.766, 228.974, 261.766, 53.9744, 255.766, 52.9744, 255.766, 209.974)
@@ -34,11 +38,40 @@ polygon = PackedVector2Array(-0.390503, -0.279602, -0.390503, -258.28, 0.609497,
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u2qk3"]
 polygon = PackedVector2Array(0.0975342, -0.0819092, 0.0975342, -18.0819, 66.0975, -18.0819, 66.0975, -24.0819, -7.90247, -24.0819, -7.90247, 0.918091)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_xf01l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_dwt70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ac5ol")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwt70"]
+
+[sub_resource type="Curve2D" id="Curve2D_ac5ol"]
+_data = {
+"points": PackedVector2Array(-0.138687, 0, 0.138687, 0, -349, 259, 0, 0, 0, 0, -395, 259, 0, 0, 0, 0, -398, 341, 0, 0, 0, 0, -460, 339, 0, 0, 0, 0, -468, 218, 0, 0, 0, 0, -431, 218, 0, 0, 0, 0, -432, 10, 0, 0, 0, 0, -365, 11, 0, 0, 0, 0, -297, 12, 0, 0, 0, 0, -300, 69, 0, 0, 0, 0, -380, 74, 0, 0, 0, 0, -380, 190, 0, 0, 0, 0, -363, 191, 0, 0, 0, 0, -362, 75, 0, 0, 0, 0, -290, 74, 0, 0, 0, 0, -286, 20, 0, 0, 0, 0, -286, 5, 0, 0, 0, 0, -436, 4, 0, 0, 0, 0, -445, 219, 0, 0, 0, 0, -474, 218, 0, 0, 0, 0, -472, 350, 0, 0, 0, 0, -380, 350, 0, 0, 0, 0, -382, 272, 0, 0, 0, 0, -346, 272, 0, 0, 0, 0, -349, 256)
+}
+point_count = 25
+
+[sub_resource type="Curve2D" id="Curve2D_xf01l"]
+_data = {
+"points": PackedVector2Array(-0.138687, 0, 0.138687, 0, -316, -10, 0, 0, 0, 0, -271, -9, 0, 0, 0, 0, -264, 129, 0, 0, 0, 0, -348, 127, 0, 0, 0, 0, -348, 332, 0, 0, 0, 0, -307, 332, 0, 0, 0, 0, -310, 172, 0, 0, 0, 0, -253, 172, 0, 0, 0, 0, -251, 180, 0, 0, 0, 0, -298, 179, 0, 0, 0, 0, -297, 338, 0, 0, 0, 0, -353, 338, 0, 0, 0, 0, -355, 124, 0, 0, 0, 0, -278, 124, 0, 0, 0, 0, -277, 65, 0, 0, 0, 0, -377, 64, 0, 0, 0, 0, -376, 98, 0, 0, 0, 0, -393, 97, 0, 0, 0, 0, -390, 358, 0, 0, 0, 0, -407, 357, 0, 0, 0, 0, -406, 94, 0, 0, 0, 0, -385, 95, 0, 0, 0, 0, -384, 59, 0, 0, 0, 0, -278, 59, 0, 0, 0, 0, -277, 5, 0, 0, 0, 0, -443, 3, 0, 0, 0, 0, -441, 355, 0, 0, 0, 0, -452, 355, 0, 0, 0, 0, -448, -5, 0, 0, 0, 0, -315, -10)
+}
+point_count = 30
+
 [node name="Cristal" type="Node2D"]
 script = ExtResource("1_b8l5q")
 
 [node name="Musica" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_f0bs0")
+stream = ExtResource("2_xf01l")
+volume_db = 6.809
 autoplay = true
 bus = &"Musica"
 parameters/looping = true
@@ -157,3 +190,60 @@ texto = "Obtuviste lampara. Presiona \"q\" o boton \"X\"."
 [node name="DWNeedLampara" parent="Items" instance=ExtResource("8_u2qk3")]
 texto = "Deberia buscar una lampara."
 sound = ExtResource("9_dwt70")
+
+[node name="ItemPliego" parent="Items" instance=ExtResource("10_xf01l")]
+position = Vector2(1729.06, 264.104)
+scale = Vector2(0.5, 0.5)
+
+[node name="Chairo xd" type="AnimatedSprite2D" parent="."]
+position = Vector2(1166.01, 122.96)
+scale = Vector2(1.1, 1.1)
+sprite_frames = SubResource("SpriteFrames_xf01l")
+autoplay = "default"
+frame = 1
+frame_progress = 1.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Chairo xd"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chairo xd/StaticBody2D"]
+position = Vector2(-0.0129395, 0.0400238)
+shape = SubResource("RectangleShape2D_dwt70")
+
+[node name="Enemigos" type="Node" parent="."]
+
+[node name="Guardia1" parent="Enemigos" instance=ExtResource("12_ac5ol")]
+position = Vector2(1064, 398)
+rotation = -0.0102037
+
+[node name="Guardia2" parent="Enemigos" instance=ExtResource("12_ac5ol")]
+position = Vector2(882, 121)
+rotation = -0.0102037
+
+[node name="Rutas" type="Node" parent="."]
+
+[node name="RtaParte1" type="Path2D" parent="Rutas"]
+position = Vector2(1413, 139)
+curve = SubResource("Curve2D_ac5ol")
+
+[node name="RtaFParte1" type="PathFollow2D" parent="Rutas/RtaParte1"]
+position = Vector2(-349, 259)
+rotation = -0.0102037
+rotates = false
+
+[node name="RtfParte1" type="RemoteTransform2D" parent="Rutas/RtaParte1/RtaFParte1"]
+position = Vector2(0, -1.56462e-06)
+remote_path = NodePath("../../../../Enemigos/Guardia1")
+
+[node name="RtaParte2" type="Path2D" parent="Rutas"]
+position = Vector2(1198, 132)
+curve = SubResource("Curve2D_xf01l")
+
+[node name="RtaFParte2" type="PathFollow2D" parent="Rutas/RtaParte2"]
+position = Vector2(-316, -10)
+rotation = -0.0102037
+rotates = false
+
+[node name="RtfParte2" type="RemoteTransform2D" parent="Rutas/RtaParte2/RtaFParte2"]
+position = Vector2(0.0102034, -0.999969)
+remote_path = NodePath("../../../../Enemigos/Guardia2")

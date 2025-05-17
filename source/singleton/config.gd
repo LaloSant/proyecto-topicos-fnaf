@@ -27,6 +27,7 @@ func _ready() -> void:
 		config.set_value("Personaje", "factorRun", 1.5)
 		config.set_value("Personaje", "nombre", "Alan")
 		config.set_value("Personaje", "tieneLampara", false)
+		config.set_value("Personaje","pliego",false)
 
 		#Seccion audio
 		config.set_value("Audio", "master", 1)

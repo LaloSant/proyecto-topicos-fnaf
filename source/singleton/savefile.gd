@@ -17,7 +17,8 @@ func salva_partida():
 		"contadorDia": GLOBAL.contador_dia,
 		"markerActual": GLOBAL.marker_actual,
 		"escenaActual": GLOBAL.escena_actual,
-		"nombre": GLOBAL.pers_nombre
+		"nombre": GLOBAL.pers_nombre,
+		"pliego": GLOBAL.pliego
 	}
 	var jsonString = JSON.stringify(datos)
 	if !FileAccess.file_exists("res://gamesave.json"):
@@ -35,6 +36,7 @@ func carga_partida():
 	var datos=JSON.parse_string(jsonString)
 	GLOBAL.pers_salud = datos.salud
 	GLOBAL.pers_tieneLampara =datos.pers_tieneLampara
+	GLOBAL.pliego = datos.pliego
 	var contador:int = 0
 	for pag in datos.paginas:
 		GLOBAL.paginas.set(contador, pag)

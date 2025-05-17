@@ -12,6 +12,7 @@ signal finMuerte
 ##Nombres: Lalo, Yael, Alan
 @export var nombre:String = "Lalo"
 #Items
+@export var pliego: bool = GLOBAL.pliego
 @export var tieneLampara:bool = GLOBAL.pers_tieneLampara
 @export var paginas:Array[bool] = GLOBAL.paginas
 #Propiedades
@@ -29,6 +30,7 @@ var flashlightSound = preload("res://resources/audio/Flashlight.ogg")
 var bonkSound = preload("res://resources/audio/Bonk.mp3")
 var muerteSound = preload("res://resources/audio/muerte.mp3")
 var pagSound= preload("res://resources/audio/tururu.mp3")
+var pliegoSound = preload("res://resources/audio/course-clear-super-mario-64_L2VXxAm.mp3")
 
 func _ready() -> void:
 	if GLOBAL.continuar_partida:
@@ -37,6 +39,7 @@ func _ready() -> void:
 		$HUD.actualizar_salud(salud)
 		paginas = GLOBAL.paginas
 		tieneLampara = GLOBAL.pers_tieneLampara
+		pliego = GLOBAL.pliego
 	else:
 		GLOBAL.pers_nombre = nombre
 		salud = 100
@@ -44,6 +47,7 @@ func _ready() -> void:
 		paginas = [false, false, false, false, false, false, false, false]
 		GLOBAL.paginas = paginas
 		tieneLampara = false
+		pliego= false
 		GLOBAL.pers_tieneLampara = tieneLampara
 		GLOBAL.continuar_partida = true
 	cambiarSprite(getSpritePorNombre(nombre))
@@ -167,6 +171,9 @@ func getSpritePorNombre(nom:String) -> Resource:
 			return preload("res://source/componentes/personajes/alan/alanSprites.tres")
 	return preload("res://source/componentes/personajes/yael/yaelSprites.tres")
 
+func has_pliego() -> bool:
+	return pliego
+
 func has_lamp() -> bool:
 	return tieneLampara
 
@@ -182,6 +189,9 @@ func toggle_lamp() -> void:
 		$Linterna.visible = !$Linterna.visible
 	else:
 		$Linterna.visible = false
+
+func pick_pliego()-> void:
+	reproduceSonido("Pliego")
 
 func pick_pag(indice: int) -> void:
 	reproduceSonido("Pagina")
@@ -241,6 +251,8 @@ func reproduceSonido(nombreAud:String) -> void:
 			$SFX.volume_db = 0
 		"Pagina":
 			$SFX.stream= pagSound
+		"Pliego":
+			$SFX.stream=pliegoSound
 		"MusicaMuerte":
 			$SFX.stream = preload("res://resources/audio/musica/MusicaGameOver.mp3")
 	$SFX.play()
