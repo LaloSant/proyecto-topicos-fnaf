@@ -115,6 +115,9 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 	
 func _process(_delta: float) -> void:
+	if muerto:
+		speed = defaultSpeed
+		return
 	if Input.is_action_pressed("CntlKey") or Input.is_action_pressed("Control_B_Circ"):
 		speed = defaultSpeed * GLOBAL.pers_factorSneak
 		$sprite.speed_scale = GLOBAL.pers_factorSneak
@@ -198,6 +201,8 @@ func pick_pag(indice: int) -> void:
 	paginas.set(indice,true) 
 
 func _input(event: InputEvent) -> void:
+	if muerto:
+		return
 	if event.is_action_pressed("TECLA_P") or event.is_action_pressed("Control_Start"):
 		if !get_tree().paused and !$HUD/pantPausa.on_pause:
 			$HUD/pantPausa.procesar()
@@ -258,6 +263,9 @@ func reproduceSonido(nombreAud:String) -> void:
 	$SFX.play()
 
 func muerte():
+	await get_tree().create_timer(3).timeout
 	reproduceSonido("MusicaMuerte")
 	$ANPPers.play("Muerte")
-	
+	$HUD/CapaTactil.visible = false
+	$HUD/CapaTactil.layer = -10
+	$HUD/GameOver.visible = true

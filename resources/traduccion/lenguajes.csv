@@ -24,3 +24,4 @@ lbl_master,Audio: maestro,Audio: Master,Audio: Master
 lbl_musica,Audio: Musica,Audio: Music,Audio: Musique
 lbl_sfx,Audio: SFX,Audio: SFX,Audio: SFX
 lbl_voz,Audio: Voz,Audio: voice,Audio: voix
+lbl_gameover,Fin de la partida,Game Over,Jeu Terminé
