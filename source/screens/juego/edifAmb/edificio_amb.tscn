@@ -47,6 +47,7 @@ offset_top = -744.0
 offset_right = 2664.0
 offset_bottom = 1063.0
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Mundo" type="Node2D" parent="."]
 y_sort_enabled = true
