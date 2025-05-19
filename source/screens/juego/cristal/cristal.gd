@@ -1,3 +1,12 @@
+'''
+	Modulo Edificio Ambiental
+	Creado por: Eduardo Jair Bautista Santiesteban
+	Modificado por:
+	Fecha de creacion: 19 / 05 / 2025
+	Fecha de ultima modificacion: 19 / 05 / 2025
+	Descripcion: Se implementa el nivel del edificio Cristal
+'''
+
 extends Node2D
 @onready var ruta_parte_1F= $Rutas/RtaParte1/RtaFParte1
 @onready var ruta_parte_2F = $Rutas/RtaParte2/RtaFParte2

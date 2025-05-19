@@ -18,7 +18,7 @@ config/icon="res://resources/images/FNAH.png"
 
 [autoload]
 
-CONFIG_FILE="*res://source/singleton/config.gd"
+CONFIG_FILE="*res://source/singleton/CapaTactil/config.gd"
 GLOBAL="*res://source/singleton/global.gd"
 SCN_FADE_IN="*res://source/singleton/transiciones/scn_fade_in.tscn"
 SCN_CIRCULAR_FADE="*res://source/singleton/transiciones/scn_circular_fade.tscn"
@@ -170,6 +170,10 @@ Control_Start={
 "events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":6,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [internationalization]
 

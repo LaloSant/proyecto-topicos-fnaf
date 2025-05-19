@@ -2,7 +2,7 @@
 	Modulo global
 	Creado por: Eduardo Jair Bautista Santiesteban
 	Fecha de creacion: 21 / 02 / 2025
-	Fecha de ultima modificacion: 11 / 03 / 2025
+	Fecha de ultima modificacion: 19 / 05 / 2025
 	Descripcion: Se implementa el singleton global
 '''
 
