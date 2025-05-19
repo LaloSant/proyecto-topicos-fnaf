@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://nigs7oc8bv4h" path="res://source/screens/juego/cristal/cristalTileSet.tres" id="2_01jm5"]
 [ext_resource type="AudioStream" uid="uid://cgdc5vmar6dcl" path="res://resources/audio/musica/Grupo Soñador en 8-Bit - El paso del gigante - VRC6 Famitracker.mp3" id="2_xf01l"]
 [ext_resource type="PackedScene" uid="uid://ciyad5p3oge3u" path="res://source/componentes/personajes/base/personaje.tscn" id="3_01jm5"]
-[ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/tps/transportador.tscn" id="5_838pq"]
+[ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/Tps/transportador.tscn" id="5_838pq"]
 [ext_resource type="PackedScene" uid="uid://dfphplmv1hblj" path="res://source/singleton/transiciones/transicion.tscn" id="6_qqxdb"]
 [ext_resource type="PackedScene" uid="uid://lmhgy8eugrgv" path="res://source/componentes/items/item_lampara.tscn" id="7_f0bs0"]
 [ext_resource type="PackedScene" uid="uid://c8hbcu3tjoig" path="res://source/screens/juego/HUD/dialog_window.tscn" id="8_u2qk3"]
@@ -56,37 +56,37 @@ animations = [{
 
 [sub_resource type="Curve2D" id="Curve2D_ac5ol"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -431, 218, 0, 0, 0, 0, -432, 10, 0, 0, 0, 0, -365, 11, 0, 0, 0, 0, -297, 12, 0, 0, 0, 0, -298, 29, 0, 0, 0, 0, -285, 28, 0, 0, 0, 0, -286, 20, 0, 0, 0, 0, -286, 5, 0, 0, 0, 0, -436, 4, 0, 0, 0, 0, -439, 224, 0, 0, 0, 0, -431, 218)
+"points": PackedVector2Array(0, 0, 0, 0, -434, 221, 0, 0, 0, 0, -432, 10, 0, 0, 0, 0, -365, 11, 0, 0, 0, 0, -297, 12, 0, 0, 0, 0, -298, 29, 0, 0, 0, 0, -285, 28, 0, 0, 0, 0, -286, 20, 0, 0, 0, 0, -286, 5, 0, 0, 0, 0, -436, 4, 0, 0, 0, 0, -439, 224, 0, 0, 0, 0, -434, 221)
 }
 point_count = 11
 
 [sub_resource type="Curve2D" id="Curve2D_xf01l"]
 _data = {
-"points": PackedVector2Array(-0.138687, 0, 0.138687, 0, -316, -10, 0, 0, 0, 0, -271, -9, 0, 0, 0, 0, -266, 34, 0, 0, 0, 0, -277, 34, 0, 0, 0, 0, -277, 5, 0, 0, 0, 0, -443, 3, 0, 0, 0, 0, -441, 355, 0, 0, 0, 0, -452, 355, 0, 0, 0, 0, -448, -5, 0, 0, 0, 0, -315, -10)
+"points": PackedVector2Array(-0.138687, 0, 0.138687, 0, -316, -10, 0, 0, 0, 0, -272, -6, 0, 0, 0, 0, -266, 34, 0, 0, 0, 0, -277, 34, 0, 0, 0, 0, -277, -1, 0, 0, 0, 0, -444, -2, 0, 0, 0, 0, -441, 355, 0, 0, 0, 0, -452, 355, 0, 0, 0, 0, -448, -5, 0, 0, 0, 0, -315, -10)
 }
 point_count = 10
 
 [sub_resource type="Curve2D" id="Curve2D_0p0cc"]
 _data = {
-"points": PackedVector2Array(-0.138687, 0, 0.138687, 0, -320, 0, 0, 0, 0, 0, -321, 10, 0, 0, 0, 0, -440, 10, 0, 0, 0, 0, -437, 123, 0, 0, 0, 0, -452, 122, 0, 0, 0, 0, -448, 0, 0, 0, 0, 0, -320, 0)
+"points": PackedVector2Array(-0.138687, 0, 0.138687, 0, -320, 0, 0, 0, 0, 0, -321, 7, 0, 0, 0, 0, -440, 4, 0, 0, 0, 0, -443, 123, 0, 0, 0, 0, -445, 122, 0, 0, 0, 0, -446, 87, 0, 0, 0, 0, -448, 0, 0, 0, 0, 0, -320, 0)
 }
-point_count = 7
+point_count = 8
 
 [sub_resource type="Curve2D" id="Curve2D_o8max"]
 _data = {
-"points": PackedVector2Array(-0.138687, 0, 0.138687, 0, -389, 7, 0, 0, 0, 0, -388, 113, 0, 0, 0, 0, -415, 114, 0, 0, 0, 0, -416, 164, 0, 0, 0, 0, -433, 165, 0, 0, 0, 0, -432, 105, 0, 0, 0, 0, -400, 107, 0, 0, 0, 0, -399, 17, 0, 0, 0, 0, -449, 17, 0, 0, 0, 0, -448, 7, 0, 0, 0, 0, -389, 6)
+"points": PackedVector2Array(-0.138687, 0, 0.138687, 0, -389, 7, 0, 0, 0, 0, -392, 113, 0, 0, 0, 0, -421, 113, 0, 0, 0, 0, -423, 164, 0, 0, 0, 0, -429, 165, 0, 0, 0, 0, -427, 105, 0, 0, 0, 0, -398, 107, 0, 0, 0, 0, -393, 17, 0, 0, 0, 0, -449, 17, 0, 0, 0, 0, -448, 7, 0, 0, 0, 0, -389, 6)
 }
 point_count = 11
 
 [sub_resource type="Curve2D" id="Curve2D_vfb85"]
 _data = {
-"points": PackedVector2Array(-0.138687, 0, 0.138687, 0, -361, 1, 0, 0, 0, 0, -361, 10, 0, 0, 0, 0, -442, 10, 0, 0, 0, 0, -445, 43, 0, 0, 0, 0, -458, 44, 0, 0, 0, 0, -460, 296, 0, 0, 0, 0, -472, 295, 0, 0, 0, 0, -469, 35, 0, 0, 0, 0, -456, 29, 0, 0, 0, 0, -454, 1, 0, 0, 0, 0, -361, 3)
+"points": PackedVector2Array(-0.138687, 0, 0.138687, 0, -361, 1, 0, 0, 0, 0, -361, 10, 0, 0, 0, 0, -442, 10, 0, 0, 0, 0, -446, 42, 0, 0, 0, 0, -463, 45, 0, 0, 0, 0, -466, 298, 0, 0, 0, 0, -468, 296, 0, 0, 0, 0, -466, 35, 0, 0, 0, 0, -456, 29, 0, 0, 0, 0, -454, 1, 0, 0, 0, 0, -361, 3)
 }
 point_count = 11
 
 [sub_resource type="Curve2D" id="Curve2D_3ae0t"]
 _data = {
-"points": PackedVector2Array(-0.138687, 0, 0.138687, 0, -386, -4, 0, 0, 0, 0, -386, 5, 0, 0, 0, 0, -433, 5, 0, 0, 0, 0, -436, 207, 0, 0, 0, 0, -403, 206, 0, 0, 0, 0, -401, 69, 0, 0, 0, 0, -388, 69, 0, 0, 0, 0, -388, 211, 0, 0, 0, 0, -447, 212, 0, 0, 0, 0, -448, 0, 0, 0, 0, 0, -387, -4)
+"points": PackedVector2Array(-0.138687, 0, 0.138687, 0, -386, -4, 0, 0, 0, 0, -386, 2, 0, 0, 0, 0, -441, 3, 0, 0, 0, 0, -439, 207, 0, 0, 0, 0, -397, 206, 0, 0, 0, 0, -396, 69, 0, 0, 0, 0, -388, 69, 0, 0, 0, 0, -388, 211, 0, 0, 0, 0, -443, 211, 0, 0, 0, 0, -445, 0, 0, 0, 0, 0, -387, -4)
 }
 point_count = 11
 
@@ -237,7 +237,7 @@ shape = SubResource("RectangleShape2D_dwt70")
 [node name="Enemigos" type="Node" parent="."]
 
 [node name="Guardia1" parent="Enemigos" instance=ExtResource("12_ac5ol")]
-position = Vector2(977, 356)
+position = Vector2(974, 359)
 rotation = -0.0102037
 
 [node name="Guardia2" parent="Enemigos" instance=ExtResource("12_ac5ol")]
@@ -247,22 +247,18 @@ rotation = -0.0102037
 [node name="Guardia3" parent="Enemigos" instance=ExtResource("12_ac5ol")]
 position = Vector2(1164, 204)
 rotation = -0.0102037
-scale = Vector2(1.4, 1.4)
 
 [node name="Guardia4" parent="Enemigos" instance=ExtResource("12_ac5ol")]
 position = Vector2(1141, 253)
 rotation = -0.0102037
-scale = Vector2(1.4, 1.4)
 
 [node name="Guardia5" parent="Enemigos" instance=ExtResource("12_ac5ol")]
 position = Vector2(905, 189)
 rotation = -0.0102037
-scale = Vector2(1.4, 1.4)
 
 [node name="Guardia6" parent="Enemigos" instance=ExtResource("12_ac5ol")]
 position = Vector2(903, 255)
 rotation = -0.0102037
-scale = Vector2(1.4, 1.4)
 
 [node name="Rutas" type="Node" parent="."]
 
@@ -271,7 +267,7 @@ position = Vector2(1413, 139)
 curve = SubResource("Curve2D_ac5ol")
 
 [node name="RtaFParte1" type="PathFollow2D" parent="Rutas/RtaParte1"]
-position = Vector2(-431, 218)
+position = Vector2(-434, 221)
 rotation = -0.0102037
 rotates = false
 
@@ -339,3 +335,5 @@ rotates = false
 
 [node name="RtfParte6" type="RemoteTransform2D" parent="Rutas/RtaParte6/RtaFParte6"]
 remote_path = NodePath("../../../../Enemigos/Guardia6")
+
+[connection signal="finMuerte" from="Personaje" to="." method="_on_personaje_fin_muerte"]
