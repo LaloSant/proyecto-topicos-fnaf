@@ -40,3 +40,8 @@ func _on_item_lampara_item_obtenido() -> void:
 	$Items/DWLampara.mostrar_dialogo()
 	GLOBAL.pers_tieneLampara = true
 	$Personaje.tieneLampara = true
+
+
+func _on_personaje_fin_muerte() -> void:
+	$Musica.playing= false
+	$Enemigos/GuardianP/SFX.playing = false

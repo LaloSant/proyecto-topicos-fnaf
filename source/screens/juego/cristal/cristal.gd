@@ -39,3 +39,13 @@ func _process(delta: float) -> void:
 	$Enemigos/Guardia6.actualizarPos(ruta_parte_6F,delta)
 
 	
+
+
+func _on_personaje_fin_muerte() -> void:
+	$Musica.playing = false
+	$Enemigos/Guardia1/SFX.playing = false
+	$Enemigos/Guardia2/SFX.playing = false
+	$Enemigos/Guardia3/SFX.playing = false
+	$Enemigos/Guardia4/SFX.playing = false
+	$Enemigos/Guardia5/SFX.playing = false
+	$Enemigos/Guardia6/SFX.playing = false

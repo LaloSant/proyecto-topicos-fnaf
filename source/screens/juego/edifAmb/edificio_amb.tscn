@@ -402,6 +402,7 @@ position = Vector2(314, 451)
 escena = "res://source/screens/juego/mundo/mundo.tscn"
 puntoSalida = "mk_EdificioAmbFuera"
 
+[connection signal="finMuerte" from="Personaje" to="." method="_on_personaje_fin_muerte"]
 [connection signal="cambio_lugar" from="TpNuevo/Salon_P1Tp" to="." method="_on_salon_p_1_tp_cambio_lugar"]
 [connection signal="cambio_lugar" from="TpNuevo/P1_SalonTp" to="." method="_on_p_1_salon_tp_cambio_lugar"]
 [connection signal="cambio_lugar" from="TpNuevo/P1_PbTp" to="." method="_on_p_1_pb_tp_cambio_lugar"]
