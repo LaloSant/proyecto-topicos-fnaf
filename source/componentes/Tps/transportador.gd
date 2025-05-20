@@ -11,7 +11,7 @@ extends Area2D
 signal cambio_lugar
 
 func _on_body_entered(body: Node2D) -> void:
-	if body is Personaje:
+	if body is Personaje or body is Enemigo:
 		$CooldownPersonaje.start()
 		body.setPuedeMoverse(false)
 		await SCN_CIRCULAR_FADE.playPt1()

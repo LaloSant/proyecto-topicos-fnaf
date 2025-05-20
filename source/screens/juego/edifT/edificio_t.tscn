@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://b5hj1agndq0u6"]
+[gd_scene load_steps=21 format=4 uid="uid://b5hj1agndq0u6"]
 
 [ext_resource type="PackedScene" uid="uid://ciyad5p3oge3u" path="res://source/componentes/personajes/base/personaje.tscn" id="1_ghekp"]
 [ext_resource type="Script" uid="uid://bcokrb4kb46j" path="res://source/screens/juego/edifT/edificio_t.gd" id="1_i38r3"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://c8hbcu3tjoig" path="res://source/screens/juego/HUD/dialog_window.tscn" id="8_63xdy"]
 [ext_resource type="PackedScene" uid="uid://bddno62kg4il7" path="res://source/componentes/personajes/enemigos/enemigo_base.tscn" id="8_tjhh6"]
 [ext_resource type="AudioStream" uid="uid://cyox8ywkadgcp" path="res://resources/audio/gowMisterio.mp3" id="9_tjhh6"]
+[ext_resource type="Texture2D" uid="uid://dhbff6obm5b38" path="res://resources/images/sprites/ocayo/ocayo2.png" id="11_fcnty"]
+[ext_resource type="Texture2D" uid="uid://cnd4bspsdi2hk" path="res://resources/images/sprites/ocayo/ocayo.png" id="12_qs5lx"]
+[ext_resource type="AudioStream" uid="uid://dmo36x88j3qiu" path="res://resources/audio/just-sans-talking.mp3" id="13_qs5lx"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tjhh6"]
 cull_mode = 2
@@ -26,6 +29,24 @@ _data = {
 "points": PackedVector2Array(-0.138687, 0, 0.138687, 0, -320, 0, 0, 0, 0, 0, 286, 1, 0, 0, 0, 0, 285, 65, 0, 0, 0, 0, -336, 65, 0, 0, 0, 0, -448, 64, 0, 0, 0, 0, -448, 0, 0, 0, 0, 0, -320, 0)
 }
 point_count = 7
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_alr8s"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("11_fcnty")
+}, {
+"duration": 2.0,
+"texture": ExtResource("12_qs5lx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjhh6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qs5lx"]
 
 [node name="EdificioT" type="Node2D"]
 y_sort_enabled = true
@@ -61,7 +82,7 @@ tile_map_data = PackedByteArray("AAATAP//AAADAAMAAAATAAAAAAADAAQAAADw//z/AAABAAY
 tile_set = ExtResource("3_ytj8a")
 
 [node name="Personaje" parent="." instance=ExtResource("1_ghekp")]
-position = Vector2(751, -120)
+position = Vector2(817, -109)
 scale = Vector2(0.4, 0.4)
 tieneLampara = false
 
@@ -229,9 +250,33 @@ position = Vector2(-272, 592)
 escena = "res://source/screens/juego/mundo/mundo.tscn"
 puntoSalida = "mk_EdificioTFuera"
 
+[node name="OcayoXd" type="AnimatedSprite2D" parent="."]
+position = Vector2(751, -116)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_alr8s")
+autoplay = "default"
+frame_progress = 0.852199
+
+[node name="StaticBody2D" type="StaticBody2D" parent="OcayoXd"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OcayoXd/StaticBody2D"]
+shape = SubResource("RectangleShape2D_tjhh6")
+
+[node name="DWOcayo" parent="." instance=ExtResource("8_63xdy")]
+texto = "Que hace aqui joven?, Ya vamonos no?"
+sound = ExtResource("13_qs5lx")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(751, -95)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.360413, 1.18446)
+shape = SubResource("RectangleShape2D_qs5lx")
+
 [connection signal="finMuerte" from="Personaje" to="." method="_on_personaje_fin_muerte"]
 [connection signal="cambio_lugar" from="TpNuevo/Salon_P1Tp" to="." method="_on_salon_p_1_tp_cambio_lugar"]
 [connection signal="cambio_lugar" from="TpNuevo/P1_SalonTp" to="." method="_on_p_1_salon_tp_cambio_lugar"]
 [connection signal="cambio_lugar" from="TpNuevo/P1_PbTp" to="." method="_on_p_1_pb_tp_cambio_lugar"]
 [connection signal="cambio_lugar" from="TpNuevo/Pb_P1Tp" to="." method="_on_pb_p_1_tp_cambio_lugar"]
 [connection signal="item_obtenido" from="Items/item_lampara" to="." method="_on_item_lampara_item_obtenido"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

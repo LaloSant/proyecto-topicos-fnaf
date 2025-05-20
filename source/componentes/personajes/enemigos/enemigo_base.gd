@@ -7,13 +7,20 @@
 '''
 
 class_name Enemigo extends CharacterBody2D
+@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
+@export var target_to_chase: CharacterBody2D
 @export var tipo:String = GLOBAL.enem_tipo
 var spriteSet:Resource
 var speed:float = 50
 var posicionAnt:Vector2 = position
 var currentAnim:String
 
-
+func _physics_process(delta: float) -> void:
+	if target_to_chase != null:
+		navigation_agent.target_position = target_to_chase.global_position
+		velocity = global_position.direction_to(navigation_agent.get_next_path_position())* speed
+	
+		move_and_slide()
 func _ready() -> void:
 	spriteSet = getSpritePorNombre(tipo)
 	cambiarSprite(spriteSet)
@@ -34,6 +41,20 @@ func getSpritePorNombre(nom:String) -> Resource:
 func actualizarPos(ruta:PathFollow2D, delta:float):
 	var anim:String
 	ruta.progress += speed * delta
+	var difx = position.x - posicionAnt.x
+	var dify = position.y - posicionAnt.y
+	var difMayorX = (abs(difx) - abs(dify)) > 0 
+	if difMayorX:
+		anim = "caminar_der" if difx > 0 else "caminar_izq"
+	else:
+		anim = "caminar_abj" if dify > 0 else "caminar_arr"
+	$Sprite.play(anim)
+	currentAnim = anim
+	posicionAnt = position
+	
+func actualizarPosChase(delta:float):
+	var anim:String
+	##ruta. += speed * delta
 	var difx = position.x - posicionAnt.x
 	var dify = position.y - posicionAnt.y
 	var difMayorX = (abs(difx) - abs(dify)) > 0 

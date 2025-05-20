@@ -183,6 +183,11 @@ func has_lamp() -> bool:
 func has_pagina_x(num_pagina:int) -> bool:
 	return paginas.get(num_pagina)
 
+func tiene_8_paginas()-> bool:
+	for valor in GLOBAL.paginas:
+			if not valor:
+				return false
+	return true
 func set_pagina_x(num_pagina:int) -> void:
 	paginas.set(num_pagina, true)
 

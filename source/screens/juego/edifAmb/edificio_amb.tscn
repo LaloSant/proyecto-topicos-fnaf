@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://ckp8mg1snkfpe"]
+[gd_scene load_steps=21 format=4 uid="uid://ckp8mg1snkfpe"]
 
 [ext_resource type="Script" uid="uid://bpebvnns0ych4" path="res://source/screens/juego/edifAmb/edificio_amb.gd" id="1_ylvr1"]
 [ext_resource type="AudioStream" uid="uid://c6d2d6wt32dnk" path="res://resources/audio/musica/solin.mp3" id="2_ylvr1"]
@@ -12,6 +12,36 @@
 [ext_resource type="PackedScene" uid="uid://dfphplmv1hblj" path="res://source/singleton/transiciones/transicion.tscn" id="10_86rvo"]
 [ext_resource type="PackedScene" uid="uid://bblj0ey40hflo" path="res://source/componentes/items/item_pagina.tscn" id="10_ylvr1"]
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ylvr1"]
+vertices = PackedVector2Array(310, 70.9688, -503.789, 69.0234, -502.219, -8, -330.523, -8, 9.53906, -7, 310, -7, -156.977, -5.92969, -170.469, -36.3594, -163.906, -36.6406, -175.562, -5.82812, -22.1328, -7.0625, -10.1484, -38, -4.46094, -38, -317.648, -36.6875, -304.148, -36.0625, -289.023, -8.11719)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 0, 6), PackedInt32Array(7, 8, 6, 9), PackedInt32Array(10, 11, 12, 4), PackedInt32Array(3, 13, 14, 15), PackedInt32Array(0, 3, 15, 9), PackedInt32Array(0, 9, 6), PackedInt32Array(10, 4, 6)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-510, -18, -337, -18, -324, -47, -298.055, -45.7914, -283, -18, -184, -16, -179, -46, -156, -47, -149, -16, -29, -17, -17, -48, 2, -48, 16, -17, 320, -17, 320, 31.0619, 320, 81, -514, 79, -512, -19)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_rge4g"]
+vertices = PackedVector2Array(-5.10156, 184.43, -8.14844, 185.039, -9.03906, 13.2266, 227.906, 13.2266, 227.906, 186.273, 22.7109, 187.258, 9.72656, 213.227, 0.226562, 213.227)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5), PackedInt32Array(0, 5, 6, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-19.0825, 3.22784, 237.918, 3.22784, 237.918, 196.228, 28.9175, 197.228, 15.9175, 223.228, -8.08246, 223.228, -13.0825, 196.228, -18.0825, 197.228)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_h1tbr"]
+vertices = PackedVector2Array(818.742, 11.6328, 819.531, 87.6562, 6.85156, 87.6562, 8.42969, 9.67969)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1.36258, -0.339203, 828.637, 1.6608, 829.637, 97.6608, -3.36258, 97.6608)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ueu2e"]
+vertices = PackedVector2Array(241.828, 9.38281, 241.828, 180.383, 6.92969, 179.453, 8.71875, 8.45312)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1.17224, -1.57658, -3.17224, 189.423, 251.828, 190.423, 251.828, -0.576576)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_5h5ae"]
+vertices = PackedVector2Array(245.023, 8.46875, 245.023, 179.508, 11.0234, 178.578, 11.0234, 6.61719)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(1.01697, -3.44275, 1.01697, 188.557, 255.017, 189.557, 255.017, -1.44275)])
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ngs8f"]
+vertices = PackedVector2Array(244.594, 9.47656, 244.594, 180.398, 9.53125, 177.633, 8.64062, 8.54688)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1.40924, -1.48822, -0.409241, 187.512, 254.591, 190.512, 254.591, -0.48822)])
+
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tjhh6"]
 cull_mode = 2
 polygon = PackedVector2Array(768, -128, 768, -95, 783, -95, 784, -128)
@@ -22,15 +52,34 @@ polygon = PackedVector2Array(-520, 536, -328, 536, -328, 640, -216, 640, -216, 5
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_fcnty"]
 polygon = PackedVector2Array(-184, 88, -360, 88, -520, 88, -520, -72, 129, -67, 161, -66, 328, -72, 328, 88, 352, -112, -576, -96, -560, 112, -216, 240, 320, 88)
 
-[sub_resource type="Curve2D" id="Curve2D_63xdy"]
-_data = {
-"points": PackedVector2Array(-0.138687, 0, 0.138687, 0, -320, 0, 0, 0, 0, 0, 286, 1, 0, 0, 0, 0, 285, 65, 0, 0, 0, 0, -336, 65, 0, 0, 0, 0, -448, 64, 0, 0, 0, 0, -448, 0, 0, 0, 0, 0, -320, 0)
-}
-point_count = 7
-
 [node name="EdificioAmb" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_ylvr1")
+
+[node name="Navegadores" type="Node" parent="."]
+
+[node name="NavegadorP1" type="NavigationRegion2D" parent="Navegadores"]
+navigation_polygon = SubResource("NavigationPolygon_ylvr1")
+
+[node name="NavegadorSalon" type="NavigationRegion2D" parent="Navegadores"]
+position = Vector2(753.082, -133.228)
+navigation_polygon = SubResource("NavigationPolygon_rge4g")
+
+[node name="NavegadorP2" type="NavigationRegion2D" parent="Navegadores"]
+position = Vector2(-509.637, -258.661)
+navigation_polygon = SubResource("NavigationPolygon_h1tbr")
+
+[node name="NavegadorSalon2" type="NavigationRegion2D" parent="Navegadores"]
+position = Vector2(1347.17, -127.423)
+navigation_polygon = SubResource("NavigationPolygon_ueu2e")
+
+[node name="NavegadorSalon3" type="NavigationRegion2D" parent="Navegadores"]
+position = Vector2(2015.98, -126.557)
+navigation_polygon = SubResource("NavigationPolygon_5h5ae")
+
+[node name="NavegadorSalon4" type="NavigationRegion2D" parent="Navegadores"]
+position = Vector2(737.409, -670.512)
+navigation_polygon = SubResource("NavigationPolygon_ngs8f")
 
 [node name="Musica" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_ylvr1")
@@ -42,10 +91,10 @@ parameters/looping = true
 color = Color(0.0605303, 0.0605303, 0.0605303, 1)
 
 [node name="Fondo" type="ColorRect" parent="."]
-offset_left = -1042.0
-offset_top = -744.0
-offset_right = 2664.0
-offset_bottom = 1063.0
+offset_left = -1023.0
+offset_top = -910.0
+offset_right = 2683.0
+offset_bottom = 897.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
@@ -73,7 +122,6 @@ position = Vector2(-16, 0)
 occluder = SubResource("OccluderPolygon2D_tjhh6")
 
 [node name="Pb" type="LightOccluder2D" parent="Sombras"]
-visible = false
 occluder = SubResource("OccluderPolygon2D_a7uyv")
 
 [node name="P1" type="LightOccluder2D" parent="Sombras"]
@@ -81,24 +129,36 @@ occluder = SubResource("OccluderPolygon2D_fcnty")
 
 [node name="Enemigos" type="Node" parent="."]
 
-[node name="GuardianP" parent="Enemigos" instance=ExtResource("5_ueu2e")]
+[node name="GuardianP" parent="Enemigos" node_paths=PackedStringArray("target_to_chase") instance=ExtResource("5_ueu2e")]
 position = Vector2(-317, -2)
 rotation = -0.0102037
+target_to_chase = NodePath("../../Personaje")
 tipo = "Fantasma"
 
-[node name="Rutas" type="Node" parent="."]
+[node name="GuardianP2" parent="Enemigos" node_paths=PackedStringArray("target_to_chase") instance=ExtResource("5_ueu2e")]
+position = Vector2(182.636, -219.307)
+target_to_chase = NodePath("../../Personaje")
+tipo = "Fantasma"
 
-[node name="RtaPasillo" type="Path2D" parent="Rutas"]
-position = Vector2(3, -2)
-curve = SubResource("Curve2D_63xdy")
+[node name="GuardianSalon" parent="Enemigos" node_paths=PackedStringArray("target_to_chase") instance=ExtResource("5_ueu2e")]
+position = Vector2(888, -72)
+target_to_chase = NodePath("../../Personaje")
+tipo = "Fantasma"
 
-[node name="RtaFPasillo" type="PathFollow2D" parent="Rutas/RtaPasillo"]
-position = Vector2(-320, 0)
-rotation = -0.0102037
-rotates = false
+[node name="GuardianSalon2" parent="Enemigos" node_paths=PackedStringArray("target_to_chase") instance=ExtResource("5_ueu2e")]
+position = Vector2(1500, -70)
+target_to_chase = NodePath("../../Personaje")
+tipo = "Fantasma"
 
-[node name="RtfPasillo" type="RemoteTransform2D" parent="Rutas/RtaPasillo/RtaFPasillo"]
-remote_path = NodePath("../../../../Enemigos/GuardianP")
+[node name="GuardianSalon3" parent="Enemigos" node_paths=PackedStringArray("target_to_chase") instance=ExtResource("5_ueu2e")]
+position = Vector2(2160, -82)
+target_to_chase = NodePath("../../Personaje")
+tipo = "Fantasma"
+
+[node name="GuardianSalon4" parent="Enemigos" node_paths=PackedStringArray("target_to_chase") instance=ExtResource("5_ueu2e")]
+position = Vector2(891, -600)
+target_to_chase = NodePath("../../Personaje")
+tipo = "Fantasma"
 
 [node name="Hitboxes" type="Node" parent="."]
 
@@ -123,7 +183,7 @@ polygon = PackedVector2Array(992, 64, 992, -128, 736, -128, 734, 63, 745.6, 63.2
 
 [node name="PoligonoPB" type="CollisionPolygon2D" parent="Hitboxes/HitboxPB"]
 visible = false
-polygon = PackedVector2Array(-512, 431, -429, 431, -416, 401, -400, 401, -384, 431, -54, 432, -34, 398, -16, 398, 10, 431, 128, 431, 128, 386, 159, 386, 159, 430, 319, 430, 320.4, 528.4, -223.2, 528.4, -320, 528, -512.4, 528, -513, 432, -517.6, 418.8, -517.6, 533.2, -324.8, 533.6, -218.4, 532.4, 324.8, 533.2, 324.8, 379.2, -517.2, 379.2, -517.6, 416.8)
+polygon = PackedVector2Array(-512, 431, -417, 431, -416, 401, -400, 401, -398, 433, -33, 431, -34, 398, -16, 398, -15, 433, 128, 431, 128, 386, 159, 386, 159, 430, 319, 430, 320.4, 528.4, -223.2, 528.4, -320, 528, -512.4, 528, -513, 432, -517.6, 418.8, -517.6, 533.2, -324.8, 533.6, -218.4, 532.4, 324.8, 533.2, 324.8, 379.2, -517.2, 379.2, -517.6, 416.8)
 
 [node name="HitboxP1" type="StaticBody2D" parent="Hitboxes"]
 collision_mask = 2
@@ -131,7 +191,7 @@ collision_mask = 2
 [node name="PoligonoP1" type="CollisionPolygon2D" parent="Hitboxes/HitboxP1"]
 visible = false
 position = Vector2(-0.8, 0.799988)
-polygon = PackedVector2Array(-213.2, -16.8, -202.2, -19.8, -185.2, -53.8, -156.2, -52.8, -136.2, -18.8, -28.2, -19.8, -15.2, -47.8, 1.8, -47.8, 17.8, -18.8, 128.8, -17.8, 127.8, -61.8, 162.8, -62.8, 162.8, -17.8, 191.8, -17.8, 190.8, -61.8, 226.8, -61.8, 226.8, -19.8, 317.8, -19.8, 320.8, 80.8, -191.2, 79.2, -341.2, 79.2, -349.2, 80.2, -510.8, 80, -510.2, -18.8, -337.2, -17.8, -320.2, -49.8, -303.2, -49.8, -284.2, -16.8, -215.2, -15.8, -216.2, -69.8, -517.2, -70, -517.6, 84, -356.191, 84.1532, -185.2, 86.2, 325.2, 84.8, 324.8, -69.2, 279.833, -69.2, -215.2, -69.8)
+polygon = PackedVector2Array(-213.2, -16.8, -177.2, -16.8, -174.2, -47.8, -161.2, -47.8, -158.2, -16.8, -16.2, -17.8, -15.2, -47.8, 1.8, -47.8, 3.8, -16.8, 128.8, -17.8, 127.8, -61.8, 162.8, -62.8, 162.8, -17.8, 191.8, -17.8, 190.8, -61.8, 226.8, -61.8, 226.8, -19.8, 317.8, -19.8, 320.8, 80.8, -191.2, 79.2, -341.2, 79.2, -349.2, 80.2, -510.8, 80, -510.2, -18.8, -320.2, -17.8, -320.2, -49.8, -303.2, -49.8, -301.2, -16.8, -215.2, -15.8, -216.2, -69.8, -517.2, -70, -517.6, 84, -356.191, 84.1532, -185.2, 86.2, 325.2, 84.8, 324.8, -69.2, 279.833, -69.2, -215.2, -69.8)
 
 [node name="HitboxSalon2" type="StaticBody2D" parent="Hitboxes"]
 position = Vector2(-3, 465)
@@ -149,7 +209,7 @@ collision_mask = 2
 [node name="PoligonoP2" type="CollisionPolygon2D" parent="Hitboxes/HitboxP2"]
 visible = false
 position = Vector2(-0.8, 0.799988)
-polygon = PackedVector2Array(-213.2, -16.8, -202.2, -19.8, -185.2, -53.8, -156.2, -52.8, -136.2, -18.8, -37.2, -17.8, -16.2, -49.8, -1.2, -49.8, 25.8, -17.8, 128.8, -17.8, 127.8, -61.8, 162.8, -62.8, 162.8, -17.8, 191.8, -17.8, 225.8, -17.8, 317.8, -19.8, 320.8, 80.8, -191.2, 79.2, -341.2, 79.2, -349.2, 80.2, -510.8, 80, -510.2, -18.8, -342.2, -17.8, -321.2, -50.8, -304.2, -50.8, -285.2, -17.8, -215.2, -15.8, -216.2, -69.8, -517.2, -70, -517.6, 84, -356.191, 84.1532, -185.2, 86.2, 325.2, 84.8, 324.8, -69.2, 279.833, -69.2, -215.2, -69.8)
+polygon = PackedVector2Array(-213.2, -16.8, -180.2, -18.8, -180.2, -50.8, -159.2, -51.8, -157.2, -15.8, -17.2, -16.8, -16.2, -49.8, -1.2, -49.8, -0.2, -15.8, 128.8, -17.8, 127.8, -61.8, 162.8, -62.8, 162.8, -17.8, 191.8, -17.8, 225.8, -17.8, 317.8, -19.8, 320.8, 80.8, -191.2, 79.2, -341.2, 79.2, -349.2, 80.2, -510.8, 80, -510.2, -18.8, -323.2, -16.8, -321.2, -50.8, -304.2, -50.8, -304.2, -15.8, -215.2, -15.8, -216.2, -69.8, -517.2, -70, -517.6, 84, -356.191, 84.1532, -185.2, 86.2, 325.2, 84.8, 324.8, -69.2, 279.833, -69.2, -215.2, -69.8)
 
 [node name="HitboxSalon5" type="StaticBody2D" parent="Hitboxes"]
 position = Vector2(224, -541)
@@ -211,7 +271,7 @@ destino = NodePath("../Salon_P1Dest")
 position = Vector2(-169, -8)
 
 [node name="P1_SalonTp" parent="TpNuevo" node_paths=PackedStringArray("destino") instance=ExtResource("6_5h5ae")]
-position = Vector2(-170, -43)
+position = Vector2(-169, -34)
 destino = NodePath("../P1_SalonDest")
 
 [node name="P1_SalonDest" type="Marker2D" parent="TpNuevo"]
@@ -356,6 +416,10 @@ texto = "Obtuviste lampara. Presiona \"q\" o boton \"X\"."
 texto = "Deberia buscar una lampara."
 sound = ExtResource("9_at3cn")
 
+[node name="DWNeedPaginas" parent="Items" instance=ExtResource("8_shijo")]
+texto = "Necesito recolectar las 8 paginas de este edificio"
+sound = ExtResource("9_at3cn")
+
 [node name="Paginas" type="Node" parent="Items"]
 
 [node name="Pag0" parent="Items/Paginas" instance=ExtResource("10_ylvr1")]
@@ -398,13 +462,17 @@ scale = Vector2(0.5, 0.5)
 num_pagina = 7
 
 [node name="Transicion" parent="." instance=ExtResource("10_86rvo")]
-position = Vector2(314, 451)
+position = Vector2(310, 447)
 escena = "res://source/screens/juego/mundo/mundo.tscn"
 puntoSalida = "mk_EdificioAmbFuera"
 
 [connection signal="finMuerte" from="Personaje" to="." method="_on_personaje_fin_muerte"]
 [connection signal="cambio_lugar" from="TpNuevo/Salon_P1Tp" to="." method="_on_salon_p_1_tp_cambio_lugar"]
 [connection signal="cambio_lugar" from="TpNuevo/P1_SalonTp" to="." method="_on_p_1_salon_tp_cambio_lugar"]
+[connection signal="body_entered" from="TpNuevo/P1_PbTp" to="." method="_on_p_1_pb_tp_body_entered"]
 [connection signal="cambio_lugar" from="TpNuevo/P1_PbTp" to="." method="_on_p_1_pb_tp_cambio_lugar"]
 [connection signal="cambio_lugar" from="TpNuevo/Pb_P1Tp" to="." method="_on_pb_p_1_tp_cambio_lugar"]
+[connection signal="body_entered" from="TpNuevo/Salon2_PBTp" to="." method="_on_salon_2_pb_tp_body_entered"]
+[connection signal="body_entered" from="TpNuevo/Salon8_PBTp" to="." method="_on_salon_8_pb_tp_body_entered"]
 [connection signal="item_obtenido" from="Items/item_lampara" to="." method="_on_item_lampara_item_obtenido"]
+[connection signal="body_entered" from="Transicion" to="." method="_on_transicion_body_entered"]

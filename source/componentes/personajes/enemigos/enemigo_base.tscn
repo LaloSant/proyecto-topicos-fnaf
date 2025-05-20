@@ -67,7 +67,6 @@ max_distance = 300.0
 bus = &"SFX"
 
 [node name="HB(disabled)" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("RectangleShape2D_f2cju")
 disabled = true
 
@@ -87,7 +86,6 @@ collision_mask = 2
 shape = SubResource("RectangleShape2D_igk5n")
 
 [node name="HurtBox" parent="." instance=ExtResource("4_nryi5")]
-visible = false
 collision_layer = 128
 collision_mask = 16
 
@@ -98,6 +96,8 @@ shape = SubResource("RectangleShape2D_nryi5")
 libraries = {
 &"": SubResource("AnimationLibrary_7nqon")
 }
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
 [connection signal="body_entered" from="AreaDanio" to="." method="_on_area_danio_body_entered"]
 [connection signal="damage_received" from="HurtBox" to="." method="_on_hurt_box_damage_received"]
