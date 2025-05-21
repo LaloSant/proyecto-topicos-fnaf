@@ -18,11 +18,12 @@ config/icon="res://resources/images/FNAH.png"
 
 [autoload]
 
-CONFIG_FILE="*res://source/config.gd"
+CONFIG_FILE="*res://config.gd"
 GLOBAL="*res://source/singleton/global.gd"
 SCN_FADE_IN="*res://source/singleton/transiciones/scn_fade_in.tscn"
 SCN_CIRCULAR_FADE="*res://source/singleton/transiciones/scn_circular_fade.tscn"
 SAVEFILE="*res://source/singleton/savefile.tscn"
+THR_LOADER="*res://source/singleton/thread_loader.tscn"
 
 [debug]
 

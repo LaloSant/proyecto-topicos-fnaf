@@ -9,6 +9,7 @@
 extends Node2D
 
 func _ready() -> void:
+	$Panel/HBox/VButtons/btn_controles.text = 'btn_controlesAct' if GLOBAL.controles_tactiles else 'btn_controlesDes'
 	$Panel/HBox/VButtons/slider_master.set_value_no_signal(GLOBAL.nivelAudioMaster)
 	$Panel/HBox/VButtons/slider_musica.set_value_no_signal(GLOBAL.nivelAudioMusica)
 	$Panel/HBox/VButtons/slider_sfx.set_value_no_signal(GLOBAL.nivelAudioSFX)
@@ -60,3 +61,7 @@ func _on_btn_eliminar_part_pressed() -> void:
 	if FileAccess.file_exists("res://gamesave.json"):
 		SAVEFILE.elimina_partida()
 		$Panel/HBoxBtn/btn_eliminarPart.disabled = true
+
+func _on_btn_controles_pressed() -> void:
+	GLOBAL.controles_tactiles = !GLOBAL.controles_tactiles
+	$Panel/HBox/VButtons/btn_controles.text = 'btn_controlesAct' if GLOBAL.controles_tactiles else 'btn_controlesDes'

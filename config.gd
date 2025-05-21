@@ -25,9 +25,10 @@ func _ready() -> void:
 		config.set_value("Personaje", "highAguaLoca", 50)
 		config.set_value("Personaje", "factorSneak", 0.75)
 		config.set_value("Personaje", "factorRun", 1.5)
-		config.set_value("Personaje", "nombre", "Alan")
+		config.set_value("Personaje", "nombre", "Lalo")
 		config.set_value("Personaje", "tieneLampara", false)
 		config.set_value("Personaje","pliego",false)
+		config.set_value("Personaje","contTactiles",false)
 
 		#Seccion audio
 		config.set_value("Audio", "master", 1)

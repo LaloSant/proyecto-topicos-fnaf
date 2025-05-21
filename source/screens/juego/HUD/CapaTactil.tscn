@@ -30,7 +30,7 @@ script = ExtResource("1_e1p3u")
 
 [node name="Contenedor" type="Node2D" parent="."]
 
-[node name="Botones" type="Node" parent="Contenedor"]
+[node name="Botones" type="Node2D" parent="Contenedor"]
 
 [node name="A" type="TouchScreenButton" parent="Contenedor/Botones"]
 position = Vector2(1152, 448)
@@ -58,7 +58,7 @@ scale = Vector2(1.26, 1.26)
 texture_normal = ExtResource("9_4l7c8")
 texture_pressed = ExtResource("8_25rhg")
 
-[node name="Control" type="Node" parent="Contenedor"]
+[node name="Control" type="Node2D" parent="Contenedor"]
 
 [node name="LB" type="TouchScreenButton" parent="Contenedor/Control"]
 position = Vector2(193, 170)
@@ -86,7 +86,7 @@ texture_normal = ExtResource("13_of62m")
 texture_pressed = ExtResource("12_2aqb1")
 action = "Control_L3"
 
-[node name="Pad" type="Node" parent="Contenedor"]
+[node name="Pad" type="Node2D" parent="Contenedor"]
 
 [node name="PadArr" type="TouchScreenButton" parent="Contenedor/Pad"]
 position = Vector2(165, 388)
@@ -115,7 +115,7 @@ texture_normal = ExtResource("3_0q7so")
 texture_pressed = ExtResource("2_vctob")
 action = "ui_left"
 
-[node name="Triggers" type="Node" parent="Contenedor"]
+[node name="Triggers" type="Node2D" parent="Contenedor"]
 
 [node name="Start" type="TouchScreenButton" parent="Contenedor/Triggers"]
 position = Vector2(704, 41.0001)

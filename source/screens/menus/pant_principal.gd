@@ -11,7 +11,7 @@ extends Node2D
 func _ready() -> void:
 	$Panel/VBoxContainer/btn_iniciar.grab_focus()
 	$Panel/VBoxContainer/btn_continuar.disabled = !FileAccess.file_exists("res://gamesave.json")
-	
+	THR_LOADER.load_trigger("res://source/screens/menus/pant_creditos.tscn")
 
 func _on_btn_iniciar_pressed() -> void:
 	GLOBAL.contador_dia = 1
@@ -25,7 +25,8 @@ func _on_btn_config_pressed() -> void:
 	SCN_FADE_IN.cambia_escena("res://source/screens/menus/pant_config.tscn")
 
 func _on_btn_creditos_pressed() -> void:
-	SCN_FADE_IN.cambia_escena("res://source/screens/menus/pant_creditos.tscn")
+	SCN_FADE_IN.cambia_escena_packed(THR_LOADER.get_scene())
+	#SCN_FADE_IN.cambia_escena("res://source/screens/menus/pant_creditos.tscn")
 
 func _on_btn_salir_pressed() -> void:
 	get_tree().quit()

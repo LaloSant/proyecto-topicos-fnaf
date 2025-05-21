@@ -76,6 +76,13 @@ theme_override_font_sizes/font_size = 24
 text = "lbl_voz"
 horizontal_alignment = 1
 
+[node name="lbl_controles" type="Label" parent="Panel/HBox/Vlabels"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_a6jwc")
+theme_override_font_sizes/font_size = 24
+text = "lbl_controles"
+horizontal_alignment = 1
+
 [node name="VButtons" type="VBoxContainer" parent="Panel/HBox"]
 layout_mode = 2
 theme_override_constants/separation = 56
@@ -110,6 +117,13 @@ layout_mode = 2
 theme = ExtResource("3_w4dsj")
 max_value = 1.0
 step = 0.1
+
+[node name="btn_controles" type="Button" parent="Panel/HBox/VButtons"]
+layout_mode = 2
+focus_neighbor_right = NodePath("../../../HBoxBtn/btn_guardar")
+theme_override_fonts/font = ExtResource("1_a6jwc")
+theme_override_font_sizes/font_size = 24
+text = "btn_controlesAct"
 
 [node name="HBoxBtn" type="HBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -156,6 +170,7 @@ text = "btn_eliminar_part"
 [connection signal="value_changed" from="Panel/HBox/VButtons/slider_musica" to="." method="_on_slider_musica_value_changed"]
 [connection signal="value_changed" from="Panel/HBox/VButtons/slider_sfx" to="." method="_on_slider_sfx_value_changed"]
 [connection signal="value_changed" from="Panel/HBox/VButtons/slider_voz" to="." method="_on_slider_voz_value_changed"]
+[connection signal="pressed" from="Panel/HBox/VButtons/btn_controles" to="." method="_on_btn_controles_pressed"]
 [connection signal="pressed" from="Panel/HBoxBtn/btn_pant_principal" to="." method="_on_btn_pant_principal_pressed"]
 [connection signal="pressed" from="Panel/HBoxBtn/btn_guardar" to="." method="_on_btn_guardar_idioma_pressed"]
 [connection signal="pressed" from="Panel/HBoxBtn/btn_eliminarPart" to="." method="_on_btn_eliminar_part_pressed"]

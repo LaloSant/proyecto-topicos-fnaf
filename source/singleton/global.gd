@@ -17,6 +17,7 @@ enum MarkerPosicion{mk_EdificioAmbSalon, mk_EdificioAmbEntrada, mk_EdificioAmbFu
 @onready var audioSFX = AudioServer.get_bus_index("SFX")
 @onready var audioVoz = AudioServer.get_bus_index("Voz")
 @onready var continuar_partida:bool = false
+@onready var controles_tactiles:bool = false
 
 #Seccion personaje
 var pers_default_speed:int
@@ -52,7 +53,7 @@ func _ready() -> void:
 	pers_nombre = personaje_settings.nombre
 	pers_salud = personaje_settings.currentHealth
 	pers_tieneLampara = personaje_settings.tieneLampara
-	##pliego = personaje_settings.pliego
+	controles_tactiles = personaje_settings.contTactiles
 	#Carga de datos audio
 	var audio_settings = CONFIG_FILE.load_audio_setting()
 	nivelAudioMaster = audio_settings.master
