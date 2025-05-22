@@ -24,6 +24,8 @@ func setPosicionJugador() -> void: #Para cuando salga de un edificio o empieze p
 		$Personaje.position = $Marcadores/EnsambleFuera.position
 	elif GLOBAL.marker_actual == GLOBAL.MarkerPosicion.mk_CristalFuera:
 		$Personaje.position = $Marcadores/CristalFuera.position
+	elif GLOBAL.marker_actual == GLOBAL.MarkerPosicion.mk_EdificioXFuera:
+		$Personaje.position = $Marcadores/EdificioXFuera.position	
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

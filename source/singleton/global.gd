@@ -9,7 +9,8 @@
 extends Node
 enum MarkerPosicion{mk_EdificioAmbSalon, mk_EdificioAmbEntrada, mk_EdificioAmbFuera,
 		mk_EdificioTSalon, mk_EdificioTEntrada, mk_EdificioTFuera, 
-		mk_EPrinFuera, mk_EnsambleEntrada, mk_EnsambleFuera,mk_CristalEntrada,mk_CristalFuera}
+		mk_EPrinFuera, mk_EnsambleEntrada, mk_EnsambleFuera,mk_CristalEntrada,mk_CristalFuera,
+		mk_EdificioXEntrada,mk_EdificioXFuera}
 
 #Declaraciones de variables globales
 @onready var audioMaster = AudioServer.get_bus_index("Master")
@@ -91,6 +92,10 @@ func continuarPartida() -> void:
 	elif GLOBAL.marker_actual==GLOBAL.MarkerPosicion.mk_CristalEntrada:
 		SCN_FADE_IN.cambia_escena("res://source/screens/juego/cristal/cristal.tscn")
 	elif GLOBAL.marker_actual == GLOBAL.MarkerPosicion.mk_CristalFuera:
+		SCN_FADE_IN.cambia_escena("res://source/screens/juego/mundo/mundo.tscn")
+	elif GLOBAL.marker_actual==GLOBAL.MarkerPosicion.mk_EdificioXEntrada:
+		SCN_FADE_IN.cambia_escena("res://source/screens/juego/edifX/edificio_x.tscn")
+	elif GLOBAL.marker_actual == GLOBAL.MarkerPosicion.mk_EdificioXFuera:
 		SCN_FADE_IN.cambia_escena("res://source/screens/juego/mundo/mundo.tscn")
 	else: 
 		print("Configura en GLOBAL:gs continuar partida")

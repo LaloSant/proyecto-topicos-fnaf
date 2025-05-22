@@ -271,6 +271,9 @@ position = Vector2(-1634, -2024)
 [node name="CristalFuera" type="Marker2D" parent="Marcadores"]
 position = Vector2(-1703.85, -691.822)
 
+[node name="EdificioXFuera" type="Marker2D" parent="Marcadores"]
+position = Vector2(183, 311)
+
 [node name="Transiciones" type="Node" parent="."]
 
 [node name="TCCristal" parent="Transiciones" instance=ExtResource("6_r8mfa")]
@@ -294,6 +297,11 @@ puntoSalida = "mk_EdificioAmbEntrada"
 position = Vector2(-1644, -2049)
 escena = "res://source/screens/juego/ensamble/ensamble.tscn"
 puntoSalida = "mk_EnsambleEntrada"
+
+[node name="TCEdifX" parent="Transiciones" instance=ExtResource("6_r8mfa")]
+position = Vector2(184, 336)
+escena = "res://source/screens/juego/edifX/edificio_x.tscn"
+puntoSalida = "mk_EdificioXEntrada"
 
 [node name="Transparentar" type="Node2D" parent="."]
 
