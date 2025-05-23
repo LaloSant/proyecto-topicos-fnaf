@@ -268,6 +268,9 @@ position = Vector2(-1703.85, -691.822)
 [node name="EdificioXFuera" type="Marker2D" parent="Marcadores"]
 position = Vector2(183, 311)
 
+[node name="EdificioMecaFuera" type="Marker2D" parent="Marcadores"]
+position = Vector2(-2589.78, -470.393)
+
 [node name="Transiciones" type="Node" parent="."]
 
 [node name="TCCristal" parent="Transiciones" instance=ExtResource("6_r8mfa")]
@@ -296,6 +299,11 @@ puntoSalida = "mk_EnsambleEntrada"
 position = Vector2(184, 336)
 escena = "res://source/screens/juego/edifX/edificio_x.tscn"
 puntoSalida = "mk_EdificioXEntrada"
+
+[node name="TCEdifMeca" parent="Transiciones" instance=ExtResource("6_r8mfa")]
+position = Vector2(-2570.46, -500.522)
+escena = "res://source/screens/juego/edifMeca/edif_meca.tscn"
+puntoSalida = "mk_EdificioMecaEntrada"
 
 [node name="Transparentar" type="Node2D" parent="."]
 
@@ -406,10 +414,10 @@ shape = SubResource("RectangleShape2D_q8wrk")
 [node name="Items" type="Node" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -5040.0
-offset_top = -6761.0
-offset_right = 2869.0
-offset_bottom = 2550.0
+offset_left = -5037.0
+offset_top = -6763.0
+offset_right = 2872.0
+offset_bottom = 2548.0
 color = Color(0.25098, 0.0392157, 0.227451, 1)
 
 [connection signal="body_entered" from="Transiciones/TCCristal" to="." method="_on_tc_cristal_body_entered"]

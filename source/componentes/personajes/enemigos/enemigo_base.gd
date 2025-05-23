@@ -14,7 +14,7 @@ var spriteSet:Resource
 var speed:float = 50
 var posicionAnt:Vector2 = position
 var currentAnim:String
-var salud:int = 100
+var salud:int = 30
 var muerto:bool = false
 
 func _physics_process(_delta: float) -> void:
