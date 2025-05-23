@@ -14,8 +14,12 @@ var spriteSet:Resource
 var speed:float = 50
 var posicionAnt:Vector2 = position
 var currentAnim:String
+var salud:int = 100
+var muerto:bool = false
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
+	if muerto:
+		return
 	if target_to_chase != null:
 		navigation_agent.target_position = target_to_chase.global_position
 		velocity = global_position.direction_to(navigation_agent.get_next_path_position())* speed
@@ -34,11 +38,11 @@ func getSpritePorNombre(nom:String) -> Resource:
 			return preload("res://source/componentes/personajes/enemigos/police/policeSprites.tres")
 		"Fantasma":
 			return preload("res://source/componentes/personajes/enemigos/Ghost girl/ghostSprites.tres")
-			
-
 	return preload("res://source/componentes/personajes/enemigos/police/policeSprites.tres")
 
 func actualizarPos(ruta:PathFollow2D, delta:float):
+	if muerto:
+		return
 	var anim:String
 	ruta.progress += speed * delta
 	var difx = position.x - posicionAnt.x
@@ -52,7 +56,9 @@ func actualizarPos(ruta:PathFollow2D, delta:float):
 	currentAnim = anim
 	posicionAnt = position
 	
-func actualizarPosChase(delta:float):
+func actualizarPosChase(_delta:float):
+	if muerto:
+		return
 	var anim:String
 	##ruta. += speed * delta
 	var difx = position.x - posicionAnt.x
@@ -67,6 +73,8 @@ func actualizarPosChase(delta:float):
 	posicionAnt = position
 
 func _on_area_danio_body_entered(body: Node2D) -> void:
+	if muerto:
+		return
 	if body is Personaje:
 		if body.muerto:
 			return
@@ -84,6 +92,16 @@ func _on_area_danio_body_entered(body: Node2D) -> void:
 		body.recibe_danio(10, desdeX, desdeY)
 
 func _on_hurt_box_damage_received() -> void:
+	if tipo == "Fantasma":
+		return
+	salud -= 10
+	if salud <= 0:
+		muerto = true
+		$Sprite.animation = "muerto"
+	else:
+		danio()
+
+func danio():
 	$SFX.stream = preload("res://resources/audio/SteveHUrt.mp3")
 	$SFX.play()
 	$ANPEnemigo.play("hurt")

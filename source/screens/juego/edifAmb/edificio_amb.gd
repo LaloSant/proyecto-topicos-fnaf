@@ -57,25 +57,18 @@ func _on_item_lampara_item_obtenido() -> void:
 	GLOBAL.pers_tieneLampara = true
 	$Personaje.tieneLampara = true
 
-
 func _on_personaje_fin_muerte() -> void:
 	$Musica.playing= false
 	$Enemigos/GuardianP/SFX.playing = false
 
-
-
-func _on_p_1_pb_tp_body_entered(body: Node2D) -> void:
+func _on_p_1_pb_tp_body_entered(_body: Node2D) -> void:
 	if $Personaje.tiene_8_paginas():
 		$Transicion.set_deferred("monitoring",true)
 
-
-func _on_salon_2_pb_tp_body_entered(body: Node2D) -> void:
+func _on_salon_2_pb_tp_body_entered(_body: Node2D) -> void:
 	if $Personaje.tiene_8_paginas():
 		$Transicion.set_deferred("monitoring",true)
 
-
-
-
-func _on_salon_8_pb_tp_body_entered(body: Node2D) -> void:
+func _on_salon_8_pb_tp_body_entered(_body: Node2D) -> void:
 		if $Personaje.tiene_8_paginas():
 			$Transicion.set_deferred("monitoring",true)

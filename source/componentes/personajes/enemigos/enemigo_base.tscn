@@ -72,7 +72,7 @@ disabled = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("3_f2cju")
-animation = &"caminar_abj"
+animation = &"muerto"
 
 [node name="Sombra" type="LightOccluder2D" parent="."]
 visible = false

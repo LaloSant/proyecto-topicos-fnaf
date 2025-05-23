@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=13 format=3 uid="uid://dadddakkfagni"]
+[gd_resource type="SpriteFrames" load_steps=14 format=3 uid="uid://dadddakkfagni"]
 
 [ext_resource type="Texture2D" uid="uid://ckl23s6afd8n4" path="res://source/componentes/personajes/enemigos/police/tile_0266.png" id="1_12dwe"]
 [ext_resource type="Texture2D" uid="uid://bcf0ma4p5lbly" path="res://source/componentes/personajes/enemigos/police/tile_0267.png" id="1_dobt4"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://d242t88egxvqu" path="res://source/componentes/personajes/enemigos/police/tile_0269.png" id="10_4co3l"]
 [ext_resource type="Texture2D" uid="uid://c2pa05bs0dcch" path="res://source/componentes/personajes/enemigos/police/tile_0296.png" id="11_7pwd1"]
 [ext_resource type="Texture2D" uid="uid://7uavaj5xqvwe" path="res://source/componentes/personajes/enemigos/police/tile_0323.png" id="12_flqor"]
+[ext_resource type="Texture2D" uid="uid://dpeh60w1si5f1" path="res://source/componentes/personajes/enemigos/police/muerto.png" id="13_cm8c0"]
 
 [resource]
 animations = [{
@@ -113,5 +114,13 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_izq",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_cm8c0")
+}],
+"loop": false,
+"name": &"muerto",
 "speed": 5.0
 }]
