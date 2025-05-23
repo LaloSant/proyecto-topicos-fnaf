@@ -15,6 +15,8 @@ signal finMuerte
 @export var pliego: bool = GLOBAL.pliego
 @export var tieneLampara:bool = GLOBAL.pers_tieneLampara
 @export var paginas:Array[bool] = GLOBAL.paginas
+@export var naranjas:bool= GLOBAL.naranjas
+@export var torta:bool=GLOBAL.torta
 #Propiedades
 var lastAnimation = "idle_abj"
 var defaultSpeed = GLOBAL.pers_default_speed
@@ -31,6 +33,8 @@ var bonkSound = preload("res://resources/audio/Bonk.mp3")
 var muerteSound = preload("res://resources/audio/muerte.mp3")
 var pagSound= preload("res://resources/audio/tururu.mp3")
 var pliegoSound = preload("res://resources/audio/course-clear-super-mario-64_L2VXxAm.mp3")
+var naranjasSound= preload("res://resources/audio/fallout-shelter-lvl-up-sound.mp3")
+var tortaSound = preload("res://resources/audio/chavo.mp3")
 
 func _ready() -> void:
 	if GLOBAL.continuar_partida:
@@ -40,6 +44,7 @@ func _ready() -> void:
 		paginas = GLOBAL.paginas
 		tieneLampara = GLOBAL.pers_tieneLampara
 		pliego = GLOBAL.pliego
+		naranjas=GLOBAL.naranjas
 	else:
 		GLOBAL.pers_nombre = nombre
 		salud = 100
@@ -48,6 +53,8 @@ func _ready() -> void:
 		GLOBAL.paginas = paginas
 		tieneLampara = false
 		pliego= false
+		naranjas=false
+		torta=false
 		GLOBAL.pers_tieneLampara = tieneLampara
 		GLOBAL.continuar_partida = true
 	cambiarSprite(getSpritePorNombre(nombre))
@@ -176,7 +183,13 @@ func getSpritePorNombre(nom:String) -> Resource:
 
 func has_pliego() -> bool:
 	return pliego
-
+	
+func has_naranjas() -> bool:
+	return naranjas
+	
+func has_torta()-> bool:
+	return torta
+	
 func has_lamp() -> bool:
 	return tieneLampara
 
@@ -188,6 +201,7 @@ func tiene_8_paginas()-> bool:
 			if not valor:
 				return false
 	return true
+	
 func set_pagina_x(num_pagina:int) -> void:
 	paginas.set(num_pagina, true)
 
@@ -200,6 +214,12 @@ func toggle_lamp() -> void:
 
 func pick_pliego()-> void:
 	reproduceSonido("Pliego")
+
+func pick_naranjas()-> void:
+	reproduceSonido("Naranjas")
+	
+func pick_torta()-> void:
+	reproduceSonido("Torta")
 
 func pick_pag(indice: int) -> void:
 	reproduceSonido("Pagina")
@@ -263,6 +283,10 @@ func reproduceSonido(nombreAud:String) -> void:
 			$SFX.stream= pagSound
 		"Pliego":
 			$SFX.stream=pliegoSound
+		"Naranjas":
+			$SFX.stream=naranjasSound
+		"Torta":
+			$SFX.stream=tortaSound
 		"MusicaMuerte":
 			$SFX.stream = preload("res://resources/audio/musica/MusicaGameOver.mp3")
 	$SFX.play()

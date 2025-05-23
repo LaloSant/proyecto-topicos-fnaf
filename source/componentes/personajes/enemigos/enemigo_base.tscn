@@ -56,7 +56,7 @@ _data = {
 
 [node name="Enemigo Base" type="CharacterBody2D"]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 7
 script = ExtResource("1_f2cju")
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="."]
@@ -80,7 +80,7 @@ occluder = SubResource("OccluderPolygon2D_f2cju")
 
 [node name="AreaDanio" type="Area2D" parent="."]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 6
 
 [node name="HB2" type="CollisionShape2D" parent="AreaDanio"]
 shape = SubResource("RectangleShape2D_igk5n")

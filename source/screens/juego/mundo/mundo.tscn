@@ -214,6 +214,7 @@ scale = Vector2(195.688, 311.313)
 texture = SubResource("PlaceholderTexture2D_h71qy")
 
 [node name="Edificio G" type="Sprite2D" parent="EdificiosPH"]
+visible = false
 position = Vector2(-929, -288.686)
 rotation = 1.5708
 scale = Vector2(357.638, 154.353)

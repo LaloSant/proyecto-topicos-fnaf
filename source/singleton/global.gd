@@ -29,6 +29,8 @@ var enem_tipo:String
 var pers_salud:int
 
 #Seccion partida
+var naranjas:bool
+var torta:bool
 var pliego:bool
 var pers_tieneLampara:bool
 var contador_dia:int
