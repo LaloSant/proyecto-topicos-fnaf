@@ -31,6 +31,8 @@ var pers_salud:int
 #Seccion partida
 var naranjas:bool
 var torta:bool
+var otorgar_naranjas:bool
+var otorgar_torta:bool
 var pliego:bool
 var pers_tieneLampara:bool
 var contador_dia:int

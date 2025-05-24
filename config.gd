@@ -31,6 +31,8 @@ func _ready() -> void:
 		config.set_value("Personaje","contTactiles",false)
 		config.set_value("Personaje","naranjas",false)
 		config.set_value("Personaje","torta",false)
+		config.set_value("Personaje","otorgar_naranjas",false)
+		config.set_value("Personaje","otorgar_torta",false)
 
 		#Seccion audio
 		config.set_value("Audio", "master", 1)

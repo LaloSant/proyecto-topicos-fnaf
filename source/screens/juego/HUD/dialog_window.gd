@@ -18,6 +18,7 @@ func _ready() -> void:
 	$Timer1.wait_time = tiempo
 	layer =-5
 	
+	
 func actualizaTexto() -> void:
 	lblTexto.text = texto
 

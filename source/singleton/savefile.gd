@@ -20,7 +20,9 @@ func salva_partida():
 		"nombre": GLOBAL.pers_nombre,
 		"pliego": GLOBAL.pliego,
 		"naranjas":GLOBAL.naranjas,
-		"torta":GLOBAL.torta
+		"torta":GLOBAL.torta,
+		"otorgar_torta":GLOBAL.otorgar_torta,
+		"otorgar_naranjas":GLOBAL.otorgar_naranjas
 	}
 	var jsonString = JSON.stringify(datos)
 	if !FileAccess.file_exists("res://gamesave.json"):
@@ -41,6 +43,8 @@ func carga_partida():
 	GLOBAL.pliego = datos.pliego
 	GLOBAL.naranjas=datos.naranjas
 	GLOBAL.torta=datos.torta
+	GLOBAL.otorgar_naranjas= datos.otorgar_naranjas
+	GLOBAL.otorgar_torta = datos.otorgar_torta
 	var contador:int = 0
 	for pag in datos.paginas:
 		GLOBAL.paginas.set(contador, pag)

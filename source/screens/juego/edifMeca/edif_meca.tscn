@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://b7j4234vt56ru" path="res://source/screens/juego/edifMeca/edif_meca.gd" id="1_ohdij"]
 [ext_resource type="TileSet" uid="uid://diumo1fqsdv2j" path="res://source/screens/juego/edifAmb/edificio_ambTileSet.tres" id="2_o67al"]
-[ext_resource type="AudioStream" uid="uid://cgdc5vmar6dcl" path="res://resources/audio/musica/Grupo Soñador en 8-Bit - El paso del gigante - VRC6 Famitracker.mp3" id="2_ohdij"]
+[ext_resource type="AudioStream" uid="uid://cbd2m4qj3ej74" path="res://resources/audio/musica/Grupo Soñador en 8-Bit - El paso del gigante - VRC6 Famitracker.mp3" id="2_ohdij"]
 [ext_resource type="PackedScene" uid="uid://ciyad5p3oge3u" path="res://source/componentes/personajes/base/personaje.tscn" id="3_crit5"]
 [ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/Tps/transportador.tscn" id="4_o67al"]
 [ext_resource type="PackedScene" uid="uid://dfphplmv1hblj" path="res://source/singleton/transiciones/transicion.tscn" id="5_crit5"]
 [ext_resource type="Texture2D" uid="uid://c020bj7lxiskl" path="res://resources/images/sprites/npcChava/npcChava2.png" id="7_hnvyw"]
 [ext_resource type="Texture2D" uid="uid://b0akds10vaq27" path="res://resources/images/sprites/npcChava/npcChava.png" id="8_uadl2"]
 [ext_resource type="PackedScene" uid="uid://c8hbcu3tjoig" path="res://source/screens/juego/HUD/dialog_window.tscn" id="9_cw4fm"]
-[ext_resource type="AudioStream" uid="uid://dmo36x88j3qiu" path="res://resources/audio/just-sans-talking.mp3" id="10_aad6h"]
+[ext_resource type="AudioStream" uid="uid://cv3pegoq44c4j" path="res://resources/audio/bob-omb.mp3" id="10_cw4fm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cw4fm"]
 animations = [{
@@ -40,7 +40,6 @@ bus = &"Musica"
 parameters/looping = true
 
 [node name="Luz" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.0605303, 0.0605303, 0.0605303, 1)
 
 [node name="Fondo" type="ColorRect" parent="."]
@@ -127,12 +126,17 @@ shape = SubResource("RectangleShape2D_aad6h")
 
 [node name="Area2D" type="Area2D" parent="Npc"]
 position = Vector2(744, 377)
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Npc/Area2D"]
 shape = SubResource("RectangleShape2D_hnvyw")
 
 [node name="DWChicaNeed" parent="Npc" instance=ExtResource("9_cw4fm")]
-texto = "Necesitamos las naranjas para alimentar a los de las guardias"
-sound = ExtResource("10_aad6h")
+texto = "Necesitamos naranjas para los de las guardias"
+sound = ExtResource("10_cw4fm")
+
+[node name="DWChicaThanks" parent="Npc" instance=ExtResource("9_cw4fm")]
+texto = "Muchas gracias, teniamos hambre"
+sound = ExtResource("10_cw4fm")
 
 [connection signal="body_entered" from="Npc/Area2D" to="." method="_on_area_2d_body_entered"]

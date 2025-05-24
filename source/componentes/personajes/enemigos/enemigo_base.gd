@@ -14,7 +14,7 @@ var spriteSet:Resource
 var speed:float = 50
 var posicionAnt:Vector2 = position
 var currentAnim:String
-var salud:int = 30
+var salud:int = 50
 var muerto:bool = false
 
 func _physics_process(_delta: float) -> void:
@@ -98,6 +98,8 @@ func _on_hurt_box_damage_received() -> void:
 	if salud <= 0:
 		muerto = true
 		$Sprite.animation = "muerto"
+		$SFX.stream= preload	("res://resources/audio/toma-don-ramon.mp3")
+		$SFX.play()
 	else:
 		danio()
 

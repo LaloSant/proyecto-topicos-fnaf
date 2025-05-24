@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bcokrb4kb46j" path="res://source/screens/juego/edifT/edificio_t.gd" id="1_i38r3"]
 [ext_resource type="AudioStream" uid="uid://cblj3wxb5ean2" path="res://resources/audio/musica/LuigiMansion.mp3" id="2_tjhh6"]
 [ext_resource type="TileSet" uid="uid://buyircn635ffw" path="res://source/screens/juego/edifT/edificio_tTileSet.tres" id="3_ytj8a"]
-[ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/tps/transportador.tscn" id="5_pf4qd"]
+[ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/Tps/transportador.tscn" id="5_pf4qd"]
 [ext_resource type="PackedScene" uid="uid://dfphplmv1hblj" path="res://source/singleton/transiciones/transicion.tscn" id="6_sr0qs"]
 [ext_resource type="PackedScene" uid="uid://lmhgy8eugrgv" path="res://source/componentes/items/item_lampara.tscn" id="7_gm1lj"]
 [ext_resource type="PackedScene" uid="uid://c8hbcu3tjoig" path="res://source/screens/juego/HUD/dialog_window.tscn" id="8_63xdy"]
@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://cyox8ywkadgcp" path="res://resources/audio/gowMisterio.mp3" id="9_tjhh6"]
 [ext_resource type="Texture2D" uid="uid://dhbff6obm5b38" path="res://resources/images/sprites/ocayo/ocayo2.png" id="11_fcnty"]
 [ext_resource type="Texture2D" uid="uid://cnd4bspsdi2hk" path="res://resources/images/sprites/ocayo/ocayo.png" id="12_qs5lx"]
-[ext_resource type="AudioStream" uid="uid://dmo36x88j3qiu" path="res://resources/audio/just-sans-talking.mp3" id="13_qs5lx"]
+[ext_resource type="AudioStream" uid="uid://g4un81y5ly6g" path="res://resources/audio/chavo-a-valer-el-semestre.mp3" id="13_qs5lx"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tjhh6"]
 cull_mode = 2
@@ -263,7 +263,7 @@ frame_progress = 0.852199
 shape = SubResource("RectangleShape2D_tjhh6")
 
 [node name="DWOcayo" parent="." instance=ExtResource("8_63xdy")]
-texto = "Que hace aqui joven?, Ya vamonos no?"
+texto = "chAvo, va a valer vrg el semestre"
 sound = ExtResource("13_qs5lx")
 
 [node name="Area2D" type="Area2D" parent="."]

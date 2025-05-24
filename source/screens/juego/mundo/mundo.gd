@@ -65,3 +65,12 @@ func _on_tc_ensamble_body_entered(body: Node2D) -> void:
 func _on_tc_cristal_body_entered(body: Node2D) -> void:
 	if body is Personaje:
 		GLOBAL.marker_actual = GLOBAL.MarkerPosicion.mk_CristalEntrada
+
+
+func _on_dialogo_body_entered(body: Node2D) -> void:
+	if body is Personaje:
+		if GLOBAL.torta:
+			$NpcVato/DWChicoThanks.mostrar_dialogo()
+			GLOBAL.otorgar_torta= true
+		else:
+			$NpcVato/DWChicoNeed.mostrar_dialogo()
