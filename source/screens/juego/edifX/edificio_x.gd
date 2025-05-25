@@ -14,3 +14,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	$Enemigos/Guardia1.actualizarPosChase(delta)
 	$Enemigos/Guardia2.actualizarPosChase(delta)
+
+
+func _on_personaje_fin_muerte() -> void:
+	$Musica.playing= false
+	$Enemigos/Guardia1/SFX.playing = false
+	$Enemigos/Guardia2/SFX.playing = false

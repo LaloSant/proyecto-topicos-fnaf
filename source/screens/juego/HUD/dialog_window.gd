@@ -19,6 +19,7 @@ func _ready() -> void:
 	layer =-5
 	
 	
+	
 func actualizaTexto() -> void:
 	lblTexto.text = texto
 

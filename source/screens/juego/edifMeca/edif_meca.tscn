@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=4 uid="uid://6iksyfbpudxi"]
 
 [ext_resource type="Script" uid="uid://b7j4234vt56ru" path="res://source/screens/juego/edifMeca/edif_meca.gd" id="1_ohdij"]
+[ext_resource type="AudioStream" uid="uid://butucroy73xlb" path="res://resources/audio/musica/Vecinos en 8 BITS (8 BIT COVER  Animación).mp3" id="2_cw4fm"]
 [ext_resource type="TileSet" uid="uid://diumo1fqsdv2j" path="res://source/screens/juego/edifAmb/edificio_ambTileSet.tres" id="2_o67al"]
-[ext_resource type="AudioStream" uid="uid://cbd2m4qj3ej74" path="res://resources/audio/musica/Grupo Soñador en 8-Bit - El paso del gigante - VRC6 Famitracker.mp3" id="2_ohdij"]
 [ext_resource type="PackedScene" uid="uid://ciyad5p3oge3u" path="res://source/componentes/personajes/base/personaje.tscn" id="3_crit5"]
 [ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/Tps/transportador.tscn" id="4_o67al"]
 [ext_resource type="PackedScene" uid="uid://dfphplmv1hblj" path="res://source/singleton/transiciones/transicion.tscn" id="5_crit5"]
@@ -33,7 +33,7 @@ animations = [{
 script = ExtResource("1_ohdij")
 
 [node name="Musica" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_ohdij")
+stream = ExtResource("2_cw4fm")
 volume_db = 2.0
 autoplay = true
 bus = &"Musica"
