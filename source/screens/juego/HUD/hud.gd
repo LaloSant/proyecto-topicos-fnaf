@@ -15,3 +15,7 @@ func actualizar_salud(salud) -> void:
 	if salud == 100:
 		$Salud.frame = 10
 	$Salud/ANPSalud.play("danio")
+	
+func mostrarMisiones():
+	$HUD/PanelMisiones.visible = !$HUD/PanelMisiones.visible
+	

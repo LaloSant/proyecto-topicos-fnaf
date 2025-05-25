@@ -28,3 +28,8 @@ lbl_sfx,Audio: SFX,Audio: SFX,Audio: SFX
 lbl_voz,Audio: Voz,Audio: voice,Audio: voix
 lbl_gameover,Fin de la partida,Game Over,Jeu Terminé
 lbl_controles,Controles tactiles,Tactile controls,Controles tactiles
+lblMisiones,Misiones,Mission,Mission
+lblMisionPaginas,Paginas del diario (Amb.),Pages of diary (Amb),Pages du journal (Amb)
+lblMisionPliego, Pliego petitorio (Cristal),Petition document (Crystal),Document de pétition (Verre)
+lblMisionNaranjas,Entregar narajnas (Meca),Deliver oranges (Meca),Livrer des oranges (Meca)
+,,,

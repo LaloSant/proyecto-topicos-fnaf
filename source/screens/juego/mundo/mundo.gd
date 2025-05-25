@@ -10,7 +10,8 @@ extends Node2D
 
 func _ready() -> void:
 	setPosicionJugador()
-	$Personaje/HUD/lblInfo.text = "lbl_dia" + str(GLOBAL.contador_dia)
+	$Personaje/camara.zoom = Vector2(2,2)
+	#$Personaje/HUD/lblInfo.text = "lbl_dia" + str(GLOBAL.contador_dia)
 
 func setPosicionJugador() -> void: #Para cuando salga de un edificio o empieze partida
 	$Personaje/Linterna.visible = false

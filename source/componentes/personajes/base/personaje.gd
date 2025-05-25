@@ -198,7 +198,7 @@ func has_pagina_x(num_pagina:int) -> bool:
 
 func tiene_8_paginas()-> bool:
 	for valor in GLOBAL.paginas:
-			if not valor:
+		if not valor:
 				return false
 	return true
 	
@@ -228,6 +228,8 @@ func pick_pag(indice: int) -> void:
 func _input(event: InputEvent) -> void:
 	if muerto:
 		return
+	if event.is_action_pressed("TECLA_M") or event.is_action_pressed("Control_Back"):
+		$HUD.mostrarMisiones()
 	if event.is_action_pressed("TECLA_P") or event.is_action_pressed("Control_Start"):
 		if !get_tree().paused and !$HUD/pantPausa.on_pause:
 			$HUD/pantPausa.procesar()
