@@ -7,8 +7,7 @@
 	Descripcion: Se implementa componente de item torta
 '''
 
-class_name torta extends Area2D
-
+class_name item_torta extends Area2D
 signal item_obtenido
 
 func ready()->void:

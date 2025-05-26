@@ -16,6 +16,7 @@ func setPosicionJugador() -> void: #Para cuando salga de un edificio o empieze p
 	$Personaje/Linterna.visible = false
 	if GLOBAL.marker_actual == GLOBAL.MarkerPosicion.mk_EdificioTFuera:
 		$Personaje.position = $Marcadores/EdificioTFuera.position
+		saleT()
 	elif GLOBAL.marker_actual == GLOBAL.MarkerPosicion.mk_EPrinFuera:
 		$Personaje.position = $Marcadores/EPrincFuera.position
 	elif GLOBAL.marker_actual == GLOBAL.MarkerPosicion.mk_EdificioAmbFuera:
@@ -63,3 +64,12 @@ func _on_tc_ensamble_body_entered(body: Node2D) -> void:
 func _on_tc_cristal_body_entered(body: Node2D) -> void:
 	if body is Personaje:
 		GLOBAL.marker_actual = GLOBAL.MarkerPosicion.mk_CristalEntrada
+
+func saleT():
+	if !GLOBAL.saleT:
+		GLOBAL.saleT = true
+		$Dialogo.popup()
+		$Personaje.puedeMoverse = false
+
+func _on_dialogo_confirmed() -> void:
+	$Personaje.puedeMoverse = true

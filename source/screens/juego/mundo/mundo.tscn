@@ -1,9 +1,10 @@
-[gd_scene load_steps=32 format=4 uid="uid://bcedmut05i6ho"]
+[gd_scene load_steps=33 format=4 uid="uid://bcedmut05i6ho"]
 
 [ext_resource type="Script" uid="uid://7aic3ebec30s" path="res://source/screens/juego/mundo/mundo.gd" id="1_woy8x"]
 [ext_resource type="AudioStream" uid="uid://dp1m1k357d67x" path="res://resources/audio/musica/Mundo Tec.mp3" id="2_r2syo"]
 [ext_resource type="TileSet" uid="uid://dsgq63x7wwt58" path="res://source/screens/juego/mundo/mundoTileSet.tres" id="3_or3ot"]
 [ext_resource type="PackedScene" uid="uid://ciyad5p3oge3u" path="res://source/componentes/personajes/base/personaje.tscn" id="5_21ka8"]
+[ext_resource type="Theme" uid="uid://tanh1kklj0vh" path="res://source/screens/menus/pant_principal_tema.tres" id="6_04pcm"]
 [ext_resource type="PackedScene" uid="uid://dfphplmv1hblj" path="res://source/singleton/transiciones/transicion.tscn" id="6_r8mfa"]
 
 [sub_resource type="Animation" id="Animation_8v40e"]
@@ -386,9 +387,27 @@ offset_right = 3316.0
 offset_bottom = 2772.0
 color = Color(0.25098, 0.0392157, 0.227451, 1)
 
+[node name="Dialogo" type="AcceptDialog" parent="."]
+title = "BIENVENIDO!"
+initial_position = 2
+size = Vector2i(700, 301)
+unresizable = true
+borderless = true
+theme = ExtResource("6_04pcm")
+ok_button_text = "Empezar el juego"
+dialog_text = "Con M puedes ver las misiones por hacer.
+
+Los edificios visitables son: T, Ambiental, Mecatronica, X, Cristal y Gradas (Ensamble).
+
+Con E puedes pegar a enemigos (Excepto a los que te atormentan desde el mas allá).
+
+Con T puedes comerte una tortita (Si es que tienes...)."
+dialog_autowrap = true
+
 [connection signal="body_entered" from="Transiciones/TCCristal" to="." method="_on_tc_cristal_body_entered"]
 [connection signal="body_entered" from="Transiciones/TCEdifT" to="." method="_on_tc_edif_t_body_entered"]
 [connection signal="body_entered" from="Transiciones/TCEdifAmb" to="." method="_on_tc_edif_amb_body_entered"]
 [connection signal="body_entered" from="Transiciones/TCEnsamble" to="." method="_on_tc_ensamble_body_entered"]
 [connection signal="body_entered" from="Transparentar/Edificios" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Transparentar/Edificios" to="." method="_on_area_2d_body_exited"]
+[connection signal="confirmed" from="Dialogo" to="." method="_on_dialogo_confirmed"]
