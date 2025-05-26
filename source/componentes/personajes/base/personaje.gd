@@ -237,6 +237,7 @@ func come_torta() -> void:
 		salud += 50
 	else: 
 		salud = 100
+	GLOBAL.pers_salud = salud
 	$HUD.actualizar_salud(salud)
 
 func pick_pag(indice: int) -> void:

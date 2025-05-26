@@ -10,7 +10,7 @@ extends Node2D
 
 func _ready() -> void:
 	setPosicionJugador()
-	$Personaje/camara.zoom = Vector2(2,2)
+	$Personaje/camara.zoom = Vector2(2.5,2.5)
 
 func setPosicionJugador() -> void: #Para cuando salga de un edificio o empieze partida
 	$Personaje/Linterna.visible = false
