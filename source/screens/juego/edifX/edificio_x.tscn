@@ -128,10 +128,10 @@ puntoSalida = "mk_EdificioXFuera"
 [node name="Items" type="Node" parent="."]
 
 [node name="ItemNaranjas" parent="Items" instance=ExtResource("7_0o0t4")]
-position = Vector2(695, 400)
+position = Vector2(65, 30)
 
 [node name="ItemTorta" parent="Items" instance=ExtResource("8_2q3wn")]
-position = Vector2(66, 32)
+position = Vector2(690, 417)
 
 [node name="Navegadores" type="Node" parent="."]
 
