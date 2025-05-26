@@ -31,10 +31,11 @@ var muerto:bool = false
 var flashlightSound = preload("res://resources/audio/Flashlight.ogg")
 var bonkSound = preload("res://resources/audio/Bonk.mp3")
 var muerteSound = preload("res://resources/audio/muerte.mp3")
-var pagSound= preload("res://resources/audio/tururu.mp3")
+var pagSound = preload("res://resources/audio/tururu.mp3")
 var pliegoSound = preload("res://resources/audio/course-clear-super-mario-64_L2VXxAm.mp3")
 var naranjasSound= preload("res://resources/audio/fallout-shelter-lvl-up-sound.mp3")
 var tortaSound = preload("res://resources/audio/chavo.mp3")
+var biteSound = preload("res://resources/audio/GoofyAhhBite.mp3")
 
 func _ready() -> void:
 	if GLOBAL.continuar_partida:
@@ -44,7 +45,8 @@ func _ready() -> void:
 		paginas = GLOBAL.paginas
 		tieneLampara = GLOBAL.pers_tieneLampara
 		pliego = GLOBAL.pliego
-		naranjas=GLOBAL.naranjas
+		naranjas = GLOBAL.naranjas
+		torta = GLOBAL.torta
 	else:
 		GLOBAL.pers_nombre = nombre
 		salud = 100
@@ -213,17 +215,34 @@ func toggle_lamp() -> void:
 		$Linterna.visible = false
 
 func pick_pliego()-> void:
+	$HUD/PanelMisiones/TickPliego.visible = true
 	reproduceSonido("Pliego")
 
 func pick_naranjas()-> void:
 	reproduceSonido("Naranjas")
-	
+
+func entrega_naranjas() -> void:
+	$HUD.consultarMisiones()
+
 func pick_torta()-> void:
 	reproduceSonido("Torta")
+	$HUD.cambioTorta(true)
+
+func come_torta() -> void:
+	if !has_torta():
+		return
+	reproduceSonido("Bite")
+	$HUD.cambioTorta(false)
+	if salud <= 50:
+		salud += 50
+	else: 
+		salud = 100
+	$HUD.actualizar_salud(salud)
 
 func pick_pag(indice: int) -> void:
 	reproduceSonido("Pagina")
-	paginas.set(indice,true) 
+	paginas.set(indice,true)
+	$HUD.setNumPaginas()
 
 func _input(event: InputEvent) -> void:
 	if muerto:
@@ -235,6 +254,8 @@ func _input(event: InputEvent) -> void:
 			$HUD/pantPausa.procesar()
 	if event.is_action_pressed("TECLA_Q") or event.is_action_pressed("Control_X_cuad"):
 		toggle_lamp()
+	if event.is_action_pressed("TECLA_T") or event.is_action_pressed("CONTROL_Y_tria"):
+		come_torta()
 	if event.is_action_pressed("TECLA_E") or event.is_action_pressed("Control_RT_R2"):
 		if not golpeando:
 			golpeando = true
@@ -282,13 +303,15 @@ func reproduceSonido(nombreAud:String) -> void:
 			$SFX.stream = muerteSound
 			$SFX.volume_db = 0
 		"Pagina":
-			$SFX.stream= pagSound
+			$SFX.stream = pagSound
 		"Pliego":
-			$SFX.stream=pliegoSound
+			$SFX.stream = pliegoSound
 		"Naranjas":
-			$SFX.stream=naranjasSound
+			$SFX.stream = naranjasSound
 		"Torta":
-			$SFX.stream=tortaSound
+			$SFX.stream = tortaSound
+		"Bite":
+			$SFX.stream = biteSound
 		"MusicaMuerte":
 			$SFX.stream = preload("res://resources/audio/musica/MusicaGameOver.mp3")
 	$SFX.play()

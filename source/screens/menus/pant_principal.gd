@@ -14,7 +14,7 @@ func _ready() -> void:
 	THR_LOADER.load_trigger("res://source/screens/menus/pant_creditos.tscn")
 
 func _on_btn_iniciar_pressed() -> void:
-	GLOBAL.contador_dia = 1
+	GLOBAL.continuar_partida = false
 	GLOBAL.marker_actual = GLOBAL.MarkerPosicion.mk_EdificioTSalon
 	SCN_FADE_IN.cambia_escena("res://source/screens/juego/edifT/edificio_t.tscn")
 

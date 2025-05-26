@@ -1,14 +1,10 @@
-[gd_scene load_steps=40 format=4 uid="uid://bcedmut05i6ho"]
+[gd_scene load_steps=33 format=4 uid="uid://bcedmut05i6ho"]
 
 [ext_resource type="Script" uid="uid://7aic3ebec30s" path="res://source/screens/juego/mundo/mundo.gd" id="1_woy8x"]
 [ext_resource type="AudioStream" uid="uid://dp1m1k357d67x" path="res://resources/audio/musica/Mundo Tec.mp3" id="2_r2syo"]
 [ext_resource type="TileSet" uid="uid://dsgq63x7wwt58" path="res://source/screens/juego/mundo/mundoTileSet.tres" id="3_or3ot"]
 [ext_resource type="PackedScene" uid="uid://ciyad5p3oge3u" path="res://source/componentes/personajes/base/personaje.tscn" id="5_21ka8"]
-[ext_resource type="Texture2D" uid="uid://vhp4cw2ax8tx" path="res://resources/images/sprites/npcChavo/npcChavo2.png" id="6_04pcm"]
 [ext_resource type="PackedScene" uid="uid://dfphplmv1hblj" path="res://source/singleton/transiciones/transicion.tscn" id="6_r8mfa"]
-[ext_resource type="Texture2D" uid="uid://c22uuubhgy02b" path="res://resources/images/sprites/npcChavo/npcChavo.png" id="7_8v40e"]
-[ext_resource type="PackedScene" uid="uid://c8hbcu3tjoig" path="res://source/screens/juego/HUD/dialog_window.tscn" id="8_doqp4"]
-[ext_resource type="AudioStream" uid="uid://dmo36x88j3qiu" path="res://resources/audio/just-sans-talking.mp3" id="9_doqp4"]
 
 [sub_resource type="Animation" id="Animation_8v40e"]
 resource_name = "Ciclo_DN"
@@ -146,25 +142,6 @@ size = Vector2(175, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q8wrk"]
 size = Vector2(65, 39)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_doqp4"]
-animations = [{
-"frames": [{
-"duration": 2.0,
-"texture": ExtResource("6_04pcm")
-}, {
-"duration": 2.0,
-"texture": ExtResource("7_8v40e")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_chrhl"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6or1"]
-size = Vector2(20, 9)
 
 [node name="MundExt" type="Node2D"]
 y_sort_enabled = true
@@ -416,40 +393,9 @@ offset_right = 3329.0
 offset_bottom = 2764.0
 color = Color(0.25098, 0.0392157, 0.227451, 1)
 
-[node name="NpcVato" type="Node" parent="."]
-
-[node name="NpcVato" type="AnimatedSprite2D" parent="NpcVato"]
-position = Vector2(-2218.74, -2457.12)
-sprite_frames = SubResource("SpriteFrames_doqp4")
-autoplay = "default"
-frame_progress = 0.212029
-
-[node name="StaticBody2D" type="StaticBody2D" parent="NpcVato/NpcVato"]
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NpcVato/NpcVato/StaticBody2D"]
-shape = SubResource("RectangleShape2D_chrhl")
-
-[node name="Dialogo" type="Area2D" parent="NpcVato"]
-position = Vector2(-2220.28, -2443.62)
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NpcVato/Dialogo"]
-position = Vector2(1.27832, -0.379395)
-shape = SubResource("RectangleShape2D_r6or1")
-
-[node name="DWChicoNeed" parent="NpcVato" instance=ExtResource("8_doqp4")]
-texto = "Tengo mucha hambre, me vendria bien una torta"
-sound = ExtResource("9_doqp4")
-
-[node name="DWChicoThanks" parent="NpcVato" instance=ExtResource("8_doqp4")]
-texto = "Muchas gracias, eres de gran ayuda aqui"
-sound = ExtResource("9_doqp4")
-
 [connection signal="body_entered" from="Transiciones/TCCristal" to="." method="_on_tc_cristal_body_entered"]
 [connection signal="body_entered" from="Transiciones/TCEdifT" to="." method="_on_tc_edif_t_body_entered"]
 [connection signal="body_entered" from="Transiciones/TCEdifAmb" to="." method="_on_tc_edif_amb_body_entered"]
 [connection signal="body_entered" from="Transiciones/TCEnsamble" to="." method="_on_tc_ensamble_body_entered"]
 [connection signal="body_entered" from="Transparentar/Edificios" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Transparentar/Edificios" to="." method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="NpcVato/Dialogo" to="." method="_on_dialogo_body_entered"]

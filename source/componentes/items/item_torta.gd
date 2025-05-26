@@ -1,3 +1,12 @@
+'''
+	Modulo item torta
+	Creado por: Yael Sampayo Marin
+	Modificado por: Eduardo Jair Bautista Santiesteban
+	Fecha de creacion: 22 / 05 / 2025
+	Fecha de ultima modificacion: 25 / 05 / 2025
+	Descripcion: Se implementa componente de item torta
+'''
+
 class_name torta extends Area2D
 
 signal item_obtenido

@@ -60,7 +60,6 @@ func actualizarPosChase(_delta:float):
 	if muerto:
 		return
 	var anim:String
-	##ruta. += speed * delta
 	var difx = position.x - posicionAnt.x
 	var dify = position.y - posicionAnt.y
 	var difMayorX = (abs(difx) - abs(dify)) > 0 
@@ -96,10 +95,11 @@ func _on_hurt_box_damage_received() -> void:
 		return
 	salud -= 10
 	if salud <= 0:
+		if not muerto:
+			$SFX.stream = preload("res://resources/audio/toma-don-ramon.mp3")
+			$SFX.play()
 		muerto = true
 		$Sprite.animation = "muerto"
-		$SFX.stream= preload	("res://resources/audio/toma-don-ramon.mp3")
-		$SFX.play()
 	else:
 		danio()
 

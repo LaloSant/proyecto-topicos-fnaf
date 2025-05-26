@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://7vxsatdtmkuv" path="res://source/screens/juego/edifX/edificio_x.gd" id="1_14eha"]
 [ext_resource type="PackedScene" uid="uid://ciyad5p3oge3u" path="res://source/componentes/personajes/base/personaje.tscn" id="2_gy42i"]
 [ext_resource type="AudioStream" uid="uid://cbd2m4qj3ej74" path="res://resources/audio/musica/Grupo Soñador en 8-Bit - El paso del gigante - VRC6 Famitracker.mp3" id="2_u7uiv"]
-[ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/Tps/transportador.tscn" id="3_lsn7d"]
+[ext_resource type="PackedScene" uid="uid://bna2yasfy1opo" path="res://source/componentes/tps/transportador.tscn" id="3_lsn7d"]
 [ext_resource type="PackedScene" uid="uid://dfphplmv1hblj" path="res://source/singleton/transiciones/transicion.tscn" id="5_mt1od"]
 [ext_resource type="PackedScene" uid="uid://cqd88yxl6imvi" path="res://source/componentes/items/item_naranjas.tscn" id="7_0o0t4"]
 [ext_resource type="PackedScene" uid="uid://ck834551n2jko" path="res://source/componentes/items/item_torta.tscn" id="8_2q3wn"]

@@ -11,19 +11,20 @@ class_name DialogWindow extends CanvasLayer
 @export var sound:AudioStream
 @export var tiempo:int
 @onready var lblTexto = $PnlTexto/lbl_texto
+var pers:Personaje
 
 func _ready() -> void:
 	$PnlTexto/lbl_texto.text = texto
 	$ASP.stream = sound
 	$Timer1.wait_time = tiempo
 	layer =-5
-	
-	
-	
+
 func actualizaTexto() -> void:
 	lblTexto.text = texto
 
-func mostrar_dialogo():
+func mostrar_dialogo(body:Personaje):
+	pers = body
+	pers.puedeMoverse = false
 	actualizaTexto()
 	lblTexto.visible_characters = 0
 	layer = 1
@@ -32,7 +33,6 @@ func mostrar_dialogo():
 	var tween = create_tween()
 	tween.tween_property(lblTexto, "visible_characters", lblTexto.get_total_character_count(), tiempoL)
 	$Timer1.start()
-	
 
 func _on_timer_timeout() -> void:
 	var tiempoL = lblTexto.get_total_character_count() * 0.05
@@ -41,6 +41,6 @@ func _on_timer_timeout() -> void:
 	tween.tween_property(lblTexto, "visible_characters", 0, tiempoL)
 	$Timer2.start()
 
-
 func _on_timer_2_timeout() -> void:
+	pers.puedeMoverse = true
 	layer = -5

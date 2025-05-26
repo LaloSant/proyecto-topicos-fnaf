@@ -1,9 +1,9 @@
 '''
-	Modulo Edificio Ambiental
-	Creado por: Eduardo Jair Bautista Santiesteban
-	Modificado por:
+	Modulo Edificio Cristal
+	Creado por: Yael Sampayo Marin
+	Modificado por: Eduardo Jair Bautista Santiesteban
 	Fecha de creacion: 19 / 05 / 2025
-	Fecha de ultima modificacion: 19 / 05 / 2025
+	Fecha de ultima modificacion: 25 / 05 / 2025
 	Descripcion: Se implementa el nivel del edificio Cristal
 '''
 
@@ -17,14 +17,11 @@ extends Node2D
 
 func _ready() -> void:
 	$Personaje.defaultSpeed = GLOBAL.pers_default_speed * 0.5
-	##$Enemigos/Guardia1.speed*=2.5
-	##$Enemigos/Guardia2.speed*=3
 	match GLOBAL.marker_actual:
-		
-			GLOBAL.MarkerPosicion.mk_CristalEntrada:
-				$Personaje.position = $Markers/Cristal.position
+		GLOBAL.MarkerPosicion.mk_CristalEntrada:
+			$Personaje.position = $Markers/Cristal.position
 	if not $Personaje.has_lamp():
-		$Items/DWNeedLampara.mostrar_dialogo()
+		$Items/DWNeedLampara.mostrar_dialogo($Personaje)
 	$Personaje/Linterna.visible = $Personaje.tieneLampara
 	$Items/item_lampara.visible = !GLOBAL.pers_tieneLampara
 	$Items/ItemPliego.visible = !GLOBAL.pliego
@@ -37,9 +34,6 @@ func _process(delta: float) -> void:
 	$Enemigos/Guardia4.actualizarPos(ruta_parte_4F,delta)
 	$Enemigos/Guardia5.actualizarPos(ruta_parte_5F,delta)
 	$Enemigos/Guardia6.actualizarPos(ruta_parte_6F,delta)
-
-	
-
 
 func _on_personaje_fin_muerte() -> void:
 	$Musica.playing = false

@@ -1,8 +1,8 @@
 '''
 	Modulo item pagina
-	Creado por: Eduardo Jair Bautista Santiesteban
+	Creado por: Yael Sampayo Marin
 	Fecha de creacion: 12 / 05 / 2025
-	Fecha de ultima modificacion: 12 / 05 / 2025
+	Fecha de ultima modificacion: 25 / 05 / 2025
 	Descripcion: Se implementa componente de item pagina
 '''
 

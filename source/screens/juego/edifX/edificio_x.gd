@@ -1,3 +1,12 @@
+'''
+	Modulo Edificio X
+	Creado por: Yael Sampayo Marin
+	Modificado por: Eduardo Jair Bautista Santiesteban
+	Fecha de creacion: 22 / 04 / 2025
+	Fecha de ultima modificacion: 25 / 05 / 2025
+	Descripcion: Se implementa el nivel del edificio X
+'''
+
 extends Node2D
 
 func _ready() -> void:
@@ -14,7 +23,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	$Enemigos/Guardia1.actualizarPosChase(delta)
 	$Enemigos/Guardia2.actualizarPosChase(delta)
-
 
 func _on_personaje_fin_muerte() -> void:
 	$Musica.playing= false

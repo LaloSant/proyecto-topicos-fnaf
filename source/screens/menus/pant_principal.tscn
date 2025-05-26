@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bt2k7hof7sakh"]
+[gd_scene load_steps=7 format=3 uid="uid://bt2k7hof7sakh"]
 
 [ext_resource type="Script" uid="uid://du8j6m4iym2tf" path="res://source/screens/menus/pant_principal.gd" id="1_ut4m4"]
 [ext_resource type="Texture2D" uid="uid://c3v7cdacugfc3" path="res://resources/images/FiveNigths.jpg" id="3_o7wbf"]
 [ext_resource type="AudioStream" uid="uid://1ehnfoqqyg11" path="res://resources/audio/musica/Main Menu.mp3" id="4_atong"]
 [ext_resource type="Theme" uid="uid://tanh1kklj0vh" path="res://source/screens/menus/pant_principal_tema.tres" id="4_y8nws"]
-[ext_resource type="Texture2D" uid="uid://dkjvcsecjibky" path="res://resources/chispa.png" id="5_y8nws"]
 
 [sub_resource type="Gradient" id="Gradient_0m4t8"]
 offsets = PackedFloat32Array(0.0324675, 0.454545)
@@ -14,20 +13,6 @@ metadata/_snap_count = 11
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_a3kqj"]
 gradient = SubResource("Gradient_0m4t8")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xwumx"]
-particle_flag_disable_z = true
-emission_shape_offset = Vector3(50, 50, 0)
-angle_min = 64.5
-angle_max = 322.4
-inherit_velocity_ratio = 0.235
-direction = Vector3(6, -6, 0)
-spread = 95.294
-initial_velocity_max = 306.45
-gravity = Vector3(200, 200, 0)
-scale_min = 0.1
-scale_max = 0.15
-color = Color(1, 0, 0, 1)
 
 [node name="PantPrincipal" type="Node2D"]
 script = ExtResource("1_ut4m4")
@@ -52,15 +37,6 @@ texture = SubResource("GradientTexture1D_a3kqj")
 position = Vector2(931, 357)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_o7wbf")
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="Panel"]
-position = Vector2(-116, -108)
-emitting = false
-amount = 20
-texture = ExtResource("5_y8nws")
-lifetime = 2.0
-trail_lifetime = 4.26
-process_material = SubResource("ParticleProcessMaterial_xwumx")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 0

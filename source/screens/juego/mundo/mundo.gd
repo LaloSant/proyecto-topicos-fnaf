@@ -11,7 +11,6 @@ extends Node2D
 func _ready() -> void:
 	setPosicionJugador()
 	$Personaje/camara.zoom = Vector2(2,2)
-	#$Personaje/HUD/lblInfo.text = "lbl_dia" + str(GLOBAL.contador_dia)
 
 func setPosicionJugador() -> void: #Para cuando salga de un edificio o empieze partida
 	$Personaje/Linterna.visible = false
@@ -30,7 +29,6 @@ func setPosicionJugador() -> void: #Para cuando salga de un edificio o empieze p
 	elif GLOBAL.marker_actual == GLOBAL.MarkerPosicion.mk_EdificioMecaFuera:
 		$Personaje.position = $Marcadores/EdificioMecaFuera.position		
 
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	transparentar(body)
 
@@ -40,7 +38,7 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 func transparentar(body:Node2D) -> void:
 	if body is Personaje:
 		$Transparentar/ANPModulate.play("Fade_Edificios")
-		
+
 func de_transparentar(body:Node2D) -> void:
 	if body is Personaje:
 		$Transparentar/ANPModulate.play_backwards("Fade_Edificios")
@@ -58,7 +56,6 @@ func _on_tc_edif_amb_body_entered(body: Node2D) -> void:
 	if body is Personaje:
 		GLOBAL.marker_actual= GLOBAL.MarkerPosicion.mk_EdificioAmbEntrada
 
-
 func _on_tc_ensamble_body_entered(body: Node2D) -> void:
 	if body is Personaje:
 		GLOBAL.marker_actual = GLOBAL.MarkerPosicion.mk_EnsambleEntrada
@@ -66,12 +63,3 @@ func _on_tc_ensamble_body_entered(body: Node2D) -> void:
 func _on_tc_cristal_body_entered(body: Node2D) -> void:
 	if body is Personaje:
 		GLOBAL.marker_actual = GLOBAL.MarkerPosicion.mk_CristalEntrada
-
-
-func _on_dialogo_body_entered(body: Node2D) -> void:
-	if body is Personaje:
-		if GLOBAL.torta:
-			$NpcVato/DWChicoThanks.mostrar_dialogo()
-			GLOBAL.otorgar_torta= true
-		else:
-			$NpcVato/DWChicoNeed.mostrar_dialogo()

@@ -12,7 +12,7 @@ extends Node2D
 
 func _ready() -> void:
 	if not $Personaje.has_lamp():
-		$Items/DWNeedLampara.mostrar_dialogo()
+		$Items/DWNeedLampara.mostrar_dialogo($Personaje)
 		$Items/item_lampara.visible = true
 	$Personaje/Linterna.visible = $Personaje.tieneLampara
 	$Items/item_lampara.visible = !$Personaje.has_lamp()
@@ -42,7 +42,7 @@ func _on_pb_p_1_tp_cambio_lugar() -> void:
 	$Personaje/HUD/lblInfo.text = "lbl_P1"
 
 func _on_item_lampara_item_obtenido() -> void:
-	$Items/DWLampara.mostrar_dialogo()
+	$Items/DWLampara.mostrar_dialogo($Personaje)
 	GLOBAL.pers_tieneLampara = true
 	$Personaje.tieneLampara = true
 
@@ -53,4 +53,4 @@ func _on_personaje_fin_muerte() -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Personaje:
-		$DWOcayo.mostrar_dialogo()
+		$DWOcayo.mostrar_dialogo(body)

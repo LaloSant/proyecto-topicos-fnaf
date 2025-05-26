@@ -21,7 +21,6 @@ func salva_partida():
 		"pliego": GLOBAL.pliego,
 		"naranjas":GLOBAL.naranjas,
 		"torta":GLOBAL.torta,
-		"otorgar_torta":GLOBAL.otorgar_torta,
 		"otorgar_naranjas":GLOBAL.otorgar_naranjas
 	}
 	var jsonString = JSON.stringify(datos)
@@ -44,7 +43,6 @@ func carga_partida():
 	GLOBAL.naranjas=datos.naranjas
 	GLOBAL.torta=datos.torta
 	GLOBAL.otorgar_naranjas= datos.otorgar_naranjas
-	GLOBAL.otorgar_torta = datos.otorgar_torta
 	var contador:int = 0
 	for pag in datos.paginas:
 		GLOBAL.paginas.set(contador, pag)

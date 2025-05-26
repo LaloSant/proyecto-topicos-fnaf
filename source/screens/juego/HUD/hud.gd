@@ -2,11 +2,16 @@
 	Modulo HUD
 	Creado por: Eduardo Jair Bautista Santiesteban
 	Fecha de creacion: 24 / 03 / 2025
-	Fecha de ultima modificacion: 30 / 04 / 2025
+	Fecha de ultima modificacion: 25 / 05 / 2025
 	Descripcion: Se implementa script de HUD
 '''
 
 class_name HUD extends CanvasLayer
+
+func _ready() -> void:
+	$PanelMisiones.visible = false
+	consultarMisiones()
+	actTorta()
 
 func actualizar_salud(salud) -> void:
 	var stage = (salud / 10) + 1 
@@ -17,5 +22,26 @@ func actualizar_salud(salud) -> void:
 	$Salud/ANPSalud.play("danio")
 	
 func mostrarMisiones():
-	$HUD/PanelMisiones.visible = !$HUD/PanelMisiones.visible
-	
+	consultarMisiones()
+	$PanelMisiones.visible = !$PanelMisiones.visible
+
+func consultarMisiones():
+	$PanelMisiones/TickNaranjas.visible = GLOBAL.otorgar_naranjas
+	$PanelMisiones/TickPliego.visible = GLOBAL.pliego
+	setNumPaginas()
+
+func setNumPaginas():
+	var numPaginas = 0
+	for tienePagina in GLOBAL.paginas:
+		if tienePagina:
+			numPaginas += 1
+	$PanelMisiones/lblNumPaginas.text = str(numPaginas) + " / 8"
+
+func cambioTorta(valor:bool) -> void:
+	GLOBAL.torta = valor
+	var tween = create_tween()
+	var color = Color(1, 1, 1, 1) if valor else Color(0, 0, 0, 1)
+	tween.tween_property($Torta, "modulate", color, 1.0)
+
+func actTorta():
+	$Torta.modulate = Color(1, 1, 1, 1) if GLOBAL.torta else Color(0, 0, 0, 1)

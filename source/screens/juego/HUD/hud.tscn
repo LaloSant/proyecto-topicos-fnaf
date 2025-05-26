@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0a4ucxe160yd"]
+[gd_scene load_steps=10 format=3 uid="uid://d0a4ucxe160yd"]
 
 [ext_resource type="Script" uid="uid://bsljbid08urdh" path="res://source/screens/juego/HUD/hud.gd" id="1_s75c2"]
 [ext_resource type="FontFile" uid="uid://bqc8jwwk78iqu" path="res://resources/lang/MinecraftBoldItalic-1y1e.otf" id="2_8tycl"]
 [ext_resource type="Theme" uid="uid://tanh1kklj0vh" path="res://source/screens/menus/pant_principal_tema.tres" id="4_gxufb"]
 [ext_resource type="SpriteFrames" uid="uid://isubefltarb4" path="res://source/screens/juego/HUD/salud_bar.tres" id="5_atmrw"]
 [ext_resource type="Texture2D" uid="uid://dkuatk4q1afp0" path="res://resources/images/Tick.png" id="5_dnx0k"]
+[ext_resource type="Texture2D" uid="uid://3nr5v0uf3vqg" path="res://source/componentes/items/Torta.png" id="6_dnx0k"]
 
 [sub_resource type="Animation" id="Animation_dnx0k"]
 length = 0.001
@@ -73,7 +74,6 @@ libraries = {
 }
 
 [node name="PanelMisiones" type="Panel" parent="."]
-visible = false
 offset_left = 569.0
 offset_top = 2.0
 offset_right = 1275.0
@@ -126,7 +126,22 @@ theme = ExtResource("4_gxufb")
 theme_override_font_sizes/font_size = 30
 text = "lblMisionPaginas"
 
-[node name="TickPliegoPaginas" type="Sprite2D" parent="PanelMisiones"]
+[node name="lblNumPaginas" type="Label" parent="PanelMisiones"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 276.0
+offset_top = 24.5
+offset_right = 558.0
+offset_bottom = 54.5
+grow_vertical = 2
+theme = ExtResource("4_gxufb")
+theme_override_font_sizes/font_size = 30
+text = "X / 8"
+
+[node name="TickPaginas" type="Sprite2D" parent="PanelMisiones"]
+visible = false
 position = Vector2(74, 242)
 scale = Vector2(0.0494898, 0.0494898)
 texture = ExtResource("5_dnx0k")
@@ -145,7 +160,13 @@ theme = ExtResource("4_gxufb")
 theme_override_font_sizes/font_size = 30
 text = "lblMisionNaranjas"
 
-[node name="TickPliegoNaranjas" type="Sprite2D" parent="PanelMisiones"]
+[node name="TickNaranjas" type="Sprite2D" parent="PanelMisiones"]
 position = Vector2(74, 346)
 scale = Vector2(0.0494898, 0.0494898)
 texture = ExtResource("5_dnx0k")
+
+[node name="Torta" type="Sprite2D" parent="."]
+modulate = Color(0.973535, 0.973535, 0.973535, 1)
+position = Vector2(113.5, 588.5)
+scale = Vector2(5.9375, 5.6875)
+texture = ExtResource("6_dnx0k")

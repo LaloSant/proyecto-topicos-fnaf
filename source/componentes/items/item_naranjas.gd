@@ -1,3 +1,11 @@
+'''
+	Modulo item naranjas
+	Creado por: Yael Sampayo Marin
+	Fecha de creacion: 22 / 05 / 2025
+	Fecha de ultima modificacion: 22 / 05 / 2025
+	Descripcion: Se implementa componente de item naranjas
+'''
+
 class_name item_naranjas extends Area2D
 
 signal item_obtenido
