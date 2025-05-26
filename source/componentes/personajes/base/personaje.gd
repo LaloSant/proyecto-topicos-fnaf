@@ -233,6 +233,7 @@ func come_torta() -> void:
 		return
 	reproduceSonido("Bite")
 	$HUD.cambioTorta(false)
+	torta = false
 	if salud <= 50:
 		salud += 50
 	else: 

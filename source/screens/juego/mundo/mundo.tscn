@@ -267,7 +267,8 @@ escena = "res://source/screens/juego/ensamble/ensamble.tscn"
 puntoSalida = "mk_EnsambleEntrada"
 
 [node name="TCEdifX" parent="Transiciones" instance=ExtResource("6_r8mfa")]
-position = Vector2(184, 336)
+position = Vector2(89, 352)
+scale = Vector2(12, 1)
 escena = "res://source/screens/juego/edifX/edificio_x.tscn"
 puntoSalida = "mk_EdificioXEntrada"
 

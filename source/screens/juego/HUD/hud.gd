@@ -42,6 +42,8 @@ func setNumPaginas():
 		if tienePagina:
 			numPaginas += 1
 	$PanelMisiones/lblNumPaginas.text = str(numPaginas) + " / 8"
+	if numPaginas == 8:
+		$PanelMisiones/TickPaginas.visible = true
 
 func cambioTorta(valor:bool) -> void:
 	GLOBAL.torta = valor
