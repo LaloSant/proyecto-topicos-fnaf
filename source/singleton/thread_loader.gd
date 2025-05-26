@@ -14,7 +14,7 @@ var scene_path:String
 var thread = Thread.new()
 
 func load_trigger(sp:String):
-	if thread.is_alive():
+	if thread.is_alive() or thread.is_started():
 		return
 	scene_path = sp
 	thread.start(load_scene)

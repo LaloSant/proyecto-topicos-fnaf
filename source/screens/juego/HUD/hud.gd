@@ -23,6 +23,12 @@ func actualizar_salud(salud) -> void:
 	
 func mostrarMisiones():
 	consultarMisiones()
+	var tween = create_tween()
+	if $PanelMisiones.visible: 
+		tween.tween_property($PanelMisiones, "position", Vector2(574, -413), 0.5).set_ease(Tween.EASE_OUT)
+		await get_tree().create_timer(0.5).timeout
+	else:
+		tween.tween_property($PanelMisiones, "position", Vector2(574, 0), 0.5).set_ease(Tween.EASE_IN)
 	$PanelMisiones.visible = !$PanelMisiones.visible
 
 func consultarMisiones():

@@ -41,21 +41,24 @@ func _on_btn_guardar_idioma_pressed() -> void:
 	CONFIG_FILE.save_full_config()
 
 func _on_slider_master_value_changed(value: float) -> void:
+	GLOBAL.nivelAudioMaster = value
 	GLOBAL.cambiar_bus_audio(GLOBAL.audioMaster, value)
 	CONFIG_FILE.update_audio_setting("master", value)
 
 func _on_slider_musica_value_changed(value: float) -> void:
+	GLOBAL.nivelAudioMusica = value
 	GLOBAL.cambiar_bus_audio(GLOBAL.audioMusica, value)
 	CONFIG_FILE.update_audio_setting("musica", value)
 
 func _on_slider_sfx_value_changed(value: float) -> void:
+	GLOBAL.nivelAudioSFX = value
 	GLOBAL.cambiar_bus_audio(GLOBAL.audioSFX, value)
 	CONFIG_FILE.update_audio_setting("sfx", value)
 
 func _on_slider_voz_value_changed(value: float) -> void:
+	GLOBAL.nivelAudioVoz = value
 	GLOBAL.cambiar_bus_audio(GLOBAL.audioVoz, value)
 	CONFIG_FILE.update_audio_setting("voz", value)
-
 
 func _on_btn_eliminar_part_pressed() -> void:
 	if FileAccess.file_exists("res://gamesave.json"):

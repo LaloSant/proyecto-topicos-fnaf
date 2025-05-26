@@ -38,6 +38,7 @@ var contador_dia:int
 var marker_actual = MarkerPosicion.mk_EdificioTSalon
 var escena_actual = ""
 var paginas:Array[bool] = [false, false, false, false, false, false, false, false]
+var saleT:bool = false
 
 #Seccion audio
 var nivelAudioMaster:float
@@ -68,11 +69,6 @@ func _ready() -> void:
 ## Guarda datos importantes de la partida
 func guardarPartida() -> void:
 	SAVEFILE.salva_partida()
-	#CONFIG_FILE.save_partida_setting("dia", contador_dia)
-	#CONFIG_FILE.save_partida_setting("marcador", marker_actual)
-	#CONFIG_FILE.save_partida_setting("paginas", personaje.paginas)
-	#CONFIG_FILE.save_personaje_setting("tieneLampara", personaje.has_lamp())
-	#CONFIG_FILE.save_personaje_setting("currentHealth", personaje.salud)
 
 ##Evalua posicion y que escena cargar
 func continuarPartida() -> void:
