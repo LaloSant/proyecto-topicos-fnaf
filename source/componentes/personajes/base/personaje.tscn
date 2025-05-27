@@ -35,7 +35,7 @@ height = 52.0
 
 [sub_resource type="Animation" id="Animation_xk7y5"]
 resource_name = "Muerte"
-length = 5.0
+length = 10.0
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -44,10 +44,10 @@ tracks/0/path = NodePath("camara:zoom")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
+"times": PackedFloat32Array(0, 10),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(3.7, 3.7), Vector2(7, 7)]
+"values": [Vector2(3.7, 3.7), Vector2(8, 8)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -56,10 +56,10 @@ tracks/1/path = NodePath("camara:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 3.03333, 6.6, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 1.39626]
+"values": [0.0, 0.785398, 0.0, -0.785398]
 }
 
 [sub_resource type="Animation" id="Animation_0yiej"]
@@ -121,6 +121,7 @@ debug_color = Color(0.234351, 0.607851, 0.669646, 0.376471)
 
 [node name="camara" type="Camera2D" parent="."]
 scale = Vector2(0.5, 0.5)
+ignore_rotation = false
 zoom = Vector2(3.7, 3.7)
 
 [node name="LightOc" type="LightOccluder2D" parent="."]

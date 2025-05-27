@@ -12,6 +12,8 @@ class_name transicion extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Personaje:
+		if body.muerto:
+			return
 		body.setPuedeMoverse(false)
 		defPuntoSalida() 
 		await SCN_FADE_IN.cambia_escena(escena)

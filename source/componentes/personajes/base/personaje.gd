@@ -154,6 +154,7 @@ func recibe_danio(danio:int, desdeX:int, desdeY:int) -> void:
 	salud -= danio
 	GLOBAL.pers_salud = salud
 	if salud <= 0:
+		golpeando = false
 		muerto = true
 		setPuedeMoverse(false)
 		reproduceSonido("Muerte")
@@ -294,7 +295,6 @@ func _on_sprite_animation_finished() -> void:
 		emit_signal("finMuerte")
 		muerte()
 
-##Linterna, Bonk, Muerte, Pag
 func reproduceSonido(nombreAud:String) -> void:
 	match nombreAud:
 		"Linterna":
@@ -325,3 +325,4 @@ func muerte():
 	$HUD/CapaTactil.visible = false
 	$HUD/CapaTactil.layer = -10
 	$HUD/GameOver.visible = true
+	$HUD/GameOver/Continuar/btnContinuar.grab_focus()

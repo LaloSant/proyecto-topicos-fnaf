@@ -71,9 +71,12 @@ func guardarPartida() -> void:
 	SAVEFILE.salva_partida()
 
 ##Evalua posicion y que escena cargar
-func continuarPartida() -> void:
+func continuarPartida(partidaLocal:bool) -> void:
 	continuar_partida = true
-	SAVEFILE.carga_partida()
+	if !partidaLocal:
+		SAVEFILE.carga_partida()
+	else:
+		pers_salud = 50
 	if GLOBAL.marker_actual == GLOBAL.MarkerPosicion.mk_EdificioTSalon:
 		SCN_FADE_IN.cambia_escena("res://source/screens/juego/edifT/edificio_t.tscn")
 	elif GLOBAL.marker_actual == GLOBAL.MarkerPosicion.mk_EdificioTEntrada:

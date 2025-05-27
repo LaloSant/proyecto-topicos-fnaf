@@ -10,7 +10,7 @@
 extends CanvasLayer
 
 func _on_btn_continuar_pressed() -> void:
-	GLOBAL.continuarPartida()
+	GLOBAL.continuarPartida(true)
 
 func _on_btn_menu_pressed() -> void:
 	SCN_FADE_IN.cambia_escena("res://source/screens/menus/pant_principal.tscn")

@@ -39,6 +39,7 @@ offset_left = -93.0
 offset_top = -40.0
 offset_right = 93.0
 offset_bottom = 41.0
+focus_neighbor_right = NodePath("../../Menu/btnMenu")
 theme_type_variation = &"FlatButton"
 
 [node name="Menu" type="Sprite2D" parent="."]
@@ -51,6 +52,7 @@ offset_left = -93.0
 offset_top = -39.0
 offset_right = 92.0
 offset_bottom = 40.0
+focus_neighbor_left = NodePath("../../Continuar/btnContinuar")
 theme_type_variation = &"FlatButton"
 
 [connection signal="pressed" from="Continuar/btnContinuar" to="." method="_on_btn_continuar_pressed"]

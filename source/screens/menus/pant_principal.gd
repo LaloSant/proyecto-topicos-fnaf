@@ -19,7 +19,7 @@ func _on_btn_iniciar_pressed() -> void:
 	SCN_FADE_IN.cambia_escena("res://source/screens/juego/edifT/edificio_t.tscn")
 
 func _on_btn_continuar_pressed() -> void:
-	GLOBAL.continuarPartida()
+	GLOBAL.continuarPartida(false)
 
 func _on_btn_config_pressed() -> void:
 	SCN_FADE_IN.cambia_escena("res://source/screens/menus/pant_config.tscn")

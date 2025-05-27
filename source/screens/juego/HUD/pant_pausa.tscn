@@ -178,6 +178,7 @@ offset_top = -38.0
 offset_right = 96.0
 offset_bottom = 40.0
 focus_neighbor_left = NodePath("../../Guardar/btnGuardar")
+focus_neighbor_top = NodePath(".")
 focus_neighbor_bottom = NodePath("../../Guardar/btnGuardar")
 theme = ExtResource("2_k7li3")
 theme_type_variation = &"FlatButton"
