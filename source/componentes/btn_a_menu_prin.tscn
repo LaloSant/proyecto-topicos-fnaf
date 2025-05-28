@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://rerxv8lts2mu"]
 
-[ext_resource type="Script" path="res://source/componentes/btn_a_menu_prin.gd" id="1_gafkj"]
+[ext_resource type="Script" uid="uid://ds8fci0mdovm" path="res://source/componentes/btn_a_menu_prin.gd" id="1_gafkj"]
 [ext_resource type="FontFile" uid="uid://30d8vkb8b4t8" path="res://resources/lang/MinecraftItalic-R8Mo.otf" id="1_rsnan"]
 
 [sub_resource type="Theme" id="Theme_m8ywg"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://butucroy73xlb"
+path="res://.godot/imported/Vecinos en 8 BITS (8 BIT COVER  Animación).mp3-89ed2c13c258746ae74d0201d46c95e2.mp3str"
+
+[deps]
+
+source_file="res://resources/audio/musica/Vecinos en 8 BITS (8 BIT COVER  Animación).mp3"
+dest_files=["res://.godot/imported/Vecinos en 8 BITS (8 BIT COVER  Animación).mp3-89ed2c13c258746ae74d0201d46c95e2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
