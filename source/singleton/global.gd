@@ -72,6 +72,7 @@ func guardarPartida() -> void:
 
 ##Evalua posicion y que escena cargar
 func continuarPartida(partidaLocal:bool) -> void:
+	saleT = true
 	continuar_partida = true
 	if !partidaLocal:
 		SAVEFILE.carga_partida()
