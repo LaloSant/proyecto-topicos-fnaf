@@ -75,7 +75,7 @@ func _on_area_danio_body_entered(body: Node2D) -> void:
 	if muerto:
 		return
 	if body is Personaje:
-		if body.muerto:
+		if body.muerto or !body.puedeMoverse:
 			return
 		var desdeX:int
 		var desdeY:int
