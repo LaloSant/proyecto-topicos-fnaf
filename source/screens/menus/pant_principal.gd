@@ -16,6 +16,12 @@ func _ready() -> void:
 func _on_btn_iniciar_pressed() -> void:
 	GLOBAL.continuar_partida = false
 	GLOBAL.marker_actual = GLOBAL.MarkerPosicion.mk_EdificioTSalon
+	GLOBAL.naranjas = false
+	GLOBAL.otorgar_naranjas = false
+	GLOBAL.torta = false
+	GLOBAL.saleT = false
+	GLOBAL.pliego = false
+	GLOBAL.paginas = [false, false, false, false, false, false, false, false]
 	SCN_FADE_IN.cambia_escena("res://source/screens/juego/edifT/edificio_t.tscn")
 
 func _on_btn_continuar_pressed() -> void:
