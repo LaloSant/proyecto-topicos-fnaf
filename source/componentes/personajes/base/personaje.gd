@@ -63,6 +63,7 @@ func _ready() -> void:
 	defaultSpeed = GLOBAL.pers_default_speed
 
 func _physics_process(_delta: float) -> void:
+	get_viewport().canvas_transform.origin = self.position
 	if daniado:
 		move_and_slide()
 		return
