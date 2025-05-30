@@ -10,7 +10,7 @@ extends Node2D
 
 func _ready() -> void:
 	$Panel/VBoxContainer/btn_iniciar.grab_focus()
-	$Panel/VBoxContainer/btn_continuar.disabled = !FileAccess.file_exists("res://gamesave.json")
+	$Panel/VBoxContainer/btn_continuar.disabled = !SAVEFILE.existe_partida()
 	THR_LOADER.load_trigger("res://source/screens/menus/pant_creditos.tscn")
 
 func _on_btn_iniciar_pressed() -> void:

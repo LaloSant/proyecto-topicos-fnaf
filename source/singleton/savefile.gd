@@ -9,7 +9,7 @@
 
 extends Node2D
 
-var file_path = "res://gamsesave.json" if OS.get_name() == "Windows" else "user://gamesave.json"
+var file_path = "user://gamsesave.json" if OS.get_name() == "Android" else "res://gamesave.json"
 
 func salva_partida():
 	var datos = {
@@ -58,3 +58,6 @@ func carga_partida():
 func elimina_partida():
 	if FileAccess.file_exists(file_path):
 		DirAccess.remove_absolute(file_path)
+		
+func existe_partida() -> bool:
+	return FileAccess.file_exists(file_path)
