@@ -9,6 +9,8 @@
 
 extends Node2D
 
+var file_path = "res://gamsesave.json" if OS.get_name() == "Windows" else "user://gamesave.json"
+
 func salva_partida():
 	var datos = {
 		"salud": GLOBAL.pers_salud,
@@ -24,16 +26,16 @@ func salva_partida():
 		"otorgar_naranjas":GLOBAL.otorgar_naranjas
 	}
 	var jsonString = JSON.stringify(datos)
-	if !FileAccess.file_exists("res://gamesave.json"):
+	if !FileAccess.file_exists(file_path):
 		pass
-	var jsonFile = FileAccess.open("res://gamesave.json", FileAccess.WRITE)
+	var jsonFile = FileAccess.open(file_path, FileAccess.WRITE)
 	jsonFile.store_line(jsonString)
 	jsonFile.close()
 
 func carga_partida():
-	if !FileAccess.file_exists("res://gamesave.json"):
+	if !FileAccess.file_exists(file_path):
 		return false
-	var jsonFile = FileAccess.open("res://gamesave.json", FileAccess.READ)
+	var jsonFile = FileAccess.open(file_path, FileAccess.READ)
 	var jsonString=jsonFile.get_as_text()
 	jsonFile.close()
 	var datos=JSON.parse_string(jsonString)
@@ -54,5 +56,5 @@ func carga_partida():
 	GLOBAL.pers_nombre = datos.nombre
 
 func elimina_partida():
-	if FileAccess.file_exists("res://gamesave.json"):
-		DirAccess.remove_absolute("res://gamesave.json")
+	if FileAccess.file_exists(file_path):
+		DirAccess.remove_absolute(file_path)
