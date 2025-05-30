@@ -9,7 +9,7 @@
 
 extends Node2D
 
-var file_path = "user://gamsesave.json" if OS.get_name() == "Android" else "res://gamesave.json"
+var file_path = "user://gamsesave.json" if OS.get_name() == "Android" or OS.get_name()== "macOS" else "res://gamesave.json"
 
 func salva_partida():
 	var datos = {
