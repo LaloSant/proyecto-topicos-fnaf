@@ -61,8 +61,8 @@ func _on_slider_voz_value_changed(value: float) -> void:
 	CONFIG_FILE.update_audio_setting("voz", value)
 
 func _on_btn_eliminar_part_pressed() -> void:
-	if FileAccess.file_exists("res://gamesave.json"):
-		SAVEFILE.elimina_partida()
+	SAVEFILE.elimina_partida()
+	if !SAVEFILE.existe_partida():
 		$Panel/HBoxBtn/btn_eliminarPart.disabled = true
 
 func _on_btn_controles_pressed() -> void:
