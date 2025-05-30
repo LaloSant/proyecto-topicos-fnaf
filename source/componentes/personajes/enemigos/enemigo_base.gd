@@ -97,7 +97,7 @@ func _on_hurt_box_damage_received() -> void:
 	if salud <= 0:
 		if not muerto:
 			$SFX.stream = preload("res://resources/audio/toma-don-ramon.mp3")
-			$SFX.play()
+			$SFX	.play()
 		muerto = true
 		$Sprite.animation = "muerto"
 	else:

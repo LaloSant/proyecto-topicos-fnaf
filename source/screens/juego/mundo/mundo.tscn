@@ -223,7 +223,7 @@ position = Vector2(-1634, -2024)
 position = Vector2(-1703.85, -691.822)
 
 [node name="EdificioXFuera" type="Marker2D" parent="Marcadores"]
-position = Vector2(183, 311)
+position = Vector2(179, 302)
 
 [node name="EdificioMecaFuera" type="Marker2D" parent="Marcadores"]
 position = Vector2(-2589.78, -470.393)
