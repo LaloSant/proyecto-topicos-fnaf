@@ -33,55 +33,57 @@ script = ExtResource("1_e1p3u")
 [node name="Botones" type="Node2D" parent="Contenedor"]
 
 [node name="A" type="TouchScreenButton" parent="Contenedor/Botones"]
-position = Vector2(1152, 448)
-scale = Vector2(1.26, 1.26)
+position = Vector2(1171, 451)
+scale = Vector2(1.8, 1.8)
 texture_normal = ExtResource("3_qhuhg")
 texture_pressed = ExtResource("2_usplv")
 
 [node name="B" type="TouchScreenButton" parent="Contenedor/Botones"]
-position = Vector2(1089, 512)
-scale = Vector2(1.26, 1.26)
+position = Vector2(1074, 542)
+scale = Vector2(1.8, 1.8)
 texture_normal = ExtResource("5_ugv2f")
 texture_pressed = ExtResource("4_ku10b")
 action = "Control_B_Circ"
 
 [node name="X" type="TouchScreenButton" parent="Contenedor/Botones"]
-position = Vector2(1024, 449)
-scale = Vector2(1.26, 1.26)
+position = Vector2(976, 450)
+scale = Vector2(1.8, 1.8)
 texture_normal = ExtResource("7_a3pd7")
 texture_pressed = ExtResource("6_xlaus")
 action = "Control_X_cuad"
 
 [node name="Y" type="TouchScreenButton" parent="Contenedor/Botones"]
-position = Vector2(1089, 384)
-scale = Vector2(1.26, 1.26)
+position = Vector2(1071, 360)
+scale = Vector2(1.8, 1.8)
 texture_normal = ExtResource("9_4l7c8")
 texture_pressed = ExtResource("8_25rhg")
+action = "CONTROL_Y_tria"
 
 [node name="Control" type="Node2D" parent="Contenedor"]
 
 [node name="LB" type="TouchScreenButton" parent="Contenedor/Control"]
 position = Vector2(193, 170)
-scale = Vector2(1.7, 1.7)
+scale = Vector2(1.8, 1.8)
 texture_normal = ExtResource("11_4l7c8")
 texture_pressed = ExtResource("10_25rhg")
+action = "Control_L3"
 
 [node name="LT" type="TouchScreenButton" parent="Contenedor/Control"]
 position = Vector2(193, 41)
-scale = Vector2(1.7, 1.7)
+scale = Vector2(1.8, 1.8)
 texture_normal = ExtResource("13_iarm7")
 texture_pressed = ExtResource("12_of62m")
 
 [node name="RT" type="TouchScreenButton" parent="Contenedor/Control"]
 position = Vector2(961, 41)
-scale = Vector2(1.7, 1.7)
+scale = Vector2(1.8, 1.8)
 texture_normal = ExtResource("15_pabr1")
 texture_pressed = ExtResource("14_iarm7")
 action = "Control_RT_R2"
 
 [node name="RB" type="TouchScreenButton" parent="Contenedor/Control"]
 position = Vector2(962, 170)
-scale = Vector2(1.7, 1.7)
+scale = Vector2(1.8, 1.8)
 texture_normal = ExtResource("13_of62m")
 texture_pressed = ExtResource("12_2aqb1")
 action = "Control_L3"
@@ -89,43 +91,52 @@ action = "Control_L3"
 [node name="Pad" type="Node2D" parent="Contenedor"]
 
 [node name="PadArr" type="TouchScreenButton" parent="Contenedor/Pad"]
-position = Vector2(165, 388)
+position = Vector2(210, 321)
+scale = Vector2(1.8, 1.8)
 texture_normal = ExtResource("3_0q7so")
 texture_pressed = ExtResource("2_vctob")
+passby_press = true
 action = "ui_up"
 
 [node name="PadAbj" type="TouchScreenButton" parent="Contenedor/Pad"]
-position = Vector2(235, 615)
+position = Vector2(333, 698)
 rotation = 3.14159
+scale = Vector2(1.8, 1.8)
 texture_normal = ExtResource("3_0q7so")
 texture_pressed = ExtResource("2_vctob")
+passby_press = true
 action = "ui_down"
 
 [node name="PadDer" type="TouchScreenButton" parent="Contenedor/Pad"]
-position = Vector2(321, 466)
+position = Vector2(469, 448)
 rotation = 1.5708
+scale = Vector2(1.8, 1.8)
 texture_normal = ExtResource("3_0q7so")
 texture_pressed = ExtResource("2_vctob")
+passby_press = true
 action = "ui_right"
 
 [node name="PadIzq" type="TouchScreenButton" parent="Contenedor/Pad"]
-position = Vector2(79, 537)
+position = Vector2(75, 572)
 rotation = -1.5708
+scale = Vector2(1.8, 1.8)
 texture_normal = ExtResource("3_0q7so")
 texture_pressed = ExtResource("2_vctob")
+passby_press = true
 action = "ui_left"
 
 [node name="Triggers" type="Node2D" parent="Contenedor"]
 
 [node name="Start" type="TouchScreenButton" parent="Contenedor/Triggers"]
 position = Vector2(704, 41.0001)
-scale = Vector2(1.68, 1.68)
+scale = Vector2(1.8, 1.8)
 texture_normal = ExtResource("5_m80n5")
 texture_pressed = ExtResource("4_0ymrh")
 action = "Control_Start"
 
 [node name="Back" type="TouchScreenButton" parent="Contenedor/Triggers"]
 position = Vector2(449, 42.0001)
-scale = Vector2(1.68, 1.68)
+scale = Vector2(1.8, 1.8)
 texture_normal = ExtResource("5_x6107")
 texture_pressed = ExtResource("4_hjps7")
+action = "Control_Back"

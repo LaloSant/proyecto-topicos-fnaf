@@ -18,7 +18,7 @@ enum MarkerPosicion{mk_EdificioAmbSalon, mk_EdificioAmbEntrada, mk_EdificioAmbFu
 @onready var audioSFX = AudioServer.get_bus_index("SFX")
 @onready var audioVoz = AudioServer.get_bus_index("Voz")
 @onready var continuar_partida:bool = false
-@onready var controles_tactiles:bool = false
+@onready var controles_tactiles:bool = OS.get_name() == 'Android'
 
 #Seccion personaje
 var pers_default_speed:int
@@ -65,6 +65,7 @@ func _ready() -> void:
 	nivelAudioMusica = audio_settings.musica
 	nivelAudioSFX = audio_settings.sfx
 	nivelAudioVoz = audio_settings.voz
+	
 
 ## Guarda datos importantes de la partida
 func guardarPartida() -> void:

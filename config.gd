@@ -8,7 +8,7 @@
 
 extends Node
 
-var file_path="res://config.cfg"
+var file_path = "res://config.cfg" if OS.get_name() == "Windows" else "user://config.cfg"
 var config = ConfigFile.new()
 
 func _ready() -> void:

@@ -14,7 +14,7 @@ func _ready() -> void:
 	$Panel/HBox/VButtons/slider_musica.set_value_no_signal(GLOBAL.nivelAudioMusica)
 	$Panel/HBox/VButtons/slider_sfx.set_value_no_signal(GLOBAL.nivelAudioSFX)
 	$Panel/HBox/VButtons/slider_voz.set_value_no_signal(GLOBAL.nivelAudioVoz)
-	if !FileAccess.file_exists("res://gamesave.json"):
+	if !SAVEFILE.existe_partida():
 		$Panel/HBoxBtn/btn_eliminarPart.disabled = true
 	$Panel/HBoxBtn/btn_guardar.grab_focus()
 
